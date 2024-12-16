@@ -30,7 +30,7 @@ export class UserService {
       );
     }
   }
-
+  
   // Retrieves a single user by their ID
   async findById(id: number): Promise<ServiceResponse<User | null>> {
     try {
