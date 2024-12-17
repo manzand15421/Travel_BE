@@ -6,6 +6,7 @@ import { pino } from "pino";
 import { openAPIRouter } from "@/api-docs/openAPIRouter";
 import { healthCheckRouter } from "@/api/healthCheck/healthCheckRouter";
 import { userRouter } from "@/api/user/userRouter";
+import { travelRouter } from "./api/Travel/router";
 import errorHandler from "@/common/middleware/errorHandler";
 import rateLimiter from "@/common/middleware/rateLimiter";
 import requestLogger from "@/common/middleware/requestLogger";
@@ -30,6 +31,12 @@ app.use(requestLogger);
 // Routes
 app.use("/health-check", healthCheckRouter);
 app.use("/users", userRouter);
+app.use("/travel", travelRouter);
+
+// Global 404 Error Handler
+app.use((req, res) => {
+  res.status(404).json({ message: "Sorry,Page not found" });
+});
 
 // Swagger UI
 app.use(openAPIRouter);
