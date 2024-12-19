@@ -1,4 +1,5 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+#!/bin/sh
+npm test # Or any command/script to run during pre-commit
+
 
 npx lint-staged

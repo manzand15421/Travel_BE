@@ -28,18 +28,25 @@ app.use(rateLimiter);
 // Request logging
 app.use(requestLogger);
 
+// Swagger UI
+app.use(openAPIRouter);   
+
 // Routes
+app.get('/',(req,res) => {
+  res.status(200).json("Travel Testing")
+  })
+  
 app.use("/health-check", healthCheckRouter);
 app.use("/users", userRouter);
 app.use("/travel", travelRouter);
+
 
 // Global 404 Error Handler
 app.use((req, res) => {
   res.status(404).json({ message: "Sorry,Page not found" });
 });
 
-// Swagger UI
-app.use(openAPIRouter);
+
 
 // Error handlers
 app.use(errorHandler());

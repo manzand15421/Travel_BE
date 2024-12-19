@@ -6,6 +6,7 @@ import { createApiResponse } from "@/api-docs/openAPIResponseBuilders";
 import { GetUserSchema, UserSchema } from "@/api/user/userModel";
 import { validateRequest } from "@/common/utils/httpHandlers";
 import { userController } from "./userController";
+import { authorize } from "@/common/middleware/authorization";
 
 export const userRegistry = new OpenAPIRegistry();
 export const userRouter: Router = express.Router();
@@ -19,7 +20,7 @@ userRegistry.registerPath({
   responses: createApiResponse(z.array(UserSchema), "Success"),
 });
 
-userRouter.get("/", userController.getUsers);
+userRouter.get("/",authorize, userController.getUsers);
 
 userRegistry.registerPath({
   method: "get",
