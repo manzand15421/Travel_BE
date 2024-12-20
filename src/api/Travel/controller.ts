@@ -5,7 +5,7 @@ import { handleServiceResponse } from '@/common/utils/httpHandlers';
 class TravelController {
   public getTravelNoReg = async (req: Request, res: Response) => {
     const { NOREG, ROWSTART, ROWEND } = req.query;
-    
+
     // Execute the stored procedure
     const serviceResponse = await travelService.getTravelNoReg(
       NOREG as string,
@@ -23,16 +23,12 @@ class TravelController {
     return handleServiceResponse(sanitizedResult, res);
   };
 
-  public GetDataUser = async (req: Request, res: Response) => {
-    const result = await travelService.getDataUser();
-    return handleServiceResponse(result, res);
-  };
-
-  public LoginUser = async (req: Request, res: Response) => {
-    const { USERNAME, PASSWORD } = req.body;
-    const result = await travelService.LoginTravel(USERNAME, PASSWORD);
-    return handleServiceResponse(result, res);
-  };
+  public getProfile = async (req : Request , res : Response) => {
+    const NOREG = req.query.NOREG as string
+    const result = await travelService.getProfile(NOREG)
+    return handleServiceResponse(result,res)
+  }
 }
+
 
 export const travelController = new TravelController();

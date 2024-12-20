@@ -24,16 +24,6 @@ model TB_R_POA {
   @@id([SYSTEM_ID, POA_NO], map: "PK_TB_R_POA")
 }
 
-model sysdiagrams {
-  name         String @db.NVarChar(128)
-  principal_id Int
-  diagram_id   Int    @id(map: "PK__sysdiagr__C2B05B61726E399E") @default(autoincrement())
-  version      Int?
-  definition   Bytes?
-
-  @@unique([principal_id, name], map: "UK_principal_name")
-}
-
 model TB_M_APPLICATION {
   ID                    String                  @id(map: "PK_TB_M_APPLICATION_1") @db.VarChar(50)
   NAME                  String                  @db.VarChar(50)
@@ -46,7 +36,6 @@ model TB_M_APPLICATION {
   CHANGED_DATE          DateTime?               @db.DateTime
   FA_ICON               String?                 @db.VarChar(50)
   TB_M_FEATURE          TB_M_FEATURE[]
-  TB_M_FUNCTION         TB_M_FUNCTION[]
   TB_M_ROLE             TB_M_ROLE[]
   TB_M_USER_APPLICATION TB_M_USER_APPLICATION[]
 }
@@ -78,8 +67,6 @@ model TB_M_AUTHORIZATION {
   TB_M_USER       TB_M_USER @relation(fields: [USERNAME], references: [USERNAME], onUpdate: NoAction, map: "FK__TB_M_AUTH__USERN__5FB337D6")
 
   @@id([USERNAME, APPLICATION, ROLE, FUNCTION, FEATURE, QUALIFIER_KEY, QUALIFIER_VALUE], map: "PK_TB_M_AUTHORIZATION")
-  @@index([FUNCTION], map: "ix_tb_m_authorization_function")
-  @@index([ROLE], map: "ix_tb_m_authorization_role")
 }
 
 model TB_M_COMPANY {
@@ -108,15 +95,14 @@ model TB_M_FEATURE {
 }
 
 model TB_M_FUNCTION {
-  APPLICATION      String           @db.VarChar(50)
-  ID               String           @db.VarChar(50)
-  NAME             String           @db.VarChar(100)
-  DESCRIPTION      String?          @db.VarChar(200)
-  CREATED_BY       String           @db.VarChar(70)
-  CREATED_DATE     DateTime         @db.DateTime
-  CHANGED_BY       String?          @db.VarChar(70)
-  CHANGED_DATE     DateTime?        @db.DateTime
-  TB_M_APPLICATION TB_M_APPLICATION @relation(fields: [APPLICATION], references: [ID], onUpdate: NoAction, map: "FK__TB_M_FUNC__APPLI__534D60F1")
+  APPLICATION  String    @db.VarChar(50)
+  ID           String    @db.VarChar(50)
+  NAME         String    @db.VarChar(100)
+  DESCRIPTION  String?   @db.VarChar(200)
+  CREATED_BY   String    @db.VarChar(70)
+  CREATED_DATE DateTime  @db.DateTime
+  CHANGED_BY   String?   @db.VarChar(70)
+  CHANGED_DATE DateTime? @db.DateTime
 
   @@id([ID, APPLICATION], map: "PK_TB_M_FUNCTION")
 }
@@ -172,22 +158,6 @@ model TB_M_ROLE {
   TB_M_APPLICATION TB_M_APPLICATION @relation(fields: [APPLICATION], references: [ID], onUpdate: NoAction, map: "FK__TB_M_ROLE__APPLI__52593CB8")
 
   @@id([APPLICATION, ID], map: "PK_TB_M_ROLE_1")
-}
-
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
-model TB_M_ROLE_BU2021 {
-  APPLICATION     String    @db.VarChar(50)
-  ID              String    @db.VarChar(50)
-  NAME            String    @db.VarChar(100)
-  DESCRIPTION     String    @db.VarChar(200)
-  SESSION_TIMEOUT Int
-  LOCK_TIMEOUT    Int
-  CREATED_BY      String    @db.VarChar(70)
-  CREATED_DATE    DateTime  @db.DateTime
-  CHANGED_BY      String?   @db.VarChar(70)
-  CHANGED_DATE    DateTime? @db.DateTime
-
-  @@ignore
 }
 
 model TB_M_USER {
@@ -308,4 +278,135 @@ model TB_T_COUNTER {
   ACCESS_USER    String   @db.VarChar(50)
   ACCESS_NAME    String   @db.VarChar(100)
   ACCESS_DATE    DateTime @db.DateTime
+}
+
+model TB_M_EMP_POA_LEVEL {
+  SYSTEM_ID         String    @db.VarChar(50)
+  LEVEL_SEQ         Int
+  GRANTOR_LEVEL_ID  Int
+  ATTORNEY_LEVEL_ID Int
+  CREATED_BY        String    @db.VarChar(64)
+  CREATED_DT        DateTime  @db.DateTime
+  UPDATED_BY        String?   @db.VarChar(64)
+  UPDATED_DT        DateTime? @db.DateTime
+
+  @@id([SYSTEM_ID, LEVEL_SEQ], map: "PK_TB_M_EMP_POA_LEVEL")
+}
+
+model TB_M_EMP_POSITION {
+  POSITION_LEVEL Int       @id(map: "PK_TB_M_EMP_POSITION")
+  POSITION_ABBR  String    @db.VarChar(10)
+  POSITION_DESC  String?   @db.VarChar(50)
+  LEVEL_ID       Int?
+  CREATED_BY     String    @db.VarChar(64)
+  CREATED_DT     DateTime  @db.DateTime
+  UPDATED_BY     String?   @db.VarChar(64)
+  UPDATED_DT     DateTime? @db.DateTime
+}
+
+model TB_M_ON_BEHALF {
+  SYSTEM_ID       String    @db.VarChar(50)
+  SEQ             Int
+  NOREG           String    @db.VarChar(8)
+  NOREG_ON_BEHALF String    @db.VarChar(8)
+  CREATED_BY      String    @db.VarChar(64)
+  CREATED_DT      DateTime  @db.DateTime
+  UPDATED_BY      String?   @db.VarChar(64)
+  UPDATED_DT      DateTime? @db.DateTime
+
+  @@id([SYSTEM_ID, SEQ], map: "PK_TB_M_ON_BEHALF")
+}
+
+model TB_M_PROFILE_MAIN {
+  NOREG             String    @db.VarChar(8)
+  TITLE             String    @db.VarChar(15)
+  NAME              String    @db.VarChar(80)
+  GENDER            String    @db.VarChar(1)
+  DATE_OF_BIRTH     DateTime  @db.Date
+  PLACE_OF_BIRTH    String    @db.VarChar(40)
+  COUNTRY_OF_BIRTH  String    @db.VarChar(40)
+  PROVINCE_OF_BIRTH String?   @db.VarChar(40)
+  NATIONALITY       String    @db.VarChar(340)
+  BLOOD_TYPE        String?   @db.VarChar(2)
+  RELIGION          String    @db.VarChar(2)
+  MARITAL_STATUS    String    @db.VarChar(1)
+  MARITAL_DATE      DateTime? @db.Date
+  BPK_STATUS        String    @db.VarChar(3)
+  VALID_FROM        DateTime  @db.DateTime
+  VALID_TO          DateTime  @db.DateTime
+  APPROVAL_STATUS   Int
+  DATA_STATUS       String?   @db.Char(1)
+
+  @@id([NOREG, VALID_FROM, VALID_TO], map: "PK_TB_M_PROFILE_MAIN_1")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model TB_M_USER_20151221 {
+  USERNAME                 String    @db.VarChar(70)
+  ID                       String    @db.VarChar(50)
+  REG_NO                   String    @db.VarChar(50)
+  COMPANY                  String?   @db.VarChar(50)
+  PASSWORD                 String    @db.VarChar(130)
+  PASSWORD_EXPIRATION_DATE DateTime  @db.DateTime
+  PASSWORD_RESET           Boolean
+  ACCOUNT_VALIDITY_DATE    DateTime  @db.DateTime
+  FIRST_NAME               String    @db.VarChar(20)
+  LAST_NAME                String?   @db.VarChar(20)
+  GENDER                   String    @db.VarChar(10)
+  BIRTH_DATE               DateTime  @db.DateTime
+  ADDRESS                  String?   @db.VarChar(Max)
+  IN_ACTIVE_DIRECTORY      Boolean
+  SESSION_TIMEOUT          Int
+  LOCK_TIMEOUT             Int
+  MAX_CONCURRENT_LOGIN     Int
+  CREATED_BY               String    @db.VarChar(70)
+  CREATED_DATE             DateTime  @db.DateTime
+  CHANGED_BY               String?   @db.VarChar(70)
+  CHANGED_DATE             DateTime? @db.DateTime
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model TEMPTB_M_AUTHORIZATION {
+  USERNAME        String    @db.VarChar(70)
+  APPLICATION     String    @db.VarChar(50)
+  ROLE            String    @db.VarChar(50)
+  FUNCTION        String    @db.VarChar(50)
+  FEATURE         String    @db.VarChar(50)
+  QUALIFIER_KEY   String    @db.VarChar(50)
+  QUALIFIER_VALUE String    @db.VarChar(50)
+  CREATED_BY      String    @db.VarChar(70)
+  CREATED_DATE    DateTime  @db.DateTime
+  CHANGED_BY      String?   @db.VarChar(70)
+  CHANGED_DATE    DateTime? @db.DateTime
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model tempTB_M_USER_APPLICATION {
+  ID           BigInt    @default(autoincrement())
+  USERNAME     String    @db.VarChar(70)
+  APPLICATION  String    @db.VarChar(50)
+  IS_DEFAULT   Boolean
+  CREATED_BY   String    @db.VarChar(70)
+  CREATED_DATE DateTime  @db.DateTime
+  CHANGED_BY   String?   @db.VarChar(70)
+  CHANGED_DATE DateTime? @db.DateTime
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model tempTB_M_USER_EMAIL {
+  ID           BigInt    @default(autoincrement())
+  USERNAME     String    @db.VarChar(70)
+  EMAIL        String    @db.VarChar(255)
+  CREATED_BY   String    @db.VarChar(70)
+  CREATED_DATE DateTime  @db.DateTime
+  CHANGED_BY   String?   @db.VarChar(70)
+  CHANGED_DATE DateTime? @db.DateTime
+
+  @@ignore
 }

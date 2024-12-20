@@ -132,14 +132,6 @@ exports.Prisma.TB_R_POAScalarFieldEnum = {
   UPDATED_BY: 'UPDATED_BY'
 };
 
-exports.Prisma.SysdiagramsScalarFieldEnum = {
-  name: 'name',
-  principal_id: 'principal_id',
-  diagram_id: 'diagram_id',
-  version: 'version',
-  definition: 'definition'
-};
-
 exports.Prisma.TB_M_APPLICATIONScalarFieldEnum = {
   ID: 'ID',
   NAME: 'NAME',
@@ -368,6 +360,60 @@ exports.Prisma.TB_T_COUNTERScalarFieldEnum = {
   ACCESS_DATE: 'ACCESS_DATE'
 };
 
+exports.Prisma.TB_M_EMP_POA_LEVELScalarFieldEnum = {
+  SYSTEM_ID: 'SYSTEM_ID',
+  LEVEL_SEQ: 'LEVEL_SEQ',
+  GRANTOR_LEVEL_ID: 'GRANTOR_LEVEL_ID',
+  ATTORNEY_LEVEL_ID: 'ATTORNEY_LEVEL_ID',
+  CREATED_BY: 'CREATED_BY',
+  CREATED_DT: 'CREATED_DT',
+  UPDATED_BY: 'UPDATED_BY',
+  UPDATED_DT: 'UPDATED_DT'
+};
+
+exports.Prisma.TB_M_EMP_POSITIONScalarFieldEnum = {
+  POSITION_LEVEL: 'POSITION_LEVEL',
+  POSITION_ABBR: 'POSITION_ABBR',
+  POSITION_DESC: 'POSITION_DESC',
+  LEVEL_ID: 'LEVEL_ID',
+  CREATED_BY: 'CREATED_BY',
+  CREATED_DT: 'CREATED_DT',
+  UPDATED_BY: 'UPDATED_BY',
+  UPDATED_DT: 'UPDATED_DT'
+};
+
+exports.Prisma.TB_M_ON_BEHALFScalarFieldEnum = {
+  SYSTEM_ID: 'SYSTEM_ID',
+  SEQ: 'SEQ',
+  NOREG: 'NOREG',
+  NOREG_ON_BEHALF: 'NOREG_ON_BEHALF',
+  CREATED_BY: 'CREATED_BY',
+  CREATED_DT: 'CREATED_DT',
+  UPDATED_BY: 'UPDATED_BY',
+  UPDATED_DT: 'UPDATED_DT'
+};
+
+exports.Prisma.TB_M_PROFILE_MAINScalarFieldEnum = {
+  NOREG: 'NOREG',
+  TITLE: 'TITLE',
+  NAME: 'NAME',
+  GENDER: 'GENDER',
+  DATE_OF_BIRTH: 'DATE_OF_BIRTH',
+  PLACE_OF_BIRTH: 'PLACE_OF_BIRTH',
+  COUNTRY_OF_BIRTH: 'COUNTRY_OF_BIRTH',
+  PROVINCE_OF_BIRTH: 'PROVINCE_OF_BIRTH',
+  NATIONALITY: 'NATIONALITY',
+  BLOOD_TYPE: 'BLOOD_TYPE',
+  RELIGION: 'RELIGION',
+  MARITAL_STATUS: 'MARITAL_STATUS',
+  MARITAL_DATE: 'MARITAL_DATE',
+  BPK_STATUS: 'BPK_STATUS',
+  VALID_FROM: 'VALID_FROM',
+  VALID_TO: 'VALID_TO',
+  APPROVAL_STATUS: 'APPROVAL_STATUS',
+  DATA_STATUS: 'DATA_STATUS'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -381,7 +427,6 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   TB_R_POA: 'TB_R_POA',
-  sysdiagrams: 'sysdiagrams',
   TB_M_APPLICATION: 'TB_M_APPLICATION',
   TB_M_APPLICATION_RUNTIME_PARAM: 'TB_M_APPLICATION_RUNTIME_PARAM',
   TB_M_AUTHORIZATION: 'TB_M_AUTHORIZATION',
@@ -399,7 +444,11 @@ exports.Prisma.ModelName = {
   TB_R_AUDIT_FLAG: 'TB_R_AUDIT_FLAG',
   TB_R_AUDIT_TRAIL: 'TB_R_AUDIT_TRAIL',
   TB_R_SYSTEM: 'TB_R_SYSTEM',
-  TB_T_COUNTER: 'TB_T_COUNTER'
+  TB_T_COUNTER: 'TB_T_COUNTER',
+  TB_M_EMP_POA_LEVEL: 'TB_M_EMP_POA_LEVEL',
+  TB_M_EMP_POSITION: 'TB_M_EMP_POSITION',
+  TB_M_ON_BEHALF: 'TB_M_ON_BEHALF',
+  TB_M_PROFILE_MAIN: 'TB_M_PROFILE_MAIN'
 };
 
 /**

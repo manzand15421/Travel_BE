@@ -19,11 +19,6 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
  */
 export type TB_R_POA = $Result.DefaultSelection<Prisma.$TB_R_POAPayload>
 /**
- * Model sysdiagrams
- * 
- */
-export type sysdiagrams = $Result.DefaultSelection<Prisma.$sysdiagramsPayload>
-/**
  * Model TB_M_APPLICATION
  * 
  */
@@ -113,6 +108,26 @@ export type TB_R_SYSTEM = $Result.DefaultSelection<Prisma.$TB_R_SYSTEMPayload>
  * 
  */
 export type TB_T_COUNTER = $Result.DefaultSelection<Prisma.$TB_T_COUNTERPayload>
+/**
+ * Model TB_M_EMP_POA_LEVEL
+ * 
+ */
+export type TB_M_EMP_POA_LEVEL = $Result.DefaultSelection<Prisma.$TB_M_EMP_POA_LEVELPayload>
+/**
+ * Model TB_M_EMP_POSITION
+ * 
+ */
+export type TB_M_EMP_POSITION = $Result.DefaultSelection<Prisma.$TB_M_EMP_POSITIONPayload>
+/**
+ * Model TB_M_ON_BEHALF
+ * 
+ */
+export type TB_M_ON_BEHALF = $Result.DefaultSelection<Prisma.$TB_M_ON_BEHALFPayload>
+/**
+ * Model TB_M_PROFILE_MAIN
+ * 
+ */
+export type TB_M_PROFILE_MAIN = $Result.DefaultSelection<Prisma.$TB_M_PROFILE_MAINPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -246,16 +261,6 @@ export class PrismaClient<
     * ```
     */
   get tB_R_POA(): Prisma.TB_R_POADelegate<ExtArgs>;
-
-  /**
-   * `prisma.sysdiagrams`: Exposes CRUD operations for the **sysdiagrams** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Sysdiagrams
-    * const sysdiagrams = await prisma.sysdiagrams.findMany()
-    * ```
-    */
-  get sysdiagrams(): Prisma.sysdiagramsDelegate<ExtArgs>;
 
   /**
    * `prisma.tB_M_APPLICATION`: Exposes CRUD operations for the **TB_M_APPLICATION** model.
@@ -436,6 +441,46 @@ export class PrismaClient<
     * ```
     */
   get tB_T_COUNTER(): Prisma.TB_T_COUNTERDelegate<ExtArgs>;
+
+  /**
+   * `prisma.tB_M_EMP_POA_LEVEL`: Exposes CRUD operations for the **TB_M_EMP_POA_LEVEL** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more TB_M_EMP_POA_LEVELS
+    * const tB_M_EMP_POA_LEVELS = await prisma.tB_M_EMP_POA_LEVEL.findMany()
+    * ```
+    */
+  get tB_M_EMP_POA_LEVEL(): Prisma.TB_M_EMP_POA_LEVELDelegate<ExtArgs>;
+
+  /**
+   * `prisma.tB_M_EMP_POSITION`: Exposes CRUD operations for the **TB_M_EMP_POSITION** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more TB_M_EMP_POSITIONS
+    * const tB_M_EMP_POSITIONS = await prisma.tB_M_EMP_POSITION.findMany()
+    * ```
+    */
+  get tB_M_EMP_POSITION(): Prisma.TB_M_EMP_POSITIONDelegate<ExtArgs>;
+
+  /**
+   * `prisma.tB_M_ON_BEHALF`: Exposes CRUD operations for the **TB_M_ON_BEHALF** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more TB_M_ON_BEHALVES
+    * const tB_M_ON_BEHALVES = await prisma.tB_M_ON_BEHALF.findMany()
+    * ```
+    */
+  get tB_M_ON_BEHALF(): Prisma.TB_M_ON_BEHALFDelegate<ExtArgs>;
+
+  /**
+   * `prisma.tB_M_PROFILE_MAIN`: Exposes CRUD operations for the **TB_M_PROFILE_MAIN** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more TB_M_PROFILE_MAINS
+    * const tB_M_PROFILE_MAINS = await prisma.tB_M_PROFILE_MAIN.findMany()
+    * ```
+    */
+  get tB_M_PROFILE_MAIN(): Prisma.TB_M_PROFILE_MAINDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -877,7 +922,6 @@ export namespace Prisma {
 
   export const ModelName: {
     TB_R_POA: 'TB_R_POA',
-    sysdiagrams: 'sysdiagrams',
     TB_M_APPLICATION: 'TB_M_APPLICATION',
     TB_M_APPLICATION_RUNTIME_PARAM: 'TB_M_APPLICATION_RUNTIME_PARAM',
     TB_M_AUTHORIZATION: 'TB_M_AUTHORIZATION',
@@ -895,7 +939,11 @@ export namespace Prisma {
     TB_R_AUDIT_FLAG: 'TB_R_AUDIT_FLAG',
     TB_R_AUDIT_TRAIL: 'TB_R_AUDIT_TRAIL',
     TB_R_SYSTEM: 'TB_R_SYSTEM',
-    TB_T_COUNTER: 'TB_T_COUNTER'
+    TB_T_COUNTER: 'TB_T_COUNTER',
+    TB_M_EMP_POA_LEVEL: 'TB_M_EMP_POA_LEVEL',
+    TB_M_EMP_POSITION: 'TB_M_EMP_POSITION',
+    TB_M_ON_BEHALF: 'TB_M_ON_BEHALF',
+    TB_M_PROFILE_MAIN: 'TB_M_PROFILE_MAIN'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -911,7 +959,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "tB_R_POA" | "sysdiagrams" | "tB_M_APPLICATION" | "tB_M_APPLICATION_RUNTIME_PARAM" | "tB_M_AUTHORIZATION" | "tB_M_COMPANY" | "tB_M_FEATURE" | "tB_M_FUNCTION" | "tB_M_MENU" | "tB_M_MENU_AUTHORIZATION" | "tB_M_ROLE" | "tB_M_USER" | "tB_M_USER_APPLICATION" | "tB_M_USER_EMAIL" | "tB_M_USER_PHONE_NUMBER" | "tB_R_ANNOUNCEMENT" | "tB_R_AUDIT_FLAG" | "tB_R_AUDIT_TRAIL" | "tB_R_SYSTEM" | "tB_T_COUNTER"
+      modelProps: "tB_R_POA" | "tB_M_APPLICATION" | "tB_M_APPLICATION_RUNTIME_PARAM" | "tB_M_AUTHORIZATION" | "tB_M_COMPANY" | "tB_M_FEATURE" | "tB_M_FUNCTION" | "tB_M_MENU" | "tB_M_MENU_AUTHORIZATION" | "tB_M_ROLE" | "tB_M_USER" | "tB_M_USER_APPLICATION" | "tB_M_USER_EMAIL" | "tB_M_USER_PHONE_NUMBER" | "tB_R_ANNOUNCEMENT" | "tB_R_AUDIT_FLAG" | "tB_R_AUDIT_TRAIL" | "tB_R_SYSTEM" | "tB_T_COUNTER" | "tB_M_EMP_POA_LEVEL" | "tB_M_EMP_POSITION" | "tB_M_ON_BEHALF" | "tB_M_PROFILE_MAIN"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -978,72 +1026,6 @@ export namespace Prisma {
           count: {
             args: Prisma.TB_R_POACountArgs<ExtArgs>
             result: $Utils.Optional<TB_R_POACountAggregateOutputType> | number
-          }
-        }
-      }
-      sysdiagrams: {
-        payload: Prisma.$sysdiagramsPayload<ExtArgs>
-        fields: Prisma.sysdiagramsFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.sysdiagramsFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$sysdiagramsPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.sysdiagramsFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$sysdiagramsPayload>
-          }
-          findFirst: {
-            args: Prisma.sysdiagramsFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$sysdiagramsPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.sysdiagramsFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$sysdiagramsPayload>
-          }
-          findMany: {
-            args: Prisma.sysdiagramsFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$sysdiagramsPayload>[]
-          }
-          create: {
-            args: Prisma.sysdiagramsCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$sysdiagramsPayload>
-          }
-          createMany: {
-            args: Prisma.sysdiagramsCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          delete: {
-            args: Prisma.sysdiagramsDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$sysdiagramsPayload>
-          }
-          update: {
-            args: Prisma.sysdiagramsUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$sysdiagramsPayload>
-          }
-          deleteMany: {
-            args: Prisma.sysdiagramsDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.sysdiagramsUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          upsert: {
-            args: Prisma.sysdiagramsUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$sysdiagramsPayload>
-          }
-          aggregate: {
-            args: Prisma.SysdiagramsAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateSysdiagrams>
-          }
-          groupBy: {
-            args: Prisma.sysdiagramsGroupByArgs<ExtArgs>
-            result: $Utils.Optional<SysdiagramsGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.sysdiagramsCountArgs<ExtArgs>
-            result: $Utils.Optional<SysdiagramsCountAggregateOutputType> | number
           }
         }
       }
@@ -2235,6 +2217,270 @@ export namespace Prisma {
           }
         }
       }
+      TB_M_EMP_POA_LEVEL: {
+        payload: Prisma.$TB_M_EMP_POA_LEVELPayload<ExtArgs>
+        fields: Prisma.TB_M_EMP_POA_LEVELFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.TB_M_EMP_POA_LEVELFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POA_LEVELPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.TB_M_EMP_POA_LEVELFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POA_LEVELPayload>
+          }
+          findFirst: {
+            args: Prisma.TB_M_EMP_POA_LEVELFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POA_LEVELPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.TB_M_EMP_POA_LEVELFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POA_LEVELPayload>
+          }
+          findMany: {
+            args: Prisma.TB_M_EMP_POA_LEVELFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POA_LEVELPayload>[]
+          }
+          create: {
+            args: Prisma.TB_M_EMP_POA_LEVELCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POA_LEVELPayload>
+          }
+          createMany: {
+            args: Prisma.TB_M_EMP_POA_LEVELCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.TB_M_EMP_POA_LEVELDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POA_LEVELPayload>
+          }
+          update: {
+            args: Prisma.TB_M_EMP_POA_LEVELUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POA_LEVELPayload>
+          }
+          deleteMany: {
+            args: Prisma.TB_M_EMP_POA_LEVELDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.TB_M_EMP_POA_LEVELUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.TB_M_EMP_POA_LEVELUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POA_LEVELPayload>
+          }
+          aggregate: {
+            args: Prisma.TB_M_EMP_POA_LEVELAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTB_M_EMP_POA_LEVEL>
+          }
+          groupBy: {
+            args: Prisma.TB_M_EMP_POA_LEVELGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TB_M_EMP_POA_LEVELGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.TB_M_EMP_POA_LEVELCountArgs<ExtArgs>
+            result: $Utils.Optional<TB_M_EMP_POA_LEVELCountAggregateOutputType> | number
+          }
+        }
+      }
+      TB_M_EMP_POSITION: {
+        payload: Prisma.$TB_M_EMP_POSITIONPayload<ExtArgs>
+        fields: Prisma.TB_M_EMP_POSITIONFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.TB_M_EMP_POSITIONFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POSITIONPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.TB_M_EMP_POSITIONFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POSITIONPayload>
+          }
+          findFirst: {
+            args: Prisma.TB_M_EMP_POSITIONFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POSITIONPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.TB_M_EMP_POSITIONFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POSITIONPayload>
+          }
+          findMany: {
+            args: Prisma.TB_M_EMP_POSITIONFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POSITIONPayload>[]
+          }
+          create: {
+            args: Prisma.TB_M_EMP_POSITIONCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POSITIONPayload>
+          }
+          createMany: {
+            args: Prisma.TB_M_EMP_POSITIONCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.TB_M_EMP_POSITIONDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POSITIONPayload>
+          }
+          update: {
+            args: Prisma.TB_M_EMP_POSITIONUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POSITIONPayload>
+          }
+          deleteMany: {
+            args: Prisma.TB_M_EMP_POSITIONDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.TB_M_EMP_POSITIONUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.TB_M_EMP_POSITIONUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_EMP_POSITIONPayload>
+          }
+          aggregate: {
+            args: Prisma.TB_M_EMP_POSITIONAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTB_M_EMP_POSITION>
+          }
+          groupBy: {
+            args: Prisma.TB_M_EMP_POSITIONGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TB_M_EMP_POSITIONGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.TB_M_EMP_POSITIONCountArgs<ExtArgs>
+            result: $Utils.Optional<TB_M_EMP_POSITIONCountAggregateOutputType> | number
+          }
+        }
+      }
+      TB_M_ON_BEHALF: {
+        payload: Prisma.$TB_M_ON_BEHALFPayload<ExtArgs>
+        fields: Prisma.TB_M_ON_BEHALFFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.TB_M_ON_BEHALFFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_ON_BEHALFPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.TB_M_ON_BEHALFFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_ON_BEHALFPayload>
+          }
+          findFirst: {
+            args: Prisma.TB_M_ON_BEHALFFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_ON_BEHALFPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.TB_M_ON_BEHALFFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_ON_BEHALFPayload>
+          }
+          findMany: {
+            args: Prisma.TB_M_ON_BEHALFFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_ON_BEHALFPayload>[]
+          }
+          create: {
+            args: Prisma.TB_M_ON_BEHALFCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_ON_BEHALFPayload>
+          }
+          createMany: {
+            args: Prisma.TB_M_ON_BEHALFCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.TB_M_ON_BEHALFDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_ON_BEHALFPayload>
+          }
+          update: {
+            args: Prisma.TB_M_ON_BEHALFUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_ON_BEHALFPayload>
+          }
+          deleteMany: {
+            args: Prisma.TB_M_ON_BEHALFDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.TB_M_ON_BEHALFUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.TB_M_ON_BEHALFUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_ON_BEHALFPayload>
+          }
+          aggregate: {
+            args: Prisma.TB_M_ON_BEHALFAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTB_M_ON_BEHALF>
+          }
+          groupBy: {
+            args: Prisma.TB_M_ON_BEHALFGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TB_M_ON_BEHALFGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.TB_M_ON_BEHALFCountArgs<ExtArgs>
+            result: $Utils.Optional<TB_M_ON_BEHALFCountAggregateOutputType> | number
+          }
+        }
+      }
+      TB_M_PROFILE_MAIN: {
+        payload: Prisma.$TB_M_PROFILE_MAINPayload<ExtArgs>
+        fields: Prisma.TB_M_PROFILE_MAINFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.TB_M_PROFILE_MAINFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_PROFILE_MAINPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.TB_M_PROFILE_MAINFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_PROFILE_MAINPayload>
+          }
+          findFirst: {
+            args: Prisma.TB_M_PROFILE_MAINFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_PROFILE_MAINPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.TB_M_PROFILE_MAINFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_PROFILE_MAINPayload>
+          }
+          findMany: {
+            args: Prisma.TB_M_PROFILE_MAINFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_PROFILE_MAINPayload>[]
+          }
+          create: {
+            args: Prisma.TB_M_PROFILE_MAINCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_PROFILE_MAINPayload>
+          }
+          createMany: {
+            args: Prisma.TB_M_PROFILE_MAINCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.TB_M_PROFILE_MAINDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_PROFILE_MAINPayload>
+          }
+          update: {
+            args: Prisma.TB_M_PROFILE_MAINUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_PROFILE_MAINPayload>
+          }
+          deleteMany: {
+            args: Prisma.TB_M_PROFILE_MAINDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.TB_M_PROFILE_MAINUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.TB_M_PROFILE_MAINUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TB_M_PROFILE_MAINPayload>
+          }
+          aggregate: {
+            args: Prisma.TB_M_PROFILE_MAINAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTB_M_PROFILE_MAIN>
+          }
+          groupBy: {
+            args: Prisma.TB_M_PROFILE_MAINGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TB_M_PROFILE_MAINGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.TB_M_PROFILE_MAINCountArgs<ExtArgs>
+            result: $Utils.Optional<TB_M_PROFILE_MAINCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -2397,14 +2643,12 @@ export namespace Prisma {
 
   export type TB_M_APPLICATIONCountOutputType = {
     TB_M_FEATURE: number
-    TB_M_FUNCTION: number
     TB_M_ROLE: number
     TB_M_USER_APPLICATION: number
   }
 
   export type TB_M_APPLICATIONCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     TB_M_FEATURE?: boolean | TB_M_APPLICATIONCountOutputTypeCountTB_M_FEATUREArgs
-    TB_M_FUNCTION?: boolean | TB_M_APPLICATIONCountOutputTypeCountTB_M_FUNCTIONArgs
     TB_M_ROLE?: boolean | TB_M_APPLICATIONCountOutputTypeCountTB_M_ROLEArgs
     TB_M_USER_APPLICATION?: boolean | TB_M_APPLICATIONCountOutputTypeCountTB_M_USER_APPLICATIONArgs
   }
@@ -2425,13 +2669,6 @@ export namespace Prisma {
    */
   export type TB_M_APPLICATIONCountOutputTypeCountTB_M_FEATUREArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: TB_M_FEATUREWhereInput
-  }
-
-  /**
-   * TB_M_APPLICATIONCountOutputType without action
-   */
-  export type TB_M_APPLICATIONCountOutputTypeCountTB_M_FUNCTIONArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: TB_M_FUNCTIONWhereInput
   }
 
   /**
@@ -3422,879 +3659,6 @@ export namespace Prisma {
 
 
   /**
-   * Model sysdiagrams
-   */
-
-  export type AggregateSysdiagrams = {
-    _count: SysdiagramsCountAggregateOutputType | null
-    _avg: SysdiagramsAvgAggregateOutputType | null
-    _sum: SysdiagramsSumAggregateOutputType | null
-    _min: SysdiagramsMinAggregateOutputType | null
-    _max: SysdiagramsMaxAggregateOutputType | null
-  }
-
-  export type SysdiagramsAvgAggregateOutputType = {
-    principal_id: number | null
-    diagram_id: number | null
-    version: number | null
-  }
-
-  export type SysdiagramsSumAggregateOutputType = {
-    principal_id: number | null
-    diagram_id: number | null
-    version: number | null
-  }
-
-  export type SysdiagramsMinAggregateOutputType = {
-    name: string | null
-    principal_id: number | null
-    diagram_id: number | null
-    version: number | null
-    definition: Uint8Array | null
-  }
-
-  export type SysdiagramsMaxAggregateOutputType = {
-    name: string | null
-    principal_id: number | null
-    diagram_id: number | null
-    version: number | null
-    definition: Uint8Array | null
-  }
-
-  export type SysdiagramsCountAggregateOutputType = {
-    name: number
-    principal_id: number
-    diagram_id: number
-    version: number
-    definition: number
-    _all: number
-  }
-
-
-  export type SysdiagramsAvgAggregateInputType = {
-    principal_id?: true
-    diagram_id?: true
-    version?: true
-  }
-
-  export type SysdiagramsSumAggregateInputType = {
-    principal_id?: true
-    diagram_id?: true
-    version?: true
-  }
-
-  export type SysdiagramsMinAggregateInputType = {
-    name?: true
-    principal_id?: true
-    diagram_id?: true
-    version?: true
-    definition?: true
-  }
-
-  export type SysdiagramsMaxAggregateInputType = {
-    name?: true
-    principal_id?: true
-    diagram_id?: true
-    version?: true
-    definition?: true
-  }
-
-  export type SysdiagramsCountAggregateInputType = {
-    name?: true
-    principal_id?: true
-    diagram_id?: true
-    version?: true
-    definition?: true
-    _all?: true
-  }
-
-  export type SysdiagramsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which sysdiagrams to aggregate.
-     */
-    where?: sysdiagramsWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of sysdiagrams to fetch.
-     */
-    orderBy?: sysdiagramsOrderByWithRelationInput | sysdiagramsOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: sysdiagramsWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` sysdiagrams from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` sysdiagrams.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned sysdiagrams
-    **/
-    _count?: true | SysdiagramsCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: SysdiagramsAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: SysdiagramsSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: SysdiagramsMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: SysdiagramsMaxAggregateInputType
-  }
-
-  export type GetSysdiagramsAggregateType<T extends SysdiagramsAggregateArgs> = {
-        [P in keyof T & keyof AggregateSysdiagrams]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateSysdiagrams[P]>
-      : GetScalarType<T[P], AggregateSysdiagrams[P]>
-  }
-
-
-
-
-  export type sysdiagramsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: sysdiagramsWhereInput
-    orderBy?: sysdiagramsOrderByWithAggregationInput | sysdiagramsOrderByWithAggregationInput[]
-    by: SysdiagramsScalarFieldEnum[] | SysdiagramsScalarFieldEnum
-    having?: sysdiagramsScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: SysdiagramsCountAggregateInputType | true
-    _avg?: SysdiagramsAvgAggregateInputType
-    _sum?: SysdiagramsSumAggregateInputType
-    _min?: SysdiagramsMinAggregateInputType
-    _max?: SysdiagramsMaxAggregateInputType
-  }
-
-  export type SysdiagramsGroupByOutputType = {
-    name: string
-    principal_id: number
-    diagram_id: number
-    version: number | null
-    definition: Uint8Array | null
-    _count: SysdiagramsCountAggregateOutputType | null
-    _avg: SysdiagramsAvgAggregateOutputType | null
-    _sum: SysdiagramsSumAggregateOutputType | null
-    _min: SysdiagramsMinAggregateOutputType | null
-    _max: SysdiagramsMaxAggregateOutputType | null
-  }
-
-  type GetSysdiagramsGroupByPayload<T extends sysdiagramsGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<SysdiagramsGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof SysdiagramsGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], SysdiagramsGroupByOutputType[P]>
-            : GetScalarType<T[P], SysdiagramsGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type sysdiagramsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    name?: boolean
-    principal_id?: boolean
-    diagram_id?: boolean
-    version?: boolean
-    definition?: boolean
-  }, ExtArgs["result"]["sysdiagrams"]>
-
-
-  export type sysdiagramsSelectScalar = {
-    name?: boolean
-    principal_id?: boolean
-    diagram_id?: boolean
-    version?: boolean
-    definition?: boolean
-  }
-
-
-  export type $sysdiagramsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "sysdiagrams"
-    objects: {}
-    scalars: $Extensions.GetPayloadResult<{
-      name: string
-      principal_id: number
-      diagram_id: number
-      version: number | null
-      definition: Uint8Array | null
-    }, ExtArgs["result"]["sysdiagrams"]>
-    composites: {}
-  }
-
-  type sysdiagramsGetPayload<S extends boolean | null | undefined | sysdiagramsDefaultArgs> = $Result.GetResult<Prisma.$sysdiagramsPayload, S>
-
-  type sysdiagramsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<sysdiagramsFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: SysdiagramsCountAggregateInputType | true
-    }
-
-  export interface sysdiagramsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['sysdiagrams'], meta: { name: 'sysdiagrams' } }
-    /**
-     * Find zero or one Sysdiagrams that matches the filter.
-     * @param {sysdiagramsFindUniqueArgs} args - Arguments to find a Sysdiagrams
-     * @example
-     * // Get one Sysdiagrams
-     * const sysdiagrams = await prisma.sysdiagrams.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends sysdiagramsFindUniqueArgs>(args: SelectSubset<T, sysdiagramsFindUniqueArgs<ExtArgs>>): Prisma__sysdiagramsClient<$Result.GetResult<Prisma.$sysdiagramsPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
-
-    /**
-     * Find one Sysdiagrams that matches the filter or throw an error with `error.code='P2025'` 
-     * if no matches were found.
-     * @param {sysdiagramsFindUniqueOrThrowArgs} args - Arguments to find a Sysdiagrams
-     * @example
-     * // Get one Sysdiagrams
-     * const sysdiagrams = await prisma.sysdiagrams.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends sysdiagramsFindUniqueOrThrowArgs>(args: SelectSubset<T, sysdiagramsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__sysdiagramsClient<$Result.GetResult<Prisma.$sysdiagramsPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
-
-    /**
-     * Find the first Sysdiagrams that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {sysdiagramsFindFirstArgs} args - Arguments to find a Sysdiagrams
-     * @example
-     * // Get one Sysdiagrams
-     * const sysdiagrams = await prisma.sysdiagrams.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends sysdiagramsFindFirstArgs>(args?: SelectSubset<T, sysdiagramsFindFirstArgs<ExtArgs>>): Prisma__sysdiagramsClient<$Result.GetResult<Prisma.$sysdiagramsPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
-
-    /**
-     * Find the first Sysdiagrams that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {sysdiagramsFindFirstOrThrowArgs} args - Arguments to find a Sysdiagrams
-     * @example
-     * // Get one Sysdiagrams
-     * const sysdiagrams = await prisma.sysdiagrams.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends sysdiagramsFindFirstOrThrowArgs>(args?: SelectSubset<T, sysdiagramsFindFirstOrThrowArgs<ExtArgs>>): Prisma__sysdiagramsClient<$Result.GetResult<Prisma.$sysdiagramsPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
-
-    /**
-     * Find zero or more Sysdiagrams that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {sysdiagramsFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Sysdiagrams
-     * const sysdiagrams = await prisma.sysdiagrams.findMany()
-     * 
-     * // Get first 10 Sysdiagrams
-     * const sysdiagrams = await prisma.sysdiagrams.findMany({ take: 10 })
-     * 
-     * // Only select the `name`
-     * const sysdiagramsWithNameOnly = await prisma.sysdiagrams.findMany({ select: { name: true } })
-     * 
-     */
-    findMany<T extends sysdiagramsFindManyArgs>(args?: SelectSubset<T, sysdiagramsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$sysdiagramsPayload<ExtArgs>, T, "findMany">>
-
-    /**
-     * Create a Sysdiagrams.
-     * @param {sysdiagramsCreateArgs} args - Arguments to create a Sysdiagrams.
-     * @example
-     * // Create one Sysdiagrams
-     * const Sysdiagrams = await prisma.sysdiagrams.create({
-     *   data: {
-     *     // ... data to create a Sysdiagrams
-     *   }
-     * })
-     * 
-     */
-    create<T extends sysdiagramsCreateArgs>(args: SelectSubset<T, sysdiagramsCreateArgs<ExtArgs>>): Prisma__sysdiagramsClient<$Result.GetResult<Prisma.$sysdiagramsPayload<ExtArgs>, T, "create">, never, ExtArgs>
-
-    /**
-     * Create many Sysdiagrams.
-     * @param {sysdiagramsCreateManyArgs} args - Arguments to create many Sysdiagrams.
-     * @example
-     * // Create many Sysdiagrams
-     * const sysdiagrams = await prisma.sysdiagrams.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends sysdiagramsCreateManyArgs>(args?: SelectSubset<T, sysdiagramsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Delete a Sysdiagrams.
-     * @param {sysdiagramsDeleteArgs} args - Arguments to delete one Sysdiagrams.
-     * @example
-     * // Delete one Sysdiagrams
-     * const Sysdiagrams = await prisma.sysdiagrams.delete({
-     *   where: {
-     *     // ... filter to delete one Sysdiagrams
-     *   }
-     * })
-     * 
-     */
-    delete<T extends sysdiagramsDeleteArgs>(args: SelectSubset<T, sysdiagramsDeleteArgs<ExtArgs>>): Prisma__sysdiagramsClient<$Result.GetResult<Prisma.$sysdiagramsPayload<ExtArgs>, T, "delete">, never, ExtArgs>
-
-    /**
-     * Update one Sysdiagrams.
-     * @param {sysdiagramsUpdateArgs} args - Arguments to update one Sysdiagrams.
-     * @example
-     * // Update one Sysdiagrams
-     * const sysdiagrams = await prisma.sysdiagrams.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends sysdiagramsUpdateArgs>(args: SelectSubset<T, sysdiagramsUpdateArgs<ExtArgs>>): Prisma__sysdiagramsClient<$Result.GetResult<Prisma.$sysdiagramsPayload<ExtArgs>, T, "update">, never, ExtArgs>
-
-    /**
-     * Delete zero or more Sysdiagrams.
-     * @param {sysdiagramsDeleteManyArgs} args - Arguments to filter Sysdiagrams to delete.
-     * @example
-     * // Delete a few Sysdiagrams
-     * const { count } = await prisma.sysdiagrams.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends sysdiagramsDeleteManyArgs>(args?: SelectSubset<T, sysdiagramsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Sysdiagrams.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {sysdiagramsUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Sysdiagrams
-     * const sysdiagrams = await prisma.sysdiagrams.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends sysdiagramsUpdateManyArgs>(args: SelectSubset<T, sysdiagramsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one Sysdiagrams.
-     * @param {sysdiagramsUpsertArgs} args - Arguments to update or create a Sysdiagrams.
-     * @example
-     * // Update or create a Sysdiagrams
-     * const sysdiagrams = await prisma.sysdiagrams.upsert({
-     *   create: {
-     *     // ... data to create a Sysdiagrams
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Sysdiagrams we want to update
-     *   }
-     * })
-     */
-    upsert<T extends sysdiagramsUpsertArgs>(args: SelectSubset<T, sysdiagramsUpsertArgs<ExtArgs>>): Prisma__sysdiagramsClient<$Result.GetResult<Prisma.$sysdiagramsPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
-
-
-    /**
-     * Count the number of Sysdiagrams.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {sysdiagramsCountArgs} args - Arguments to filter Sysdiagrams to count.
-     * @example
-     * // Count the number of Sysdiagrams
-     * const count = await prisma.sysdiagrams.count({
-     *   where: {
-     *     // ... the filter for the Sysdiagrams we want to count
-     *   }
-     * })
-    **/
-    count<T extends sysdiagramsCountArgs>(
-      args?: Subset<T, sysdiagramsCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], SysdiagramsCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Sysdiagrams.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {SysdiagramsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends SysdiagramsAggregateArgs>(args: Subset<T, SysdiagramsAggregateArgs>): Prisma.PrismaPromise<GetSysdiagramsAggregateType<T>>
-
-    /**
-     * Group by Sysdiagrams.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {sysdiagramsGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends sysdiagramsGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: sysdiagramsGroupByArgs['orderBy'] }
-        : { orderBy?: sysdiagramsGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, sysdiagramsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSysdiagramsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the sysdiagrams model
-   */
-  readonly fields: sysdiagramsFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for sysdiagrams.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__sysdiagramsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the sysdiagrams model
-   */ 
-  interface sysdiagramsFieldRefs {
-    readonly name: FieldRef<"sysdiagrams", 'String'>
-    readonly principal_id: FieldRef<"sysdiagrams", 'Int'>
-    readonly diagram_id: FieldRef<"sysdiagrams", 'Int'>
-    readonly version: FieldRef<"sysdiagrams", 'Int'>
-    readonly definition: FieldRef<"sysdiagrams", 'Bytes'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * sysdiagrams findUnique
-   */
-  export type sysdiagramsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the sysdiagrams
-     */
-    select?: sysdiagramsSelect<ExtArgs> | null
-    /**
-     * Filter, which sysdiagrams to fetch.
-     */
-    where: sysdiagramsWhereUniqueInput
-  }
-
-  /**
-   * sysdiagrams findUniqueOrThrow
-   */
-  export type sysdiagramsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the sysdiagrams
-     */
-    select?: sysdiagramsSelect<ExtArgs> | null
-    /**
-     * Filter, which sysdiagrams to fetch.
-     */
-    where: sysdiagramsWhereUniqueInput
-  }
-
-  /**
-   * sysdiagrams findFirst
-   */
-  export type sysdiagramsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the sysdiagrams
-     */
-    select?: sysdiagramsSelect<ExtArgs> | null
-    /**
-     * Filter, which sysdiagrams to fetch.
-     */
-    where?: sysdiagramsWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of sysdiagrams to fetch.
-     */
-    orderBy?: sysdiagramsOrderByWithRelationInput | sysdiagramsOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for sysdiagrams.
-     */
-    cursor?: sysdiagramsWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` sysdiagrams from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` sysdiagrams.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of sysdiagrams.
-     */
-    distinct?: SysdiagramsScalarFieldEnum | SysdiagramsScalarFieldEnum[]
-  }
-
-  /**
-   * sysdiagrams findFirstOrThrow
-   */
-  export type sysdiagramsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the sysdiagrams
-     */
-    select?: sysdiagramsSelect<ExtArgs> | null
-    /**
-     * Filter, which sysdiagrams to fetch.
-     */
-    where?: sysdiagramsWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of sysdiagrams to fetch.
-     */
-    orderBy?: sysdiagramsOrderByWithRelationInput | sysdiagramsOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for sysdiagrams.
-     */
-    cursor?: sysdiagramsWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` sysdiagrams from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` sysdiagrams.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of sysdiagrams.
-     */
-    distinct?: SysdiagramsScalarFieldEnum | SysdiagramsScalarFieldEnum[]
-  }
-
-  /**
-   * sysdiagrams findMany
-   */
-  export type sysdiagramsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the sysdiagrams
-     */
-    select?: sysdiagramsSelect<ExtArgs> | null
-    /**
-     * Filter, which sysdiagrams to fetch.
-     */
-    where?: sysdiagramsWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of sysdiagrams to fetch.
-     */
-    orderBy?: sysdiagramsOrderByWithRelationInput | sysdiagramsOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing sysdiagrams.
-     */
-    cursor?: sysdiagramsWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` sysdiagrams from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` sysdiagrams.
-     */
-    skip?: number
-    distinct?: SysdiagramsScalarFieldEnum | SysdiagramsScalarFieldEnum[]
-  }
-
-  /**
-   * sysdiagrams create
-   */
-  export type sysdiagramsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the sysdiagrams
-     */
-    select?: sysdiagramsSelect<ExtArgs> | null
-    /**
-     * The data needed to create a sysdiagrams.
-     */
-    data: XOR<sysdiagramsCreateInput, sysdiagramsUncheckedCreateInput>
-  }
-
-  /**
-   * sysdiagrams createMany
-   */
-  export type sysdiagramsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many sysdiagrams.
-     */
-    data: sysdiagramsCreateManyInput | sysdiagramsCreateManyInput[]
-  }
-
-  /**
-   * sysdiagrams update
-   */
-  export type sysdiagramsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the sysdiagrams
-     */
-    select?: sysdiagramsSelect<ExtArgs> | null
-    /**
-     * The data needed to update a sysdiagrams.
-     */
-    data: XOR<sysdiagramsUpdateInput, sysdiagramsUncheckedUpdateInput>
-    /**
-     * Choose, which sysdiagrams to update.
-     */
-    where: sysdiagramsWhereUniqueInput
-  }
-
-  /**
-   * sysdiagrams updateMany
-   */
-  export type sysdiagramsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update sysdiagrams.
-     */
-    data: XOR<sysdiagramsUpdateManyMutationInput, sysdiagramsUncheckedUpdateManyInput>
-    /**
-     * Filter which sysdiagrams to update
-     */
-    where?: sysdiagramsWhereInput
-  }
-
-  /**
-   * sysdiagrams upsert
-   */
-  export type sysdiagramsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the sysdiagrams
-     */
-    select?: sysdiagramsSelect<ExtArgs> | null
-    /**
-     * The filter to search for the sysdiagrams to update in case it exists.
-     */
-    where: sysdiagramsWhereUniqueInput
-    /**
-     * In case the sysdiagrams found by the `where` argument doesn't exist, create a new sysdiagrams with this data.
-     */
-    create: XOR<sysdiagramsCreateInput, sysdiagramsUncheckedCreateInput>
-    /**
-     * In case the sysdiagrams was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<sysdiagramsUpdateInput, sysdiagramsUncheckedUpdateInput>
-  }
-
-  /**
-   * sysdiagrams delete
-   */
-  export type sysdiagramsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the sysdiagrams
-     */
-    select?: sysdiagramsSelect<ExtArgs> | null
-    /**
-     * Filter which sysdiagrams to delete.
-     */
-    where: sysdiagramsWhereUniqueInput
-  }
-
-  /**
-   * sysdiagrams deleteMany
-   */
-  export type sysdiagramsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which sysdiagrams to delete
-     */
-    where?: sysdiagramsWhereInput
-  }
-
-  /**
-   * sysdiagrams without action
-   */
-  export type sysdiagramsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the sysdiagrams
-     */
-    select?: sysdiagramsSelect<ExtArgs> | null
-  }
-
-
-  /**
    * Model TB_M_APPLICATION
    */
 
@@ -4499,7 +3863,6 @@ export namespace Prisma {
     CHANGED_DATE?: boolean
     FA_ICON?: boolean
     TB_M_FEATURE?: boolean | TB_M_APPLICATION$TB_M_FEATUREArgs<ExtArgs>
-    TB_M_FUNCTION?: boolean | TB_M_APPLICATION$TB_M_FUNCTIONArgs<ExtArgs>
     TB_M_ROLE?: boolean | TB_M_APPLICATION$TB_M_ROLEArgs<ExtArgs>
     TB_M_USER_APPLICATION?: boolean | TB_M_APPLICATION$TB_M_USER_APPLICATIONArgs<ExtArgs>
     _count?: boolean | TB_M_APPLICATIONCountOutputTypeDefaultArgs<ExtArgs>
@@ -4521,7 +3884,6 @@ export namespace Prisma {
 
   export type TB_M_APPLICATIONInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     TB_M_FEATURE?: boolean | TB_M_APPLICATION$TB_M_FEATUREArgs<ExtArgs>
-    TB_M_FUNCTION?: boolean | TB_M_APPLICATION$TB_M_FUNCTIONArgs<ExtArgs>
     TB_M_ROLE?: boolean | TB_M_APPLICATION$TB_M_ROLEArgs<ExtArgs>
     TB_M_USER_APPLICATION?: boolean | TB_M_APPLICATION$TB_M_USER_APPLICATIONArgs<ExtArgs>
     _count?: boolean | TB_M_APPLICATIONCountOutputTypeDefaultArgs<ExtArgs>
@@ -4531,7 +3893,6 @@ export namespace Prisma {
     name: "TB_M_APPLICATION"
     objects: {
       TB_M_FEATURE: Prisma.$TB_M_FEATUREPayload<ExtArgs>[]
-      TB_M_FUNCTION: Prisma.$TB_M_FUNCTIONPayload<ExtArgs>[]
       TB_M_ROLE: Prisma.$TB_M_ROLEPayload<ExtArgs>[]
       TB_M_USER_APPLICATION: Prisma.$TB_M_USER_APPLICATIONPayload<ExtArgs>[]
     }
@@ -4887,7 +4248,6 @@ export namespace Prisma {
   export interface Prisma__TB_M_APPLICATIONClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     TB_M_FEATURE<T extends TB_M_APPLICATION$TB_M_FEATUREArgs<ExtArgs> = {}>(args?: Subset<T, TB_M_APPLICATION$TB_M_FEATUREArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TB_M_FEATUREPayload<ExtArgs>, T, "findMany"> | Null>
-    TB_M_FUNCTION<T extends TB_M_APPLICATION$TB_M_FUNCTIONArgs<ExtArgs> = {}>(args?: Subset<T, TB_M_APPLICATION$TB_M_FUNCTIONArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TB_M_FUNCTIONPayload<ExtArgs>, T, "findMany"> | Null>
     TB_M_ROLE<T extends TB_M_APPLICATION$TB_M_ROLEArgs<ExtArgs> = {}>(args?: Subset<T, TB_M_APPLICATION$TB_M_ROLEArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TB_M_ROLEPayload<ExtArgs>, T, "findMany"> | Null>
     TB_M_USER_APPLICATION<T extends TB_M_APPLICATION$TB_M_USER_APPLICATIONArgs<ExtArgs> = {}>(args?: Subset<T, TB_M_APPLICATION$TB_M_USER_APPLICATIONArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TB_M_USER_APPLICATIONPayload<ExtArgs>, T, "findMany"> | Null>
     /**
@@ -5244,26 +4604,6 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: TB_M_FEATUREScalarFieldEnum | TB_M_FEATUREScalarFieldEnum[]
-  }
-
-  /**
-   * TB_M_APPLICATION.TB_M_FUNCTION
-   */
-  export type TB_M_APPLICATION$TB_M_FUNCTIONArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the TB_M_FUNCTION
-     */
-    select?: TB_M_FUNCTIONSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: TB_M_FUNCTIONInclude<ExtArgs> | null
-    where?: TB_M_FUNCTIONWhereInput
-    orderBy?: TB_M_FUNCTIONOrderByWithRelationInput | TB_M_FUNCTIONOrderByWithRelationInput[]
-    cursor?: TB_M_FUNCTIONWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: TB_M_FUNCTIONScalarFieldEnum | TB_M_FUNCTIONScalarFieldEnum[]
   }
 
   /**
@@ -9139,7 +8479,6 @@ export namespace Prisma {
     CREATED_DATE?: boolean
     CHANGED_BY?: boolean
     CHANGED_DATE?: boolean
-    TB_M_APPLICATION?: boolean | TB_M_APPLICATIONDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["tB_M_FUNCTION"]>
 
 
@@ -9154,15 +8493,10 @@ export namespace Prisma {
     CHANGED_DATE?: boolean
   }
 
-  export type TB_M_FUNCTIONInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    TB_M_APPLICATION?: boolean | TB_M_APPLICATIONDefaultArgs<ExtArgs>
-  }
 
   export type $TB_M_FUNCTIONPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "TB_M_FUNCTION"
-    objects: {
-      TB_M_APPLICATION: Prisma.$TB_M_APPLICATIONPayload<ExtArgs>
-    }
+    objects: {}
     scalars: $Extensions.GetPayloadResult<{
       APPLICATION: string
       ID: string
@@ -9512,7 +8846,6 @@ export namespace Prisma {
    */
   export interface Prisma__TB_M_FUNCTIONClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    TB_M_APPLICATION<T extends TB_M_APPLICATIONDefaultArgs<ExtArgs> = {}>(args?: Subset<T, TB_M_APPLICATIONDefaultArgs<ExtArgs>>): Prisma__TB_M_APPLICATIONClient<$Result.GetResult<Prisma.$TB_M_APPLICATIONPayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -9563,10 +8896,6 @@ export namespace Prisma {
      */
     select?: TB_M_FUNCTIONSelect<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: TB_M_FUNCTIONInclude<ExtArgs> | null
-    /**
      * Filter, which TB_M_FUNCTION to fetch.
      */
     where: TB_M_FUNCTIONWhereUniqueInput
@@ -9581,10 +8910,6 @@ export namespace Prisma {
      */
     select?: TB_M_FUNCTIONSelect<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: TB_M_FUNCTIONInclude<ExtArgs> | null
-    /**
      * Filter, which TB_M_FUNCTION to fetch.
      */
     where: TB_M_FUNCTIONWhereUniqueInput
@@ -9598,10 +8923,6 @@ export namespace Prisma {
      * Select specific fields to fetch from the TB_M_FUNCTION
      */
     select?: TB_M_FUNCTIONSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: TB_M_FUNCTIONInclude<ExtArgs> | null
     /**
      * Filter, which TB_M_FUNCTION to fetch.
      */
@@ -9647,10 +8968,6 @@ export namespace Prisma {
      */
     select?: TB_M_FUNCTIONSelect<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: TB_M_FUNCTIONInclude<ExtArgs> | null
-    /**
      * Filter, which TB_M_FUNCTION to fetch.
      */
     where?: TB_M_FUNCTIONWhereInput
@@ -9695,10 +9012,6 @@ export namespace Prisma {
      */
     select?: TB_M_FUNCTIONSelect<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: TB_M_FUNCTIONInclude<ExtArgs> | null
-    /**
      * Filter, which TB_M_FUNCTIONS to fetch.
      */
     where?: TB_M_FUNCTIONWhereInput
@@ -9738,10 +9051,6 @@ export namespace Prisma {
      */
     select?: TB_M_FUNCTIONSelect<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: TB_M_FUNCTIONInclude<ExtArgs> | null
-    /**
      * The data needed to create a TB_M_FUNCTION.
      */
     data: XOR<TB_M_FUNCTIONCreateInput, TB_M_FUNCTIONUncheckedCreateInput>
@@ -9765,10 +9074,6 @@ export namespace Prisma {
      * Select specific fields to fetch from the TB_M_FUNCTION
      */
     select?: TB_M_FUNCTIONSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: TB_M_FUNCTIONInclude<ExtArgs> | null
     /**
      * The data needed to update a TB_M_FUNCTION.
      */
@@ -9802,10 +9107,6 @@ export namespace Prisma {
      */
     select?: TB_M_FUNCTIONSelect<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: TB_M_FUNCTIONInclude<ExtArgs> | null
-    /**
      * The filter to search for the TB_M_FUNCTION to update in case it exists.
      */
     where: TB_M_FUNCTIONWhereUniqueInput
@@ -9827,10 +9128,6 @@ export namespace Prisma {
      * Select specific fields to fetch from the TB_M_FUNCTION
      */
     select?: TB_M_FUNCTIONSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: TB_M_FUNCTIONInclude<ExtArgs> | null
     /**
      * Filter which TB_M_FUNCTION to delete.
      */
@@ -9855,10 +9152,6 @@ export namespace Prisma {
      * Select specific fields to fetch from the TB_M_FUNCTION
      */
     select?: TB_M_FUNCTIONSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: TB_M_FUNCTIONInclude<ExtArgs> | null
   }
 
 
@@ -20996,6 +20289,3720 @@ export namespace Prisma {
 
 
   /**
+   * Model TB_M_EMP_POA_LEVEL
+   */
+
+  export type AggregateTB_M_EMP_POA_LEVEL = {
+    _count: TB_M_EMP_POA_LEVELCountAggregateOutputType | null
+    _avg: TB_M_EMP_POA_LEVELAvgAggregateOutputType | null
+    _sum: TB_M_EMP_POA_LEVELSumAggregateOutputType | null
+    _min: TB_M_EMP_POA_LEVELMinAggregateOutputType | null
+    _max: TB_M_EMP_POA_LEVELMaxAggregateOutputType | null
+  }
+
+  export type TB_M_EMP_POA_LEVELAvgAggregateOutputType = {
+    LEVEL_SEQ: number | null
+    GRANTOR_LEVEL_ID: number | null
+    ATTORNEY_LEVEL_ID: number | null
+  }
+
+  export type TB_M_EMP_POA_LEVELSumAggregateOutputType = {
+    LEVEL_SEQ: number | null
+    GRANTOR_LEVEL_ID: number | null
+    ATTORNEY_LEVEL_ID: number | null
+  }
+
+  export type TB_M_EMP_POA_LEVELMinAggregateOutputType = {
+    SYSTEM_ID: string | null
+    LEVEL_SEQ: number | null
+    GRANTOR_LEVEL_ID: number | null
+    ATTORNEY_LEVEL_ID: number | null
+    CREATED_BY: string | null
+    CREATED_DT: Date | null
+    UPDATED_BY: string | null
+    UPDATED_DT: Date | null
+  }
+
+  export type TB_M_EMP_POA_LEVELMaxAggregateOutputType = {
+    SYSTEM_ID: string | null
+    LEVEL_SEQ: number | null
+    GRANTOR_LEVEL_ID: number | null
+    ATTORNEY_LEVEL_ID: number | null
+    CREATED_BY: string | null
+    CREATED_DT: Date | null
+    UPDATED_BY: string | null
+    UPDATED_DT: Date | null
+  }
+
+  export type TB_M_EMP_POA_LEVELCountAggregateOutputType = {
+    SYSTEM_ID: number
+    LEVEL_SEQ: number
+    GRANTOR_LEVEL_ID: number
+    ATTORNEY_LEVEL_ID: number
+    CREATED_BY: number
+    CREATED_DT: number
+    UPDATED_BY: number
+    UPDATED_DT: number
+    _all: number
+  }
+
+
+  export type TB_M_EMP_POA_LEVELAvgAggregateInputType = {
+    LEVEL_SEQ?: true
+    GRANTOR_LEVEL_ID?: true
+    ATTORNEY_LEVEL_ID?: true
+  }
+
+  export type TB_M_EMP_POA_LEVELSumAggregateInputType = {
+    LEVEL_SEQ?: true
+    GRANTOR_LEVEL_ID?: true
+    ATTORNEY_LEVEL_ID?: true
+  }
+
+  export type TB_M_EMP_POA_LEVELMinAggregateInputType = {
+    SYSTEM_ID?: true
+    LEVEL_SEQ?: true
+    GRANTOR_LEVEL_ID?: true
+    ATTORNEY_LEVEL_ID?: true
+    CREATED_BY?: true
+    CREATED_DT?: true
+    UPDATED_BY?: true
+    UPDATED_DT?: true
+  }
+
+  export type TB_M_EMP_POA_LEVELMaxAggregateInputType = {
+    SYSTEM_ID?: true
+    LEVEL_SEQ?: true
+    GRANTOR_LEVEL_ID?: true
+    ATTORNEY_LEVEL_ID?: true
+    CREATED_BY?: true
+    CREATED_DT?: true
+    UPDATED_BY?: true
+    UPDATED_DT?: true
+  }
+
+  export type TB_M_EMP_POA_LEVELCountAggregateInputType = {
+    SYSTEM_ID?: true
+    LEVEL_SEQ?: true
+    GRANTOR_LEVEL_ID?: true
+    ATTORNEY_LEVEL_ID?: true
+    CREATED_BY?: true
+    CREATED_DT?: true
+    UPDATED_BY?: true
+    UPDATED_DT?: true
+    _all?: true
+  }
+
+  export type TB_M_EMP_POA_LEVELAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TB_M_EMP_POA_LEVEL to aggregate.
+     */
+    where?: TB_M_EMP_POA_LEVELWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_EMP_POA_LEVELS to fetch.
+     */
+    orderBy?: TB_M_EMP_POA_LEVELOrderByWithRelationInput | TB_M_EMP_POA_LEVELOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: TB_M_EMP_POA_LEVELWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_EMP_POA_LEVELS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_EMP_POA_LEVELS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned TB_M_EMP_POA_LEVELS
+    **/
+    _count?: true | TB_M_EMP_POA_LEVELCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: TB_M_EMP_POA_LEVELAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: TB_M_EMP_POA_LEVELSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TB_M_EMP_POA_LEVELMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TB_M_EMP_POA_LEVELMaxAggregateInputType
+  }
+
+  export type GetTB_M_EMP_POA_LEVELAggregateType<T extends TB_M_EMP_POA_LEVELAggregateArgs> = {
+        [P in keyof T & keyof AggregateTB_M_EMP_POA_LEVEL]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTB_M_EMP_POA_LEVEL[P]>
+      : GetScalarType<T[P], AggregateTB_M_EMP_POA_LEVEL[P]>
+  }
+
+
+
+
+  export type TB_M_EMP_POA_LEVELGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TB_M_EMP_POA_LEVELWhereInput
+    orderBy?: TB_M_EMP_POA_LEVELOrderByWithAggregationInput | TB_M_EMP_POA_LEVELOrderByWithAggregationInput[]
+    by: TB_M_EMP_POA_LEVELScalarFieldEnum[] | TB_M_EMP_POA_LEVELScalarFieldEnum
+    having?: TB_M_EMP_POA_LEVELScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TB_M_EMP_POA_LEVELCountAggregateInputType | true
+    _avg?: TB_M_EMP_POA_LEVELAvgAggregateInputType
+    _sum?: TB_M_EMP_POA_LEVELSumAggregateInputType
+    _min?: TB_M_EMP_POA_LEVELMinAggregateInputType
+    _max?: TB_M_EMP_POA_LEVELMaxAggregateInputType
+  }
+
+  export type TB_M_EMP_POA_LEVELGroupByOutputType = {
+    SYSTEM_ID: string
+    LEVEL_SEQ: number
+    GRANTOR_LEVEL_ID: number
+    ATTORNEY_LEVEL_ID: number
+    CREATED_BY: string
+    CREATED_DT: Date
+    UPDATED_BY: string | null
+    UPDATED_DT: Date | null
+    _count: TB_M_EMP_POA_LEVELCountAggregateOutputType | null
+    _avg: TB_M_EMP_POA_LEVELAvgAggregateOutputType | null
+    _sum: TB_M_EMP_POA_LEVELSumAggregateOutputType | null
+    _min: TB_M_EMP_POA_LEVELMinAggregateOutputType | null
+    _max: TB_M_EMP_POA_LEVELMaxAggregateOutputType | null
+  }
+
+  type GetTB_M_EMP_POA_LEVELGroupByPayload<T extends TB_M_EMP_POA_LEVELGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TB_M_EMP_POA_LEVELGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TB_M_EMP_POA_LEVELGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TB_M_EMP_POA_LEVELGroupByOutputType[P]>
+            : GetScalarType<T[P], TB_M_EMP_POA_LEVELGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type TB_M_EMP_POA_LEVELSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    SYSTEM_ID?: boolean
+    LEVEL_SEQ?: boolean
+    GRANTOR_LEVEL_ID?: boolean
+    ATTORNEY_LEVEL_ID?: boolean
+    CREATED_BY?: boolean
+    CREATED_DT?: boolean
+    UPDATED_BY?: boolean
+    UPDATED_DT?: boolean
+  }, ExtArgs["result"]["tB_M_EMP_POA_LEVEL"]>
+
+
+  export type TB_M_EMP_POA_LEVELSelectScalar = {
+    SYSTEM_ID?: boolean
+    LEVEL_SEQ?: boolean
+    GRANTOR_LEVEL_ID?: boolean
+    ATTORNEY_LEVEL_ID?: boolean
+    CREATED_BY?: boolean
+    CREATED_DT?: boolean
+    UPDATED_BY?: boolean
+    UPDATED_DT?: boolean
+  }
+
+
+  export type $TB_M_EMP_POA_LEVELPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "TB_M_EMP_POA_LEVEL"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      SYSTEM_ID: string
+      LEVEL_SEQ: number
+      GRANTOR_LEVEL_ID: number
+      ATTORNEY_LEVEL_ID: number
+      CREATED_BY: string
+      CREATED_DT: Date
+      UPDATED_BY: string | null
+      UPDATED_DT: Date | null
+    }, ExtArgs["result"]["tB_M_EMP_POA_LEVEL"]>
+    composites: {}
+  }
+
+  type TB_M_EMP_POA_LEVELGetPayload<S extends boolean | null | undefined | TB_M_EMP_POA_LEVELDefaultArgs> = $Result.GetResult<Prisma.$TB_M_EMP_POA_LEVELPayload, S>
+
+  type TB_M_EMP_POA_LEVELCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<TB_M_EMP_POA_LEVELFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: TB_M_EMP_POA_LEVELCountAggregateInputType | true
+    }
+
+  export interface TB_M_EMP_POA_LEVELDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TB_M_EMP_POA_LEVEL'], meta: { name: 'TB_M_EMP_POA_LEVEL' } }
+    /**
+     * Find zero or one TB_M_EMP_POA_LEVEL that matches the filter.
+     * @param {TB_M_EMP_POA_LEVELFindUniqueArgs} args - Arguments to find a TB_M_EMP_POA_LEVEL
+     * @example
+     * // Get one TB_M_EMP_POA_LEVEL
+     * const tB_M_EMP_POA_LEVEL = await prisma.tB_M_EMP_POA_LEVEL.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends TB_M_EMP_POA_LEVELFindUniqueArgs>(args: SelectSubset<T, TB_M_EMP_POA_LEVELFindUniqueArgs<ExtArgs>>): Prisma__TB_M_EMP_POA_LEVELClient<$Result.GetResult<Prisma.$TB_M_EMP_POA_LEVELPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one TB_M_EMP_POA_LEVEL that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {TB_M_EMP_POA_LEVELFindUniqueOrThrowArgs} args - Arguments to find a TB_M_EMP_POA_LEVEL
+     * @example
+     * // Get one TB_M_EMP_POA_LEVEL
+     * const tB_M_EMP_POA_LEVEL = await prisma.tB_M_EMP_POA_LEVEL.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends TB_M_EMP_POA_LEVELFindUniqueOrThrowArgs>(args: SelectSubset<T, TB_M_EMP_POA_LEVELFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TB_M_EMP_POA_LEVELClient<$Result.GetResult<Prisma.$TB_M_EMP_POA_LEVELPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first TB_M_EMP_POA_LEVEL that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_EMP_POA_LEVELFindFirstArgs} args - Arguments to find a TB_M_EMP_POA_LEVEL
+     * @example
+     * // Get one TB_M_EMP_POA_LEVEL
+     * const tB_M_EMP_POA_LEVEL = await prisma.tB_M_EMP_POA_LEVEL.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends TB_M_EMP_POA_LEVELFindFirstArgs>(args?: SelectSubset<T, TB_M_EMP_POA_LEVELFindFirstArgs<ExtArgs>>): Prisma__TB_M_EMP_POA_LEVELClient<$Result.GetResult<Prisma.$TB_M_EMP_POA_LEVELPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first TB_M_EMP_POA_LEVEL that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_EMP_POA_LEVELFindFirstOrThrowArgs} args - Arguments to find a TB_M_EMP_POA_LEVEL
+     * @example
+     * // Get one TB_M_EMP_POA_LEVEL
+     * const tB_M_EMP_POA_LEVEL = await prisma.tB_M_EMP_POA_LEVEL.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends TB_M_EMP_POA_LEVELFindFirstOrThrowArgs>(args?: SelectSubset<T, TB_M_EMP_POA_LEVELFindFirstOrThrowArgs<ExtArgs>>): Prisma__TB_M_EMP_POA_LEVELClient<$Result.GetResult<Prisma.$TB_M_EMP_POA_LEVELPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more TB_M_EMP_POA_LEVELS that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_EMP_POA_LEVELFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all TB_M_EMP_POA_LEVELS
+     * const tB_M_EMP_POA_LEVELS = await prisma.tB_M_EMP_POA_LEVEL.findMany()
+     * 
+     * // Get first 10 TB_M_EMP_POA_LEVELS
+     * const tB_M_EMP_POA_LEVELS = await prisma.tB_M_EMP_POA_LEVEL.findMany({ take: 10 })
+     * 
+     * // Only select the `SYSTEM_ID`
+     * const tB_M_EMP_POA_LEVELWithSYSTEM_IDOnly = await prisma.tB_M_EMP_POA_LEVEL.findMany({ select: { SYSTEM_ID: true } })
+     * 
+     */
+    findMany<T extends TB_M_EMP_POA_LEVELFindManyArgs>(args?: SelectSubset<T, TB_M_EMP_POA_LEVELFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TB_M_EMP_POA_LEVELPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a TB_M_EMP_POA_LEVEL.
+     * @param {TB_M_EMP_POA_LEVELCreateArgs} args - Arguments to create a TB_M_EMP_POA_LEVEL.
+     * @example
+     * // Create one TB_M_EMP_POA_LEVEL
+     * const TB_M_EMP_POA_LEVEL = await prisma.tB_M_EMP_POA_LEVEL.create({
+     *   data: {
+     *     // ... data to create a TB_M_EMP_POA_LEVEL
+     *   }
+     * })
+     * 
+     */
+    create<T extends TB_M_EMP_POA_LEVELCreateArgs>(args: SelectSubset<T, TB_M_EMP_POA_LEVELCreateArgs<ExtArgs>>): Prisma__TB_M_EMP_POA_LEVELClient<$Result.GetResult<Prisma.$TB_M_EMP_POA_LEVELPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many TB_M_EMP_POA_LEVELS.
+     * @param {TB_M_EMP_POA_LEVELCreateManyArgs} args - Arguments to create many TB_M_EMP_POA_LEVELS.
+     * @example
+     * // Create many TB_M_EMP_POA_LEVELS
+     * const tB_M_EMP_POA_LEVEL = await prisma.tB_M_EMP_POA_LEVEL.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends TB_M_EMP_POA_LEVELCreateManyArgs>(args?: SelectSubset<T, TB_M_EMP_POA_LEVELCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a TB_M_EMP_POA_LEVEL.
+     * @param {TB_M_EMP_POA_LEVELDeleteArgs} args - Arguments to delete one TB_M_EMP_POA_LEVEL.
+     * @example
+     * // Delete one TB_M_EMP_POA_LEVEL
+     * const TB_M_EMP_POA_LEVEL = await prisma.tB_M_EMP_POA_LEVEL.delete({
+     *   where: {
+     *     // ... filter to delete one TB_M_EMP_POA_LEVEL
+     *   }
+     * })
+     * 
+     */
+    delete<T extends TB_M_EMP_POA_LEVELDeleteArgs>(args: SelectSubset<T, TB_M_EMP_POA_LEVELDeleteArgs<ExtArgs>>): Prisma__TB_M_EMP_POA_LEVELClient<$Result.GetResult<Prisma.$TB_M_EMP_POA_LEVELPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one TB_M_EMP_POA_LEVEL.
+     * @param {TB_M_EMP_POA_LEVELUpdateArgs} args - Arguments to update one TB_M_EMP_POA_LEVEL.
+     * @example
+     * // Update one TB_M_EMP_POA_LEVEL
+     * const tB_M_EMP_POA_LEVEL = await prisma.tB_M_EMP_POA_LEVEL.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends TB_M_EMP_POA_LEVELUpdateArgs>(args: SelectSubset<T, TB_M_EMP_POA_LEVELUpdateArgs<ExtArgs>>): Prisma__TB_M_EMP_POA_LEVELClient<$Result.GetResult<Prisma.$TB_M_EMP_POA_LEVELPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more TB_M_EMP_POA_LEVELS.
+     * @param {TB_M_EMP_POA_LEVELDeleteManyArgs} args - Arguments to filter TB_M_EMP_POA_LEVELS to delete.
+     * @example
+     * // Delete a few TB_M_EMP_POA_LEVELS
+     * const { count } = await prisma.tB_M_EMP_POA_LEVEL.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends TB_M_EMP_POA_LEVELDeleteManyArgs>(args?: SelectSubset<T, TB_M_EMP_POA_LEVELDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TB_M_EMP_POA_LEVELS.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_EMP_POA_LEVELUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many TB_M_EMP_POA_LEVELS
+     * const tB_M_EMP_POA_LEVEL = await prisma.tB_M_EMP_POA_LEVEL.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends TB_M_EMP_POA_LEVELUpdateManyArgs>(args: SelectSubset<T, TB_M_EMP_POA_LEVELUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one TB_M_EMP_POA_LEVEL.
+     * @param {TB_M_EMP_POA_LEVELUpsertArgs} args - Arguments to update or create a TB_M_EMP_POA_LEVEL.
+     * @example
+     * // Update or create a TB_M_EMP_POA_LEVEL
+     * const tB_M_EMP_POA_LEVEL = await prisma.tB_M_EMP_POA_LEVEL.upsert({
+     *   create: {
+     *     // ... data to create a TB_M_EMP_POA_LEVEL
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the TB_M_EMP_POA_LEVEL we want to update
+     *   }
+     * })
+     */
+    upsert<T extends TB_M_EMP_POA_LEVELUpsertArgs>(args: SelectSubset<T, TB_M_EMP_POA_LEVELUpsertArgs<ExtArgs>>): Prisma__TB_M_EMP_POA_LEVELClient<$Result.GetResult<Prisma.$TB_M_EMP_POA_LEVELPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of TB_M_EMP_POA_LEVELS.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_EMP_POA_LEVELCountArgs} args - Arguments to filter TB_M_EMP_POA_LEVELS to count.
+     * @example
+     * // Count the number of TB_M_EMP_POA_LEVELS
+     * const count = await prisma.tB_M_EMP_POA_LEVEL.count({
+     *   where: {
+     *     // ... the filter for the TB_M_EMP_POA_LEVELS we want to count
+     *   }
+     * })
+    **/
+    count<T extends TB_M_EMP_POA_LEVELCountArgs>(
+      args?: Subset<T, TB_M_EMP_POA_LEVELCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TB_M_EMP_POA_LEVELCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a TB_M_EMP_POA_LEVEL.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_EMP_POA_LEVELAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TB_M_EMP_POA_LEVELAggregateArgs>(args: Subset<T, TB_M_EMP_POA_LEVELAggregateArgs>): Prisma.PrismaPromise<GetTB_M_EMP_POA_LEVELAggregateType<T>>
+
+    /**
+     * Group by TB_M_EMP_POA_LEVEL.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_EMP_POA_LEVELGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends TB_M_EMP_POA_LEVELGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: TB_M_EMP_POA_LEVELGroupByArgs['orderBy'] }
+        : { orderBy?: TB_M_EMP_POA_LEVELGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, TB_M_EMP_POA_LEVELGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTB_M_EMP_POA_LEVELGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the TB_M_EMP_POA_LEVEL model
+   */
+  readonly fields: TB_M_EMP_POA_LEVELFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for TB_M_EMP_POA_LEVEL.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__TB_M_EMP_POA_LEVELClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the TB_M_EMP_POA_LEVEL model
+   */ 
+  interface TB_M_EMP_POA_LEVELFieldRefs {
+    readonly SYSTEM_ID: FieldRef<"TB_M_EMP_POA_LEVEL", 'String'>
+    readonly LEVEL_SEQ: FieldRef<"TB_M_EMP_POA_LEVEL", 'Int'>
+    readonly GRANTOR_LEVEL_ID: FieldRef<"TB_M_EMP_POA_LEVEL", 'Int'>
+    readonly ATTORNEY_LEVEL_ID: FieldRef<"TB_M_EMP_POA_LEVEL", 'Int'>
+    readonly CREATED_BY: FieldRef<"TB_M_EMP_POA_LEVEL", 'String'>
+    readonly CREATED_DT: FieldRef<"TB_M_EMP_POA_LEVEL", 'DateTime'>
+    readonly UPDATED_BY: FieldRef<"TB_M_EMP_POA_LEVEL", 'String'>
+    readonly UPDATED_DT: FieldRef<"TB_M_EMP_POA_LEVEL", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * TB_M_EMP_POA_LEVEL findUnique
+   */
+  export type TB_M_EMP_POA_LEVELFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POA_LEVEL
+     */
+    select?: TB_M_EMP_POA_LEVELSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_EMP_POA_LEVEL to fetch.
+     */
+    where: TB_M_EMP_POA_LEVELWhereUniqueInput
+  }
+
+  /**
+   * TB_M_EMP_POA_LEVEL findUniqueOrThrow
+   */
+  export type TB_M_EMP_POA_LEVELFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POA_LEVEL
+     */
+    select?: TB_M_EMP_POA_LEVELSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_EMP_POA_LEVEL to fetch.
+     */
+    where: TB_M_EMP_POA_LEVELWhereUniqueInput
+  }
+
+  /**
+   * TB_M_EMP_POA_LEVEL findFirst
+   */
+  export type TB_M_EMP_POA_LEVELFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POA_LEVEL
+     */
+    select?: TB_M_EMP_POA_LEVELSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_EMP_POA_LEVEL to fetch.
+     */
+    where?: TB_M_EMP_POA_LEVELWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_EMP_POA_LEVELS to fetch.
+     */
+    orderBy?: TB_M_EMP_POA_LEVELOrderByWithRelationInput | TB_M_EMP_POA_LEVELOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TB_M_EMP_POA_LEVELS.
+     */
+    cursor?: TB_M_EMP_POA_LEVELWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_EMP_POA_LEVELS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_EMP_POA_LEVELS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TB_M_EMP_POA_LEVELS.
+     */
+    distinct?: TB_M_EMP_POA_LEVELScalarFieldEnum | TB_M_EMP_POA_LEVELScalarFieldEnum[]
+  }
+
+  /**
+   * TB_M_EMP_POA_LEVEL findFirstOrThrow
+   */
+  export type TB_M_EMP_POA_LEVELFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POA_LEVEL
+     */
+    select?: TB_M_EMP_POA_LEVELSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_EMP_POA_LEVEL to fetch.
+     */
+    where?: TB_M_EMP_POA_LEVELWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_EMP_POA_LEVELS to fetch.
+     */
+    orderBy?: TB_M_EMP_POA_LEVELOrderByWithRelationInput | TB_M_EMP_POA_LEVELOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TB_M_EMP_POA_LEVELS.
+     */
+    cursor?: TB_M_EMP_POA_LEVELWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_EMP_POA_LEVELS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_EMP_POA_LEVELS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TB_M_EMP_POA_LEVELS.
+     */
+    distinct?: TB_M_EMP_POA_LEVELScalarFieldEnum | TB_M_EMP_POA_LEVELScalarFieldEnum[]
+  }
+
+  /**
+   * TB_M_EMP_POA_LEVEL findMany
+   */
+  export type TB_M_EMP_POA_LEVELFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POA_LEVEL
+     */
+    select?: TB_M_EMP_POA_LEVELSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_EMP_POA_LEVELS to fetch.
+     */
+    where?: TB_M_EMP_POA_LEVELWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_EMP_POA_LEVELS to fetch.
+     */
+    orderBy?: TB_M_EMP_POA_LEVELOrderByWithRelationInput | TB_M_EMP_POA_LEVELOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing TB_M_EMP_POA_LEVELS.
+     */
+    cursor?: TB_M_EMP_POA_LEVELWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_EMP_POA_LEVELS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_EMP_POA_LEVELS.
+     */
+    skip?: number
+    distinct?: TB_M_EMP_POA_LEVELScalarFieldEnum | TB_M_EMP_POA_LEVELScalarFieldEnum[]
+  }
+
+  /**
+   * TB_M_EMP_POA_LEVEL create
+   */
+  export type TB_M_EMP_POA_LEVELCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POA_LEVEL
+     */
+    select?: TB_M_EMP_POA_LEVELSelect<ExtArgs> | null
+    /**
+     * The data needed to create a TB_M_EMP_POA_LEVEL.
+     */
+    data: XOR<TB_M_EMP_POA_LEVELCreateInput, TB_M_EMP_POA_LEVELUncheckedCreateInput>
+  }
+
+  /**
+   * TB_M_EMP_POA_LEVEL createMany
+   */
+  export type TB_M_EMP_POA_LEVELCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many TB_M_EMP_POA_LEVELS.
+     */
+    data: TB_M_EMP_POA_LEVELCreateManyInput | TB_M_EMP_POA_LEVELCreateManyInput[]
+  }
+
+  /**
+   * TB_M_EMP_POA_LEVEL update
+   */
+  export type TB_M_EMP_POA_LEVELUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POA_LEVEL
+     */
+    select?: TB_M_EMP_POA_LEVELSelect<ExtArgs> | null
+    /**
+     * The data needed to update a TB_M_EMP_POA_LEVEL.
+     */
+    data: XOR<TB_M_EMP_POA_LEVELUpdateInput, TB_M_EMP_POA_LEVELUncheckedUpdateInput>
+    /**
+     * Choose, which TB_M_EMP_POA_LEVEL to update.
+     */
+    where: TB_M_EMP_POA_LEVELWhereUniqueInput
+  }
+
+  /**
+   * TB_M_EMP_POA_LEVEL updateMany
+   */
+  export type TB_M_EMP_POA_LEVELUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update TB_M_EMP_POA_LEVELS.
+     */
+    data: XOR<TB_M_EMP_POA_LEVELUpdateManyMutationInput, TB_M_EMP_POA_LEVELUncheckedUpdateManyInput>
+    /**
+     * Filter which TB_M_EMP_POA_LEVELS to update
+     */
+    where?: TB_M_EMP_POA_LEVELWhereInput
+  }
+
+  /**
+   * TB_M_EMP_POA_LEVEL upsert
+   */
+  export type TB_M_EMP_POA_LEVELUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POA_LEVEL
+     */
+    select?: TB_M_EMP_POA_LEVELSelect<ExtArgs> | null
+    /**
+     * The filter to search for the TB_M_EMP_POA_LEVEL to update in case it exists.
+     */
+    where: TB_M_EMP_POA_LEVELWhereUniqueInput
+    /**
+     * In case the TB_M_EMP_POA_LEVEL found by the `where` argument doesn't exist, create a new TB_M_EMP_POA_LEVEL with this data.
+     */
+    create: XOR<TB_M_EMP_POA_LEVELCreateInput, TB_M_EMP_POA_LEVELUncheckedCreateInput>
+    /**
+     * In case the TB_M_EMP_POA_LEVEL was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TB_M_EMP_POA_LEVELUpdateInput, TB_M_EMP_POA_LEVELUncheckedUpdateInput>
+  }
+
+  /**
+   * TB_M_EMP_POA_LEVEL delete
+   */
+  export type TB_M_EMP_POA_LEVELDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POA_LEVEL
+     */
+    select?: TB_M_EMP_POA_LEVELSelect<ExtArgs> | null
+    /**
+     * Filter which TB_M_EMP_POA_LEVEL to delete.
+     */
+    where: TB_M_EMP_POA_LEVELWhereUniqueInput
+  }
+
+  /**
+   * TB_M_EMP_POA_LEVEL deleteMany
+   */
+  export type TB_M_EMP_POA_LEVELDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TB_M_EMP_POA_LEVELS to delete
+     */
+    where?: TB_M_EMP_POA_LEVELWhereInput
+  }
+
+  /**
+   * TB_M_EMP_POA_LEVEL without action
+   */
+  export type TB_M_EMP_POA_LEVELDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POA_LEVEL
+     */
+    select?: TB_M_EMP_POA_LEVELSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model TB_M_EMP_POSITION
+   */
+
+  export type AggregateTB_M_EMP_POSITION = {
+    _count: TB_M_EMP_POSITIONCountAggregateOutputType | null
+    _avg: TB_M_EMP_POSITIONAvgAggregateOutputType | null
+    _sum: TB_M_EMP_POSITIONSumAggregateOutputType | null
+    _min: TB_M_EMP_POSITIONMinAggregateOutputType | null
+    _max: TB_M_EMP_POSITIONMaxAggregateOutputType | null
+  }
+
+  export type TB_M_EMP_POSITIONAvgAggregateOutputType = {
+    POSITION_LEVEL: number | null
+    LEVEL_ID: number | null
+  }
+
+  export type TB_M_EMP_POSITIONSumAggregateOutputType = {
+    POSITION_LEVEL: number | null
+    LEVEL_ID: number | null
+  }
+
+  export type TB_M_EMP_POSITIONMinAggregateOutputType = {
+    POSITION_LEVEL: number | null
+    POSITION_ABBR: string | null
+    POSITION_DESC: string | null
+    LEVEL_ID: number | null
+    CREATED_BY: string | null
+    CREATED_DT: Date | null
+    UPDATED_BY: string | null
+    UPDATED_DT: Date | null
+  }
+
+  export type TB_M_EMP_POSITIONMaxAggregateOutputType = {
+    POSITION_LEVEL: number | null
+    POSITION_ABBR: string | null
+    POSITION_DESC: string | null
+    LEVEL_ID: number | null
+    CREATED_BY: string | null
+    CREATED_DT: Date | null
+    UPDATED_BY: string | null
+    UPDATED_DT: Date | null
+  }
+
+  export type TB_M_EMP_POSITIONCountAggregateOutputType = {
+    POSITION_LEVEL: number
+    POSITION_ABBR: number
+    POSITION_DESC: number
+    LEVEL_ID: number
+    CREATED_BY: number
+    CREATED_DT: number
+    UPDATED_BY: number
+    UPDATED_DT: number
+    _all: number
+  }
+
+
+  export type TB_M_EMP_POSITIONAvgAggregateInputType = {
+    POSITION_LEVEL?: true
+    LEVEL_ID?: true
+  }
+
+  export type TB_M_EMP_POSITIONSumAggregateInputType = {
+    POSITION_LEVEL?: true
+    LEVEL_ID?: true
+  }
+
+  export type TB_M_EMP_POSITIONMinAggregateInputType = {
+    POSITION_LEVEL?: true
+    POSITION_ABBR?: true
+    POSITION_DESC?: true
+    LEVEL_ID?: true
+    CREATED_BY?: true
+    CREATED_DT?: true
+    UPDATED_BY?: true
+    UPDATED_DT?: true
+  }
+
+  export type TB_M_EMP_POSITIONMaxAggregateInputType = {
+    POSITION_LEVEL?: true
+    POSITION_ABBR?: true
+    POSITION_DESC?: true
+    LEVEL_ID?: true
+    CREATED_BY?: true
+    CREATED_DT?: true
+    UPDATED_BY?: true
+    UPDATED_DT?: true
+  }
+
+  export type TB_M_EMP_POSITIONCountAggregateInputType = {
+    POSITION_LEVEL?: true
+    POSITION_ABBR?: true
+    POSITION_DESC?: true
+    LEVEL_ID?: true
+    CREATED_BY?: true
+    CREATED_DT?: true
+    UPDATED_BY?: true
+    UPDATED_DT?: true
+    _all?: true
+  }
+
+  export type TB_M_EMP_POSITIONAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TB_M_EMP_POSITION to aggregate.
+     */
+    where?: TB_M_EMP_POSITIONWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_EMP_POSITIONS to fetch.
+     */
+    orderBy?: TB_M_EMP_POSITIONOrderByWithRelationInput | TB_M_EMP_POSITIONOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: TB_M_EMP_POSITIONWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_EMP_POSITIONS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_EMP_POSITIONS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned TB_M_EMP_POSITIONS
+    **/
+    _count?: true | TB_M_EMP_POSITIONCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: TB_M_EMP_POSITIONAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: TB_M_EMP_POSITIONSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TB_M_EMP_POSITIONMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TB_M_EMP_POSITIONMaxAggregateInputType
+  }
+
+  export type GetTB_M_EMP_POSITIONAggregateType<T extends TB_M_EMP_POSITIONAggregateArgs> = {
+        [P in keyof T & keyof AggregateTB_M_EMP_POSITION]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTB_M_EMP_POSITION[P]>
+      : GetScalarType<T[P], AggregateTB_M_EMP_POSITION[P]>
+  }
+
+
+
+
+  export type TB_M_EMP_POSITIONGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TB_M_EMP_POSITIONWhereInput
+    orderBy?: TB_M_EMP_POSITIONOrderByWithAggregationInput | TB_M_EMP_POSITIONOrderByWithAggregationInput[]
+    by: TB_M_EMP_POSITIONScalarFieldEnum[] | TB_M_EMP_POSITIONScalarFieldEnum
+    having?: TB_M_EMP_POSITIONScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TB_M_EMP_POSITIONCountAggregateInputType | true
+    _avg?: TB_M_EMP_POSITIONAvgAggregateInputType
+    _sum?: TB_M_EMP_POSITIONSumAggregateInputType
+    _min?: TB_M_EMP_POSITIONMinAggregateInputType
+    _max?: TB_M_EMP_POSITIONMaxAggregateInputType
+  }
+
+  export type TB_M_EMP_POSITIONGroupByOutputType = {
+    POSITION_LEVEL: number
+    POSITION_ABBR: string
+    POSITION_DESC: string | null
+    LEVEL_ID: number | null
+    CREATED_BY: string
+    CREATED_DT: Date
+    UPDATED_BY: string | null
+    UPDATED_DT: Date | null
+    _count: TB_M_EMP_POSITIONCountAggregateOutputType | null
+    _avg: TB_M_EMP_POSITIONAvgAggregateOutputType | null
+    _sum: TB_M_EMP_POSITIONSumAggregateOutputType | null
+    _min: TB_M_EMP_POSITIONMinAggregateOutputType | null
+    _max: TB_M_EMP_POSITIONMaxAggregateOutputType | null
+  }
+
+  type GetTB_M_EMP_POSITIONGroupByPayload<T extends TB_M_EMP_POSITIONGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TB_M_EMP_POSITIONGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TB_M_EMP_POSITIONGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TB_M_EMP_POSITIONGroupByOutputType[P]>
+            : GetScalarType<T[P], TB_M_EMP_POSITIONGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type TB_M_EMP_POSITIONSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    POSITION_LEVEL?: boolean
+    POSITION_ABBR?: boolean
+    POSITION_DESC?: boolean
+    LEVEL_ID?: boolean
+    CREATED_BY?: boolean
+    CREATED_DT?: boolean
+    UPDATED_BY?: boolean
+    UPDATED_DT?: boolean
+  }, ExtArgs["result"]["tB_M_EMP_POSITION"]>
+
+
+  export type TB_M_EMP_POSITIONSelectScalar = {
+    POSITION_LEVEL?: boolean
+    POSITION_ABBR?: boolean
+    POSITION_DESC?: boolean
+    LEVEL_ID?: boolean
+    CREATED_BY?: boolean
+    CREATED_DT?: boolean
+    UPDATED_BY?: boolean
+    UPDATED_DT?: boolean
+  }
+
+
+  export type $TB_M_EMP_POSITIONPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "TB_M_EMP_POSITION"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      POSITION_LEVEL: number
+      POSITION_ABBR: string
+      POSITION_DESC: string | null
+      LEVEL_ID: number | null
+      CREATED_BY: string
+      CREATED_DT: Date
+      UPDATED_BY: string | null
+      UPDATED_DT: Date | null
+    }, ExtArgs["result"]["tB_M_EMP_POSITION"]>
+    composites: {}
+  }
+
+  type TB_M_EMP_POSITIONGetPayload<S extends boolean | null | undefined | TB_M_EMP_POSITIONDefaultArgs> = $Result.GetResult<Prisma.$TB_M_EMP_POSITIONPayload, S>
+
+  type TB_M_EMP_POSITIONCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<TB_M_EMP_POSITIONFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: TB_M_EMP_POSITIONCountAggregateInputType | true
+    }
+
+  export interface TB_M_EMP_POSITIONDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TB_M_EMP_POSITION'], meta: { name: 'TB_M_EMP_POSITION' } }
+    /**
+     * Find zero or one TB_M_EMP_POSITION that matches the filter.
+     * @param {TB_M_EMP_POSITIONFindUniqueArgs} args - Arguments to find a TB_M_EMP_POSITION
+     * @example
+     * // Get one TB_M_EMP_POSITION
+     * const tB_M_EMP_POSITION = await prisma.tB_M_EMP_POSITION.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends TB_M_EMP_POSITIONFindUniqueArgs>(args: SelectSubset<T, TB_M_EMP_POSITIONFindUniqueArgs<ExtArgs>>): Prisma__TB_M_EMP_POSITIONClient<$Result.GetResult<Prisma.$TB_M_EMP_POSITIONPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one TB_M_EMP_POSITION that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {TB_M_EMP_POSITIONFindUniqueOrThrowArgs} args - Arguments to find a TB_M_EMP_POSITION
+     * @example
+     * // Get one TB_M_EMP_POSITION
+     * const tB_M_EMP_POSITION = await prisma.tB_M_EMP_POSITION.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends TB_M_EMP_POSITIONFindUniqueOrThrowArgs>(args: SelectSubset<T, TB_M_EMP_POSITIONFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TB_M_EMP_POSITIONClient<$Result.GetResult<Prisma.$TB_M_EMP_POSITIONPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first TB_M_EMP_POSITION that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_EMP_POSITIONFindFirstArgs} args - Arguments to find a TB_M_EMP_POSITION
+     * @example
+     * // Get one TB_M_EMP_POSITION
+     * const tB_M_EMP_POSITION = await prisma.tB_M_EMP_POSITION.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends TB_M_EMP_POSITIONFindFirstArgs>(args?: SelectSubset<T, TB_M_EMP_POSITIONFindFirstArgs<ExtArgs>>): Prisma__TB_M_EMP_POSITIONClient<$Result.GetResult<Prisma.$TB_M_EMP_POSITIONPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first TB_M_EMP_POSITION that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_EMP_POSITIONFindFirstOrThrowArgs} args - Arguments to find a TB_M_EMP_POSITION
+     * @example
+     * // Get one TB_M_EMP_POSITION
+     * const tB_M_EMP_POSITION = await prisma.tB_M_EMP_POSITION.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends TB_M_EMP_POSITIONFindFirstOrThrowArgs>(args?: SelectSubset<T, TB_M_EMP_POSITIONFindFirstOrThrowArgs<ExtArgs>>): Prisma__TB_M_EMP_POSITIONClient<$Result.GetResult<Prisma.$TB_M_EMP_POSITIONPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more TB_M_EMP_POSITIONS that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_EMP_POSITIONFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all TB_M_EMP_POSITIONS
+     * const tB_M_EMP_POSITIONS = await prisma.tB_M_EMP_POSITION.findMany()
+     * 
+     * // Get first 10 TB_M_EMP_POSITIONS
+     * const tB_M_EMP_POSITIONS = await prisma.tB_M_EMP_POSITION.findMany({ take: 10 })
+     * 
+     * // Only select the `POSITION_LEVEL`
+     * const tB_M_EMP_POSITIONWithPOSITION_LEVELOnly = await prisma.tB_M_EMP_POSITION.findMany({ select: { POSITION_LEVEL: true } })
+     * 
+     */
+    findMany<T extends TB_M_EMP_POSITIONFindManyArgs>(args?: SelectSubset<T, TB_M_EMP_POSITIONFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TB_M_EMP_POSITIONPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a TB_M_EMP_POSITION.
+     * @param {TB_M_EMP_POSITIONCreateArgs} args - Arguments to create a TB_M_EMP_POSITION.
+     * @example
+     * // Create one TB_M_EMP_POSITION
+     * const TB_M_EMP_POSITION = await prisma.tB_M_EMP_POSITION.create({
+     *   data: {
+     *     // ... data to create a TB_M_EMP_POSITION
+     *   }
+     * })
+     * 
+     */
+    create<T extends TB_M_EMP_POSITIONCreateArgs>(args: SelectSubset<T, TB_M_EMP_POSITIONCreateArgs<ExtArgs>>): Prisma__TB_M_EMP_POSITIONClient<$Result.GetResult<Prisma.$TB_M_EMP_POSITIONPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many TB_M_EMP_POSITIONS.
+     * @param {TB_M_EMP_POSITIONCreateManyArgs} args - Arguments to create many TB_M_EMP_POSITIONS.
+     * @example
+     * // Create many TB_M_EMP_POSITIONS
+     * const tB_M_EMP_POSITION = await prisma.tB_M_EMP_POSITION.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends TB_M_EMP_POSITIONCreateManyArgs>(args?: SelectSubset<T, TB_M_EMP_POSITIONCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a TB_M_EMP_POSITION.
+     * @param {TB_M_EMP_POSITIONDeleteArgs} args - Arguments to delete one TB_M_EMP_POSITION.
+     * @example
+     * // Delete one TB_M_EMP_POSITION
+     * const TB_M_EMP_POSITION = await prisma.tB_M_EMP_POSITION.delete({
+     *   where: {
+     *     // ... filter to delete one TB_M_EMP_POSITION
+     *   }
+     * })
+     * 
+     */
+    delete<T extends TB_M_EMP_POSITIONDeleteArgs>(args: SelectSubset<T, TB_M_EMP_POSITIONDeleteArgs<ExtArgs>>): Prisma__TB_M_EMP_POSITIONClient<$Result.GetResult<Prisma.$TB_M_EMP_POSITIONPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one TB_M_EMP_POSITION.
+     * @param {TB_M_EMP_POSITIONUpdateArgs} args - Arguments to update one TB_M_EMP_POSITION.
+     * @example
+     * // Update one TB_M_EMP_POSITION
+     * const tB_M_EMP_POSITION = await prisma.tB_M_EMP_POSITION.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends TB_M_EMP_POSITIONUpdateArgs>(args: SelectSubset<T, TB_M_EMP_POSITIONUpdateArgs<ExtArgs>>): Prisma__TB_M_EMP_POSITIONClient<$Result.GetResult<Prisma.$TB_M_EMP_POSITIONPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more TB_M_EMP_POSITIONS.
+     * @param {TB_M_EMP_POSITIONDeleteManyArgs} args - Arguments to filter TB_M_EMP_POSITIONS to delete.
+     * @example
+     * // Delete a few TB_M_EMP_POSITIONS
+     * const { count } = await prisma.tB_M_EMP_POSITION.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends TB_M_EMP_POSITIONDeleteManyArgs>(args?: SelectSubset<T, TB_M_EMP_POSITIONDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TB_M_EMP_POSITIONS.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_EMP_POSITIONUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many TB_M_EMP_POSITIONS
+     * const tB_M_EMP_POSITION = await prisma.tB_M_EMP_POSITION.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends TB_M_EMP_POSITIONUpdateManyArgs>(args: SelectSubset<T, TB_M_EMP_POSITIONUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one TB_M_EMP_POSITION.
+     * @param {TB_M_EMP_POSITIONUpsertArgs} args - Arguments to update or create a TB_M_EMP_POSITION.
+     * @example
+     * // Update or create a TB_M_EMP_POSITION
+     * const tB_M_EMP_POSITION = await prisma.tB_M_EMP_POSITION.upsert({
+     *   create: {
+     *     // ... data to create a TB_M_EMP_POSITION
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the TB_M_EMP_POSITION we want to update
+     *   }
+     * })
+     */
+    upsert<T extends TB_M_EMP_POSITIONUpsertArgs>(args: SelectSubset<T, TB_M_EMP_POSITIONUpsertArgs<ExtArgs>>): Prisma__TB_M_EMP_POSITIONClient<$Result.GetResult<Prisma.$TB_M_EMP_POSITIONPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of TB_M_EMP_POSITIONS.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_EMP_POSITIONCountArgs} args - Arguments to filter TB_M_EMP_POSITIONS to count.
+     * @example
+     * // Count the number of TB_M_EMP_POSITIONS
+     * const count = await prisma.tB_M_EMP_POSITION.count({
+     *   where: {
+     *     // ... the filter for the TB_M_EMP_POSITIONS we want to count
+     *   }
+     * })
+    **/
+    count<T extends TB_M_EMP_POSITIONCountArgs>(
+      args?: Subset<T, TB_M_EMP_POSITIONCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TB_M_EMP_POSITIONCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a TB_M_EMP_POSITION.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_EMP_POSITIONAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TB_M_EMP_POSITIONAggregateArgs>(args: Subset<T, TB_M_EMP_POSITIONAggregateArgs>): Prisma.PrismaPromise<GetTB_M_EMP_POSITIONAggregateType<T>>
+
+    /**
+     * Group by TB_M_EMP_POSITION.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_EMP_POSITIONGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends TB_M_EMP_POSITIONGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: TB_M_EMP_POSITIONGroupByArgs['orderBy'] }
+        : { orderBy?: TB_M_EMP_POSITIONGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, TB_M_EMP_POSITIONGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTB_M_EMP_POSITIONGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the TB_M_EMP_POSITION model
+   */
+  readonly fields: TB_M_EMP_POSITIONFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for TB_M_EMP_POSITION.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__TB_M_EMP_POSITIONClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the TB_M_EMP_POSITION model
+   */ 
+  interface TB_M_EMP_POSITIONFieldRefs {
+    readonly POSITION_LEVEL: FieldRef<"TB_M_EMP_POSITION", 'Int'>
+    readonly POSITION_ABBR: FieldRef<"TB_M_EMP_POSITION", 'String'>
+    readonly POSITION_DESC: FieldRef<"TB_M_EMP_POSITION", 'String'>
+    readonly LEVEL_ID: FieldRef<"TB_M_EMP_POSITION", 'Int'>
+    readonly CREATED_BY: FieldRef<"TB_M_EMP_POSITION", 'String'>
+    readonly CREATED_DT: FieldRef<"TB_M_EMP_POSITION", 'DateTime'>
+    readonly UPDATED_BY: FieldRef<"TB_M_EMP_POSITION", 'String'>
+    readonly UPDATED_DT: FieldRef<"TB_M_EMP_POSITION", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * TB_M_EMP_POSITION findUnique
+   */
+  export type TB_M_EMP_POSITIONFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POSITION
+     */
+    select?: TB_M_EMP_POSITIONSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_EMP_POSITION to fetch.
+     */
+    where: TB_M_EMP_POSITIONWhereUniqueInput
+  }
+
+  /**
+   * TB_M_EMP_POSITION findUniqueOrThrow
+   */
+  export type TB_M_EMP_POSITIONFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POSITION
+     */
+    select?: TB_M_EMP_POSITIONSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_EMP_POSITION to fetch.
+     */
+    where: TB_M_EMP_POSITIONWhereUniqueInput
+  }
+
+  /**
+   * TB_M_EMP_POSITION findFirst
+   */
+  export type TB_M_EMP_POSITIONFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POSITION
+     */
+    select?: TB_M_EMP_POSITIONSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_EMP_POSITION to fetch.
+     */
+    where?: TB_M_EMP_POSITIONWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_EMP_POSITIONS to fetch.
+     */
+    orderBy?: TB_M_EMP_POSITIONOrderByWithRelationInput | TB_M_EMP_POSITIONOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TB_M_EMP_POSITIONS.
+     */
+    cursor?: TB_M_EMP_POSITIONWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_EMP_POSITIONS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_EMP_POSITIONS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TB_M_EMP_POSITIONS.
+     */
+    distinct?: TB_M_EMP_POSITIONScalarFieldEnum | TB_M_EMP_POSITIONScalarFieldEnum[]
+  }
+
+  /**
+   * TB_M_EMP_POSITION findFirstOrThrow
+   */
+  export type TB_M_EMP_POSITIONFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POSITION
+     */
+    select?: TB_M_EMP_POSITIONSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_EMP_POSITION to fetch.
+     */
+    where?: TB_M_EMP_POSITIONWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_EMP_POSITIONS to fetch.
+     */
+    orderBy?: TB_M_EMP_POSITIONOrderByWithRelationInput | TB_M_EMP_POSITIONOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TB_M_EMP_POSITIONS.
+     */
+    cursor?: TB_M_EMP_POSITIONWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_EMP_POSITIONS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_EMP_POSITIONS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TB_M_EMP_POSITIONS.
+     */
+    distinct?: TB_M_EMP_POSITIONScalarFieldEnum | TB_M_EMP_POSITIONScalarFieldEnum[]
+  }
+
+  /**
+   * TB_M_EMP_POSITION findMany
+   */
+  export type TB_M_EMP_POSITIONFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POSITION
+     */
+    select?: TB_M_EMP_POSITIONSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_EMP_POSITIONS to fetch.
+     */
+    where?: TB_M_EMP_POSITIONWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_EMP_POSITIONS to fetch.
+     */
+    orderBy?: TB_M_EMP_POSITIONOrderByWithRelationInput | TB_M_EMP_POSITIONOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing TB_M_EMP_POSITIONS.
+     */
+    cursor?: TB_M_EMP_POSITIONWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_EMP_POSITIONS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_EMP_POSITIONS.
+     */
+    skip?: number
+    distinct?: TB_M_EMP_POSITIONScalarFieldEnum | TB_M_EMP_POSITIONScalarFieldEnum[]
+  }
+
+  /**
+   * TB_M_EMP_POSITION create
+   */
+  export type TB_M_EMP_POSITIONCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POSITION
+     */
+    select?: TB_M_EMP_POSITIONSelect<ExtArgs> | null
+    /**
+     * The data needed to create a TB_M_EMP_POSITION.
+     */
+    data: XOR<TB_M_EMP_POSITIONCreateInput, TB_M_EMP_POSITIONUncheckedCreateInput>
+  }
+
+  /**
+   * TB_M_EMP_POSITION createMany
+   */
+  export type TB_M_EMP_POSITIONCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many TB_M_EMP_POSITIONS.
+     */
+    data: TB_M_EMP_POSITIONCreateManyInput | TB_M_EMP_POSITIONCreateManyInput[]
+  }
+
+  /**
+   * TB_M_EMP_POSITION update
+   */
+  export type TB_M_EMP_POSITIONUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POSITION
+     */
+    select?: TB_M_EMP_POSITIONSelect<ExtArgs> | null
+    /**
+     * The data needed to update a TB_M_EMP_POSITION.
+     */
+    data: XOR<TB_M_EMP_POSITIONUpdateInput, TB_M_EMP_POSITIONUncheckedUpdateInput>
+    /**
+     * Choose, which TB_M_EMP_POSITION to update.
+     */
+    where: TB_M_EMP_POSITIONWhereUniqueInput
+  }
+
+  /**
+   * TB_M_EMP_POSITION updateMany
+   */
+  export type TB_M_EMP_POSITIONUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update TB_M_EMP_POSITIONS.
+     */
+    data: XOR<TB_M_EMP_POSITIONUpdateManyMutationInput, TB_M_EMP_POSITIONUncheckedUpdateManyInput>
+    /**
+     * Filter which TB_M_EMP_POSITIONS to update
+     */
+    where?: TB_M_EMP_POSITIONWhereInput
+  }
+
+  /**
+   * TB_M_EMP_POSITION upsert
+   */
+  export type TB_M_EMP_POSITIONUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POSITION
+     */
+    select?: TB_M_EMP_POSITIONSelect<ExtArgs> | null
+    /**
+     * The filter to search for the TB_M_EMP_POSITION to update in case it exists.
+     */
+    where: TB_M_EMP_POSITIONWhereUniqueInput
+    /**
+     * In case the TB_M_EMP_POSITION found by the `where` argument doesn't exist, create a new TB_M_EMP_POSITION with this data.
+     */
+    create: XOR<TB_M_EMP_POSITIONCreateInput, TB_M_EMP_POSITIONUncheckedCreateInput>
+    /**
+     * In case the TB_M_EMP_POSITION was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TB_M_EMP_POSITIONUpdateInput, TB_M_EMP_POSITIONUncheckedUpdateInput>
+  }
+
+  /**
+   * TB_M_EMP_POSITION delete
+   */
+  export type TB_M_EMP_POSITIONDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POSITION
+     */
+    select?: TB_M_EMP_POSITIONSelect<ExtArgs> | null
+    /**
+     * Filter which TB_M_EMP_POSITION to delete.
+     */
+    where: TB_M_EMP_POSITIONWhereUniqueInput
+  }
+
+  /**
+   * TB_M_EMP_POSITION deleteMany
+   */
+  export type TB_M_EMP_POSITIONDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TB_M_EMP_POSITIONS to delete
+     */
+    where?: TB_M_EMP_POSITIONWhereInput
+  }
+
+  /**
+   * TB_M_EMP_POSITION without action
+   */
+  export type TB_M_EMP_POSITIONDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_EMP_POSITION
+     */
+    select?: TB_M_EMP_POSITIONSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model TB_M_ON_BEHALF
+   */
+
+  export type AggregateTB_M_ON_BEHALF = {
+    _count: TB_M_ON_BEHALFCountAggregateOutputType | null
+    _avg: TB_M_ON_BEHALFAvgAggregateOutputType | null
+    _sum: TB_M_ON_BEHALFSumAggregateOutputType | null
+    _min: TB_M_ON_BEHALFMinAggregateOutputType | null
+    _max: TB_M_ON_BEHALFMaxAggregateOutputType | null
+  }
+
+  export type TB_M_ON_BEHALFAvgAggregateOutputType = {
+    SEQ: number | null
+  }
+
+  export type TB_M_ON_BEHALFSumAggregateOutputType = {
+    SEQ: number | null
+  }
+
+  export type TB_M_ON_BEHALFMinAggregateOutputType = {
+    SYSTEM_ID: string | null
+    SEQ: number | null
+    NOREG: string | null
+    NOREG_ON_BEHALF: string | null
+    CREATED_BY: string | null
+    CREATED_DT: Date | null
+    UPDATED_BY: string | null
+    UPDATED_DT: Date | null
+  }
+
+  export type TB_M_ON_BEHALFMaxAggregateOutputType = {
+    SYSTEM_ID: string | null
+    SEQ: number | null
+    NOREG: string | null
+    NOREG_ON_BEHALF: string | null
+    CREATED_BY: string | null
+    CREATED_DT: Date | null
+    UPDATED_BY: string | null
+    UPDATED_DT: Date | null
+  }
+
+  export type TB_M_ON_BEHALFCountAggregateOutputType = {
+    SYSTEM_ID: number
+    SEQ: number
+    NOREG: number
+    NOREG_ON_BEHALF: number
+    CREATED_BY: number
+    CREATED_DT: number
+    UPDATED_BY: number
+    UPDATED_DT: number
+    _all: number
+  }
+
+
+  export type TB_M_ON_BEHALFAvgAggregateInputType = {
+    SEQ?: true
+  }
+
+  export type TB_M_ON_BEHALFSumAggregateInputType = {
+    SEQ?: true
+  }
+
+  export type TB_M_ON_BEHALFMinAggregateInputType = {
+    SYSTEM_ID?: true
+    SEQ?: true
+    NOREG?: true
+    NOREG_ON_BEHALF?: true
+    CREATED_BY?: true
+    CREATED_DT?: true
+    UPDATED_BY?: true
+    UPDATED_DT?: true
+  }
+
+  export type TB_M_ON_BEHALFMaxAggregateInputType = {
+    SYSTEM_ID?: true
+    SEQ?: true
+    NOREG?: true
+    NOREG_ON_BEHALF?: true
+    CREATED_BY?: true
+    CREATED_DT?: true
+    UPDATED_BY?: true
+    UPDATED_DT?: true
+  }
+
+  export type TB_M_ON_BEHALFCountAggregateInputType = {
+    SYSTEM_ID?: true
+    SEQ?: true
+    NOREG?: true
+    NOREG_ON_BEHALF?: true
+    CREATED_BY?: true
+    CREATED_DT?: true
+    UPDATED_BY?: true
+    UPDATED_DT?: true
+    _all?: true
+  }
+
+  export type TB_M_ON_BEHALFAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TB_M_ON_BEHALF to aggregate.
+     */
+    where?: TB_M_ON_BEHALFWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_ON_BEHALVES to fetch.
+     */
+    orderBy?: TB_M_ON_BEHALFOrderByWithRelationInput | TB_M_ON_BEHALFOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: TB_M_ON_BEHALFWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_ON_BEHALVES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_ON_BEHALVES.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned TB_M_ON_BEHALVES
+    **/
+    _count?: true | TB_M_ON_BEHALFCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: TB_M_ON_BEHALFAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: TB_M_ON_BEHALFSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TB_M_ON_BEHALFMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TB_M_ON_BEHALFMaxAggregateInputType
+  }
+
+  export type GetTB_M_ON_BEHALFAggregateType<T extends TB_M_ON_BEHALFAggregateArgs> = {
+        [P in keyof T & keyof AggregateTB_M_ON_BEHALF]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTB_M_ON_BEHALF[P]>
+      : GetScalarType<T[P], AggregateTB_M_ON_BEHALF[P]>
+  }
+
+
+
+
+  export type TB_M_ON_BEHALFGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TB_M_ON_BEHALFWhereInput
+    orderBy?: TB_M_ON_BEHALFOrderByWithAggregationInput | TB_M_ON_BEHALFOrderByWithAggregationInput[]
+    by: TB_M_ON_BEHALFScalarFieldEnum[] | TB_M_ON_BEHALFScalarFieldEnum
+    having?: TB_M_ON_BEHALFScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TB_M_ON_BEHALFCountAggregateInputType | true
+    _avg?: TB_M_ON_BEHALFAvgAggregateInputType
+    _sum?: TB_M_ON_BEHALFSumAggregateInputType
+    _min?: TB_M_ON_BEHALFMinAggregateInputType
+    _max?: TB_M_ON_BEHALFMaxAggregateInputType
+  }
+
+  export type TB_M_ON_BEHALFGroupByOutputType = {
+    SYSTEM_ID: string
+    SEQ: number
+    NOREG: string
+    NOREG_ON_BEHALF: string
+    CREATED_BY: string
+    CREATED_DT: Date
+    UPDATED_BY: string | null
+    UPDATED_DT: Date | null
+    _count: TB_M_ON_BEHALFCountAggregateOutputType | null
+    _avg: TB_M_ON_BEHALFAvgAggregateOutputType | null
+    _sum: TB_M_ON_BEHALFSumAggregateOutputType | null
+    _min: TB_M_ON_BEHALFMinAggregateOutputType | null
+    _max: TB_M_ON_BEHALFMaxAggregateOutputType | null
+  }
+
+  type GetTB_M_ON_BEHALFGroupByPayload<T extends TB_M_ON_BEHALFGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TB_M_ON_BEHALFGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TB_M_ON_BEHALFGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TB_M_ON_BEHALFGroupByOutputType[P]>
+            : GetScalarType<T[P], TB_M_ON_BEHALFGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type TB_M_ON_BEHALFSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    SYSTEM_ID?: boolean
+    SEQ?: boolean
+    NOREG?: boolean
+    NOREG_ON_BEHALF?: boolean
+    CREATED_BY?: boolean
+    CREATED_DT?: boolean
+    UPDATED_BY?: boolean
+    UPDATED_DT?: boolean
+  }, ExtArgs["result"]["tB_M_ON_BEHALF"]>
+
+
+  export type TB_M_ON_BEHALFSelectScalar = {
+    SYSTEM_ID?: boolean
+    SEQ?: boolean
+    NOREG?: boolean
+    NOREG_ON_BEHALF?: boolean
+    CREATED_BY?: boolean
+    CREATED_DT?: boolean
+    UPDATED_BY?: boolean
+    UPDATED_DT?: boolean
+  }
+
+
+  export type $TB_M_ON_BEHALFPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "TB_M_ON_BEHALF"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      SYSTEM_ID: string
+      SEQ: number
+      NOREG: string
+      NOREG_ON_BEHALF: string
+      CREATED_BY: string
+      CREATED_DT: Date
+      UPDATED_BY: string | null
+      UPDATED_DT: Date | null
+    }, ExtArgs["result"]["tB_M_ON_BEHALF"]>
+    composites: {}
+  }
+
+  type TB_M_ON_BEHALFGetPayload<S extends boolean | null | undefined | TB_M_ON_BEHALFDefaultArgs> = $Result.GetResult<Prisma.$TB_M_ON_BEHALFPayload, S>
+
+  type TB_M_ON_BEHALFCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<TB_M_ON_BEHALFFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: TB_M_ON_BEHALFCountAggregateInputType | true
+    }
+
+  export interface TB_M_ON_BEHALFDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TB_M_ON_BEHALF'], meta: { name: 'TB_M_ON_BEHALF' } }
+    /**
+     * Find zero or one TB_M_ON_BEHALF that matches the filter.
+     * @param {TB_M_ON_BEHALFFindUniqueArgs} args - Arguments to find a TB_M_ON_BEHALF
+     * @example
+     * // Get one TB_M_ON_BEHALF
+     * const tB_M_ON_BEHALF = await prisma.tB_M_ON_BEHALF.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends TB_M_ON_BEHALFFindUniqueArgs>(args: SelectSubset<T, TB_M_ON_BEHALFFindUniqueArgs<ExtArgs>>): Prisma__TB_M_ON_BEHALFClient<$Result.GetResult<Prisma.$TB_M_ON_BEHALFPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one TB_M_ON_BEHALF that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {TB_M_ON_BEHALFFindUniqueOrThrowArgs} args - Arguments to find a TB_M_ON_BEHALF
+     * @example
+     * // Get one TB_M_ON_BEHALF
+     * const tB_M_ON_BEHALF = await prisma.tB_M_ON_BEHALF.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends TB_M_ON_BEHALFFindUniqueOrThrowArgs>(args: SelectSubset<T, TB_M_ON_BEHALFFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TB_M_ON_BEHALFClient<$Result.GetResult<Prisma.$TB_M_ON_BEHALFPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first TB_M_ON_BEHALF that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_ON_BEHALFFindFirstArgs} args - Arguments to find a TB_M_ON_BEHALF
+     * @example
+     * // Get one TB_M_ON_BEHALF
+     * const tB_M_ON_BEHALF = await prisma.tB_M_ON_BEHALF.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends TB_M_ON_BEHALFFindFirstArgs>(args?: SelectSubset<T, TB_M_ON_BEHALFFindFirstArgs<ExtArgs>>): Prisma__TB_M_ON_BEHALFClient<$Result.GetResult<Prisma.$TB_M_ON_BEHALFPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first TB_M_ON_BEHALF that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_ON_BEHALFFindFirstOrThrowArgs} args - Arguments to find a TB_M_ON_BEHALF
+     * @example
+     * // Get one TB_M_ON_BEHALF
+     * const tB_M_ON_BEHALF = await prisma.tB_M_ON_BEHALF.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends TB_M_ON_BEHALFFindFirstOrThrowArgs>(args?: SelectSubset<T, TB_M_ON_BEHALFFindFirstOrThrowArgs<ExtArgs>>): Prisma__TB_M_ON_BEHALFClient<$Result.GetResult<Prisma.$TB_M_ON_BEHALFPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more TB_M_ON_BEHALVES that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_ON_BEHALFFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all TB_M_ON_BEHALVES
+     * const tB_M_ON_BEHALVES = await prisma.tB_M_ON_BEHALF.findMany()
+     * 
+     * // Get first 10 TB_M_ON_BEHALVES
+     * const tB_M_ON_BEHALVES = await prisma.tB_M_ON_BEHALF.findMany({ take: 10 })
+     * 
+     * // Only select the `SYSTEM_ID`
+     * const tB_M_ON_BEHALFWithSYSTEM_IDOnly = await prisma.tB_M_ON_BEHALF.findMany({ select: { SYSTEM_ID: true } })
+     * 
+     */
+    findMany<T extends TB_M_ON_BEHALFFindManyArgs>(args?: SelectSubset<T, TB_M_ON_BEHALFFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TB_M_ON_BEHALFPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a TB_M_ON_BEHALF.
+     * @param {TB_M_ON_BEHALFCreateArgs} args - Arguments to create a TB_M_ON_BEHALF.
+     * @example
+     * // Create one TB_M_ON_BEHALF
+     * const TB_M_ON_BEHALF = await prisma.tB_M_ON_BEHALF.create({
+     *   data: {
+     *     // ... data to create a TB_M_ON_BEHALF
+     *   }
+     * })
+     * 
+     */
+    create<T extends TB_M_ON_BEHALFCreateArgs>(args: SelectSubset<T, TB_M_ON_BEHALFCreateArgs<ExtArgs>>): Prisma__TB_M_ON_BEHALFClient<$Result.GetResult<Prisma.$TB_M_ON_BEHALFPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many TB_M_ON_BEHALVES.
+     * @param {TB_M_ON_BEHALFCreateManyArgs} args - Arguments to create many TB_M_ON_BEHALVES.
+     * @example
+     * // Create many TB_M_ON_BEHALVES
+     * const tB_M_ON_BEHALF = await prisma.tB_M_ON_BEHALF.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends TB_M_ON_BEHALFCreateManyArgs>(args?: SelectSubset<T, TB_M_ON_BEHALFCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a TB_M_ON_BEHALF.
+     * @param {TB_M_ON_BEHALFDeleteArgs} args - Arguments to delete one TB_M_ON_BEHALF.
+     * @example
+     * // Delete one TB_M_ON_BEHALF
+     * const TB_M_ON_BEHALF = await prisma.tB_M_ON_BEHALF.delete({
+     *   where: {
+     *     // ... filter to delete one TB_M_ON_BEHALF
+     *   }
+     * })
+     * 
+     */
+    delete<T extends TB_M_ON_BEHALFDeleteArgs>(args: SelectSubset<T, TB_M_ON_BEHALFDeleteArgs<ExtArgs>>): Prisma__TB_M_ON_BEHALFClient<$Result.GetResult<Prisma.$TB_M_ON_BEHALFPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one TB_M_ON_BEHALF.
+     * @param {TB_M_ON_BEHALFUpdateArgs} args - Arguments to update one TB_M_ON_BEHALF.
+     * @example
+     * // Update one TB_M_ON_BEHALF
+     * const tB_M_ON_BEHALF = await prisma.tB_M_ON_BEHALF.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends TB_M_ON_BEHALFUpdateArgs>(args: SelectSubset<T, TB_M_ON_BEHALFUpdateArgs<ExtArgs>>): Prisma__TB_M_ON_BEHALFClient<$Result.GetResult<Prisma.$TB_M_ON_BEHALFPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more TB_M_ON_BEHALVES.
+     * @param {TB_M_ON_BEHALFDeleteManyArgs} args - Arguments to filter TB_M_ON_BEHALVES to delete.
+     * @example
+     * // Delete a few TB_M_ON_BEHALVES
+     * const { count } = await prisma.tB_M_ON_BEHALF.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends TB_M_ON_BEHALFDeleteManyArgs>(args?: SelectSubset<T, TB_M_ON_BEHALFDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TB_M_ON_BEHALVES.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_ON_BEHALFUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many TB_M_ON_BEHALVES
+     * const tB_M_ON_BEHALF = await prisma.tB_M_ON_BEHALF.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends TB_M_ON_BEHALFUpdateManyArgs>(args: SelectSubset<T, TB_M_ON_BEHALFUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one TB_M_ON_BEHALF.
+     * @param {TB_M_ON_BEHALFUpsertArgs} args - Arguments to update or create a TB_M_ON_BEHALF.
+     * @example
+     * // Update or create a TB_M_ON_BEHALF
+     * const tB_M_ON_BEHALF = await prisma.tB_M_ON_BEHALF.upsert({
+     *   create: {
+     *     // ... data to create a TB_M_ON_BEHALF
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the TB_M_ON_BEHALF we want to update
+     *   }
+     * })
+     */
+    upsert<T extends TB_M_ON_BEHALFUpsertArgs>(args: SelectSubset<T, TB_M_ON_BEHALFUpsertArgs<ExtArgs>>): Prisma__TB_M_ON_BEHALFClient<$Result.GetResult<Prisma.$TB_M_ON_BEHALFPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of TB_M_ON_BEHALVES.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_ON_BEHALFCountArgs} args - Arguments to filter TB_M_ON_BEHALVES to count.
+     * @example
+     * // Count the number of TB_M_ON_BEHALVES
+     * const count = await prisma.tB_M_ON_BEHALF.count({
+     *   where: {
+     *     // ... the filter for the TB_M_ON_BEHALVES we want to count
+     *   }
+     * })
+    **/
+    count<T extends TB_M_ON_BEHALFCountArgs>(
+      args?: Subset<T, TB_M_ON_BEHALFCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TB_M_ON_BEHALFCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a TB_M_ON_BEHALF.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_ON_BEHALFAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TB_M_ON_BEHALFAggregateArgs>(args: Subset<T, TB_M_ON_BEHALFAggregateArgs>): Prisma.PrismaPromise<GetTB_M_ON_BEHALFAggregateType<T>>
+
+    /**
+     * Group by TB_M_ON_BEHALF.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_ON_BEHALFGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends TB_M_ON_BEHALFGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: TB_M_ON_BEHALFGroupByArgs['orderBy'] }
+        : { orderBy?: TB_M_ON_BEHALFGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, TB_M_ON_BEHALFGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTB_M_ON_BEHALFGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the TB_M_ON_BEHALF model
+   */
+  readonly fields: TB_M_ON_BEHALFFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for TB_M_ON_BEHALF.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__TB_M_ON_BEHALFClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the TB_M_ON_BEHALF model
+   */ 
+  interface TB_M_ON_BEHALFFieldRefs {
+    readonly SYSTEM_ID: FieldRef<"TB_M_ON_BEHALF", 'String'>
+    readonly SEQ: FieldRef<"TB_M_ON_BEHALF", 'Int'>
+    readonly NOREG: FieldRef<"TB_M_ON_BEHALF", 'String'>
+    readonly NOREG_ON_BEHALF: FieldRef<"TB_M_ON_BEHALF", 'String'>
+    readonly CREATED_BY: FieldRef<"TB_M_ON_BEHALF", 'String'>
+    readonly CREATED_DT: FieldRef<"TB_M_ON_BEHALF", 'DateTime'>
+    readonly UPDATED_BY: FieldRef<"TB_M_ON_BEHALF", 'String'>
+    readonly UPDATED_DT: FieldRef<"TB_M_ON_BEHALF", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * TB_M_ON_BEHALF findUnique
+   */
+  export type TB_M_ON_BEHALFFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_ON_BEHALF
+     */
+    select?: TB_M_ON_BEHALFSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_ON_BEHALF to fetch.
+     */
+    where: TB_M_ON_BEHALFWhereUniqueInput
+  }
+
+  /**
+   * TB_M_ON_BEHALF findUniqueOrThrow
+   */
+  export type TB_M_ON_BEHALFFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_ON_BEHALF
+     */
+    select?: TB_M_ON_BEHALFSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_ON_BEHALF to fetch.
+     */
+    where: TB_M_ON_BEHALFWhereUniqueInput
+  }
+
+  /**
+   * TB_M_ON_BEHALF findFirst
+   */
+  export type TB_M_ON_BEHALFFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_ON_BEHALF
+     */
+    select?: TB_M_ON_BEHALFSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_ON_BEHALF to fetch.
+     */
+    where?: TB_M_ON_BEHALFWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_ON_BEHALVES to fetch.
+     */
+    orderBy?: TB_M_ON_BEHALFOrderByWithRelationInput | TB_M_ON_BEHALFOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TB_M_ON_BEHALVES.
+     */
+    cursor?: TB_M_ON_BEHALFWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_ON_BEHALVES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_ON_BEHALVES.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TB_M_ON_BEHALVES.
+     */
+    distinct?: TB_M_ON_BEHALFScalarFieldEnum | TB_M_ON_BEHALFScalarFieldEnum[]
+  }
+
+  /**
+   * TB_M_ON_BEHALF findFirstOrThrow
+   */
+  export type TB_M_ON_BEHALFFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_ON_BEHALF
+     */
+    select?: TB_M_ON_BEHALFSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_ON_BEHALF to fetch.
+     */
+    where?: TB_M_ON_BEHALFWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_ON_BEHALVES to fetch.
+     */
+    orderBy?: TB_M_ON_BEHALFOrderByWithRelationInput | TB_M_ON_BEHALFOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TB_M_ON_BEHALVES.
+     */
+    cursor?: TB_M_ON_BEHALFWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_ON_BEHALVES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_ON_BEHALVES.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TB_M_ON_BEHALVES.
+     */
+    distinct?: TB_M_ON_BEHALFScalarFieldEnum | TB_M_ON_BEHALFScalarFieldEnum[]
+  }
+
+  /**
+   * TB_M_ON_BEHALF findMany
+   */
+  export type TB_M_ON_BEHALFFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_ON_BEHALF
+     */
+    select?: TB_M_ON_BEHALFSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_ON_BEHALVES to fetch.
+     */
+    where?: TB_M_ON_BEHALFWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_ON_BEHALVES to fetch.
+     */
+    orderBy?: TB_M_ON_BEHALFOrderByWithRelationInput | TB_M_ON_BEHALFOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing TB_M_ON_BEHALVES.
+     */
+    cursor?: TB_M_ON_BEHALFWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_ON_BEHALVES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_ON_BEHALVES.
+     */
+    skip?: number
+    distinct?: TB_M_ON_BEHALFScalarFieldEnum | TB_M_ON_BEHALFScalarFieldEnum[]
+  }
+
+  /**
+   * TB_M_ON_BEHALF create
+   */
+  export type TB_M_ON_BEHALFCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_ON_BEHALF
+     */
+    select?: TB_M_ON_BEHALFSelect<ExtArgs> | null
+    /**
+     * The data needed to create a TB_M_ON_BEHALF.
+     */
+    data: XOR<TB_M_ON_BEHALFCreateInput, TB_M_ON_BEHALFUncheckedCreateInput>
+  }
+
+  /**
+   * TB_M_ON_BEHALF createMany
+   */
+  export type TB_M_ON_BEHALFCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many TB_M_ON_BEHALVES.
+     */
+    data: TB_M_ON_BEHALFCreateManyInput | TB_M_ON_BEHALFCreateManyInput[]
+  }
+
+  /**
+   * TB_M_ON_BEHALF update
+   */
+  export type TB_M_ON_BEHALFUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_ON_BEHALF
+     */
+    select?: TB_M_ON_BEHALFSelect<ExtArgs> | null
+    /**
+     * The data needed to update a TB_M_ON_BEHALF.
+     */
+    data: XOR<TB_M_ON_BEHALFUpdateInput, TB_M_ON_BEHALFUncheckedUpdateInput>
+    /**
+     * Choose, which TB_M_ON_BEHALF to update.
+     */
+    where: TB_M_ON_BEHALFWhereUniqueInput
+  }
+
+  /**
+   * TB_M_ON_BEHALF updateMany
+   */
+  export type TB_M_ON_BEHALFUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update TB_M_ON_BEHALVES.
+     */
+    data: XOR<TB_M_ON_BEHALFUpdateManyMutationInput, TB_M_ON_BEHALFUncheckedUpdateManyInput>
+    /**
+     * Filter which TB_M_ON_BEHALVES to update
+     */
+    where?: TB_M_ON_BEHALFWhereInput
+  }
+
+  /**
+   * TB_M_ON_BEHALF upsert
+   */
+  export type TB_M_ON_BEHALFUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_ON_BEHALF
+     */
+    select?: TB_M_ON_BEHALFSelect<ExtArgs> | null
+    /**
+     * The filter to search for the TB_M_ON_BEHALF to update in case it exists.
+     */
+    where: TB_M_ON_BEHALFWhereUniqueInput
+    /**
+     * In case the TB_M_ON_BEHALF found by the `where` argument doesn't exist, create a new TB_M_ON_BEHALF with this data.
+     */
+    create: XOR<TB_M_ON_BEHALFCreateInput, TB_M_ON_BEHALFUncheckedCreateInput>
+    /**
+     * In case the TB_M_ON_BEHALF was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TB_M_ON_BEHALFUpdateInput, TB_M_ON_BEHALFUncheckedUpdateInput>
+  }
+
+  /**
+   * TB_M_ON_BEHALF delete
+   */
+  export type TB_M_ON_BEHALFDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_ON_BEHALF
+     */
+    select?: TB_M_ON_BEHALFSelect<ExtArgs> | null
+    /**
+     * Filter which TB_M_ON_BEHALF to delete.
+     */
+    where: TB_M_ON_BEHALFWhereUniqueInput
+  }
+
+  /**
+   * TB_M_ON_BEHALF deleteMany
+   */
+  export type TB_M_ON_BEHALFDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TB_M_ON_BEHALVES to delete
+     */
+    where?: TB_M_ON_BEHALFWhereInput
+  }
+
+  /**
+   * TB_M_ON_BEHALF without action
+   */
+  export type TB_M_ON_BEHALFDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_ON_BEHALF
+     */
+    select?: TB_M_ON_BEHALFSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model TB_M_PROFILE_MAIN
+   */
+
+  export type AggregateTB_M_PROFILE_MAIN = {
+    _count: TB_M_PROFILE_MAINCountAggregateOutputType | null
+    _avg: TB_M_PROFILE_MAINAvgAggregateOutputType | null
+    _sum: TB_M_PROFILE_MAINSumAggregateOutputType | null
+    _min: TB_M_PROFILE_MAINMinAggregateOutputType | null
+    _max: TB_M_PROFILE_MAINMaxAggregateOutputType | null
+  }
+
+  export type TB_M_PROFILE_MAINAvgAggregateOutputType = {
+    APPROVAL_STATUS: number | null
+  }
+
+  export type TB_M_PROFILE_MAINSumAggregateOutputType = {
+    APPROVAL_STATUS: number | null
+  }
+
+  export type TB_M_PROFILE_MAINMinAggregateOutputType = {
+    NOREG: string | null
+    TITLE: string | null
+    NAME: string | null
+    GENDER: string | null
+    DATE_OF_BIRTH: Date | null
+    PLACE_OF_BIRTH: string | null
+    COUNTRY_OF_BIRTH: string | null
+    PROVINCE_OF_BIRTH: string | null
+    NATIONALITY: string | null
+    BLOOD_TYPE: string | null
+    RELIGION: string | null
+    MARITAL_STATUS: string | null
+    MARITAL_DATE: Date | null
+    BPK_STATUS: string | null
+    VALID_FROM: Date | null
+    VALID_TO: Date | null
+    APPROVAL_STATUS: number | null
+    DATA_STATUS: string | null
+  }
+
+  export type TB_M_PROFILE_MAINMaxAggregateOutputType = {
+    NOREG: string | null
+    TITLE: string | null
+    NAME: string | null
+    GENDER: string | null
+    DATE_OF_BIRTH: Date | null
+    PLACE_OF_BIRTH: string | null
+    COUNTRY_OF_BIRTH: string | null
+    PROVINCE_OF_BIRTH: string | null
+    NATIONALITY: string | null
+    BLOOD_TYPE: string | null
+    RELIGION: string | null
+    MARITAL_STATUS: string | null
+    MARITAL_DATE: Date | null
+    BPK_STATUS: string | null
+    VALID_FROM: Date | null
+    VALID_TO: Date | null
+    APPROVAL_STATUS: number | null
+    DATA_STATUS: string | null
+  }
+
+  export type TB_M_PROFILE_MAINCountAggregateOutputType = {
+    NOREG: number
+    TITLE: number
+    NAME: number
+    GENDER: number
+    DATE_OF_BIRTH: number
+    PLACE_OF_BIRTH: number
+    COUNTRY_OF_BIRTH: number
+    PROVINCE_OF_BIRTH: number
+    NATIONALITY: number
+    BLOOD_TYPE: number
+    RELIGION: number
+    MARITAL_STATUS: number
+    MARITAL_DATE: number
+    BPK_STATUS: number
+    VALID_FROM: number
+    VALID_TO: number
+    APPROVAL_STATUS: number
+    DATA_STATUS: number
+    _all: number
+  }
+
+
+  export type TB_M_PROFILE_MAINAvgAggregateInputType = {
+    APPROVAL_STATUS?: true
+  }
+
+  export type TB_M_PROFILE_MAINSumAggregateInputType = {
+    APPROVAL_STATUS?: true
+  }
+
+  export type TB_M_PROFILE_MAINMinAggregateInputType = {
+    NOREG?: true
+    TITLE?: true
+    NAME?: true
+    GENDER?: true
+    DATE_OF_BIRTH?: true
+    PLACE_OF_BIRTH?: true
+    COUNTRY_OF_BIRTH?: true
+    PROVINCE_OF_BIRTH?: true
+    NATIONALITY?: true
+    BLOOD_TYPE?: true
+    RELIGION?: true
+    MARITAL_STATUS?: true
+    MARITAL_DATE?: true
+    BPK_STATUS?: true
+    VALID_FROM?: true
+    VALID_TO?: true
+    APPROVAL_STATUS?: true
+    DATA_STATUS?: true
+  }
+
+  export type TB_M_PROFILE_MAINMaxAggregateInputType = {
+    NOREG?: true
+    TITLE?: true
+    NAME?: true
+    GENDER?: true
+    DATE_OF_BIRTH?: true
+    PLACE_OF_BIRTH?: true
+    COUNTRY_OF_BIRTH?: true
+    PROVINCE_OF_BIRTH?: true
+    NATIONALITY?: true
+    BLOOD_TYPE?: true
+    RELIGION?: true
+    MARITAL_STATUS?: true
+    MARITAL_DATE?: true
+    BPK_STATUS?: true
+    VALID_FROM?: true
+    VALID_TO?: true
+    APPROVAL_STATUS?: true
+    DATA_STATUS?: true
+  }
+
+  export type TB_M_PROFILE_MAINCountAggregateInputType = {
+    NOREG?: true
+    TITLE?: true
+    NAME?: true
+    GENDER?: true
+    DATE_OF_BIRTH?: true
+    PLACE_OF_BIRTH?: true
+    COUNTRY_OF_BIRTH?: true
+    PROVINCE_OF_BIRTH?: true
+    NATIONALITY?: true
+    BLOOD_TYPE?: true
+    RELIGION?: true
+    MARITAL_STATUS?: true
+    MARITAL_DATE?: true
+    BPK_STATUS?: true
+    VALID_FROM?: true
+    VALID_TO?: true
+    APPROVAL_STATUS?: true
+    DATA_STATUS?: true
+    _all?: true
+  }
+
+  export type TB_M_PROFILE_MAINAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TB_M_PROFILE_MAIN to aggregate.
+     */
+    where?: TB_M_PROFILE_MAINWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_PROFILE_MAINS to fetch.
+     */
+    orderBy?: TB_M_PROFILE_MAINOrderByWithRelationInput | TB_M_PROFILE_MAINOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: TB_M_PROFILE_MAINWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_PROFILE_MAINS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_PROFILE_MAINS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned TB_M_PROFILE_MAINS
+    **/
+    _count?: true | TB_M_PROFILE_MAINCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: TB_M_PROFILE_MAINAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: TB_M_PROFILE_MAINSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TB_M_PROFILE_MAINMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TB_M_PROFILE_MAINMaxAggregateInputType
+  }
+
+  export type GetTB_M_PROFILE_MAINAggregateType<T extends TB_M_PROFILE_MAINAggregateArgs> = {
+        [P in keyof T & keyof AggregateTB_M_PROFILE_MAIN]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTB_M_PROFILE_MAIN[P]>
+      : GetScalarType<T[P], AggregateTB_M_PROFILE_MAIN[P]>
+  }
+
+
+
+
+  export type TB_M_PROFILE_MAINGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TB_M_PROFILE_MAINWhereInput
+    orderBy?: TB_M_PROFILE_MAINOrderByWithAggregationInput | TB_M_PROFILE_MAINOrderByWithAggregationInput[]
+    by: TB_M_PROFILE_MAINScalarFieldEnum[] | TB_M_PROFILE_MAINScalarFieldEnum
+    having?: TB_M_PROFILE_MAINScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TB_M_PROFILE_MAINCountAggregateInputType | true
+    _avg?: TB_M_PROFILE_MAINAvgAggregateInputType
+    _sum?: TB_M_PROFILE_MAINSumAggregateInputType
+    _min?: TB_M_PROFILE_MAINMinAggregateInputType
+    _max?: TB_M_PROFILE_MAINMaxAggregateInputType
+  }
+
+  export type TB_M_PROFILE_MAINGroupByOutputType = {
+    NOREG: string
+    TITLE: string
+    NAME: string
+    GENDER: string
+    DATE_OF_BIRTH: Date
+    PLACE_OF_BIRTH: string
+    COUNTRY_OF_BIRTH: string
+    PROVINCE_OF_BIRTH: string | null
+    NATIONALITY: string
+    BLOOD_TYPE: string | null
+    RELIGION: string
+    MARITAL_STATUS: string
+    MARITAL_DATE: Date | null
+    BPK_STATUS: string
+    VALID_FROM: Date
+    VALID_TO: Date
+    APPROVAL_STATUS: number
+    DATA_STATUS: string | null
+    _count: TB_M_PROFILE_MAINCountAggregateOutputType | null
+    _avg: TB_M_PROFILE_MAINAvgAggregateOutputType | null
+    _sum: TB_M_PROFILE_MAINSumAggregateOutputType | null
+    _min: TB_M_PROFILE_MAINMinAggregateOutputType | null
+    _max: TB_M_PROFILE_MAINMaxAggregateOutputType | null
+  }
+
+  type GetTB_M_PROFILE_MAINGroupByPayload<T extends TB_M_PROFILE_MAINGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TB_M_PROFILE_MAINGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TB_M_PROFILE_MAINGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TB_M_PROFILE_MAINGroupByOutputType[P]>
+            : GetScalarType<T[P], TB_M_PROFILE_MAINGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type TB_M_PROFILE_MAINSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    NOREG?: boolean
+    TITLE?: boolean
+    NAME?: boolean
+    GENDER?: boolean
+    DATE_OF_BIRTH?: boolean
+    PLACE_OF_BIRTH?: boolean
+    COUNTRY_OF_BIRTH?: boolean
+    PROVINCE_OF_BIRTH?: boolean
+    NATIONALITY?: boolean
+    BLOOD_TYPE?: boolean
+    RELIGION?: boolean
+    MARITAL_STATUS?: boolean
+    MARITAL_DATE?: boolean
+    BPK_STATUS?: boolean
+    VALID_FROM?: boolean
+    VALID_TO?: boolean
+    APPROVAL_STATUS?: boolean
+    DATA_STATUS?: boolean
+  }, ExtArgs["result"]["tB_M_PROFILE_MAIN"]>
+
+
+  export type TB_M_PROFILE_MAINSelectScalar = {
+    NOREG?: boolean
+    TITLE?: boolean
+    NAME?: boolean
+    GENDER?: boolean
+    DATE_OF_BIRTH?: boolean
+    PLACE_OF_BIRTH?: boolean
+    COUNTRY_OF_BIRTH?: boolean
+    PROVINCE_OF_BIRTH?: boolean
+    NATIONALITY?: boolean
+    BLOOD_TYPE?: boolean
+    RELIGION?: boolean
+    MARITAL_STATUS?: boolean
+    MARITAL_DATE?: boolean
+    BPK_STATUS?: boolean
+    VALID_FROM?: boolean
+    VALID_TO?: boolean
+    APPROVAL_STATUS?: boolean
+    DATA_STATUS?: boolean
+  }
+
+
+  export type $TB_M_PROFILE_MAINPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "TB_M_PROFILE_MAIN"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      NOREG: string
+      TITLE: string
+      NAME: string
+      GENDER: string
+      DATE_OF_BIRTH: Date
+      PLACE_OF_BIRTH: string
+      COUNTRY_OF_BIRTH: string
+      PROVINCE_OF_BIRTH: string | null
+      NATIONALITY: string
+      BLOOD_TYPE: string | null
+      RELIGION: string
+      MARITAL_STATUS: string
+      MARITAL_DATE: Date | null
+      BPK_STATUS: string
+      VALID_FROM: Date
+      VALID_TO: Date
+      APPROVAL_STATUS: number
+      DATA_STATUS: string | null
+    }, ExtArgs["result"]["tB_M_PROFILE_MAIN"]>
+    composites: {}
+  }
+
+  type TB_M_PROFILE_MAINGetPayload<S extends boolean | null | undefined | TB_M_PROFILE_MAINDefaultArgs> = $Result.GetResult<Prisma.$TB_M_PROFILE_MAINPayload, S>
+
+  type TB_M_PROFILE_MAINCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<TB_M_PROFILE_MAINFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: TB_M_PROFILE_MAINCountAggregateInputType | true
+    }
+
+  export interface TB_M_PROFILE_MAINDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TB_M_PROFILE_MAIN'], meta: { name: 'TB_M_PROFILE_MAIN' } }
+    /**
+     * Find zero or one TB_M_PROFILE_MAIN that matches the filter.
+     * @param {TB_M_PROFILE_MAINFindUniqueArgs} args - Arguments to find a TB_M_PROFILE_MAIN
+     * @example
+     * // Get one TB_M_PROFILE_MAIN
+     * const tB_M_PROFILE_MAIN = await prisma.tB_M_PROFILE_MAIN.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends TB_M_PROFILE_MAINFindUniqueArgs>(args: SelectSubset<T, TB_M_PROFILE_MAINFindUniqueArgs<ExtArgs>>): Prisma__TB_M_PROFILE_MAINClient<$Result.GetResult<Prisma.$TB_M_PROFILE_MAINPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one TB_M_PROFILE_MAIN that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {TB_M_PROFILE_MAINFindUniqueOrThrowArgs} args - Arguments to find a TB_M_PROFILE_MAIN
+     * @example
+     * // Get one TB_M_PROFILE_MAIN
+     * const tB_M_PROFILE_MAIN = await prisma.tB_M_PROFILE_MAIN.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends TB_M_PROFILE_MAINFindUniqueOrThrowArgs>(args: SelectSubset<T, TB_M_PROFILE_MAINFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TB_M_PROFILE_MAINClient<$Result.GetResult<Prisma.$TB_M_PROFILE_MAINPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first TB_M_PROFILE_MAIN that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_PROFILE_MAINFindFirstArgs} args - Arguments to find a TB_M_PROFILE_MAIN
+     * @example
+     * // Get one TB_M_PROFILE_MAIN
+     * const tB_M_PROFILE_MAIN = await prisma.tB_M_PROFILE_MAIN.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends TB_M_PROFILE_MAINFindFirstArgs>(args?: SelectSubset<T, TB_M_PROFILE_MAINFindFirstArgs<ExtArgs>>): Prisma__TB_M_PROFILE_MAINClient<$Result.GetResult<Prisma.$TB_M_PROFILE_MAINPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first TB_M_PROFILE_MAIN that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_PROFILE_MAINFindFirstOrThrowArgs} args - Arguments to find a TB_M_PROFILE_MAIN
+     * @example
+     * // Get one TB_M_PROFILE_MAIN
+     * const tB_M_PROFILE_MAIN = await prisma.tB_M_PROFILE_MAIN.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends TB_M_PROFILE_MAINFindFirstOrThrowArgs>(args?: SelectSubset<T, TB_M_PROFILE_MAINFindFirstOrThrowArgs<ExtArgs>>): Prisma__TB_M_PROFILE_MAINClient<$Result.GetResult<Prisma.$TB_M_PROFILE_MAINPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more TB_M_PROFILE_MAINS that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_PROFILE_MAINFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all TB_M_PROFILE_MAINS
+     * const tB_M_PROFILE_MAINS = await prisma.tB_M_PROFILE_MAIN.findMany()
+     * 
+     * // Get first 10 TB_M_PROFILE_MAINS
+     * const tB_M_PROFILE_MAINS = await prisma.tB_M_PROFILE_MAIN.findMany({ take: 10 })
+     * 
+     * // Only select the `NOREG`
+     * const tB_M_PROFILE_MAINWithNOREGOnly = await prisma.tB_M_PROFILE_MAIN.findMany({ select: { NOREG: true } })
+     * 
+     */
+    findMany<T extends TB_M_PROFILE_MAINFindManyArgs>(args?: SelectSubset<T, TB_M_PROFILE_MAINFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TB_M_PROFILE_MAINPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a TB_M_PROFILE_MAIN.
+     * @param {TB_M_PROFILE_MAINCreateArgs} args - Arguments to create a TB_M_PROFILE_MAIN.
+     * @example
+     * // Create one TB_M_PROFILE_MAIN
+     * const TB_M_PROFILE_MAIN = await prisma.tB_M_PROFILE_MAIN.create({
+     *   data: {
+     *     // ... data to create a TB_M_PROFILE_MAIN
+     *   }
+     * })
+     * 
+     */
+    create<T extends TB_M_PROFILE_MAINCreateArgs>(args: SelectSubset<T, TB_M_PROFILE_MAINCreateArgs<ExtArgs>>): Prisma__TB_M_PROFILE_MAINClient<$Result.GetResult<Prisma.$TB_M_PROFILE_MAINPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many TB_M_PROFILE_MAINS.
+     * @param {TB_M_PROFILE_MAINCreateManyArgs} args - Arguments to create many TB_M_PROFILE_MAINS.
+     * @example
+     * // Create many TB_M_PROFILE_MAINS
+     * const tB_M_PROFILE_MAIN = await prisma.tB_M_PROFILE_MAIN.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends TB_M_PROFILE_MAINCreateManyArgs>(args?: SelectSubset<T, TB_M_PROFILE_MAINCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a TB_M_PROFILE_MAIN.
+     * @param {TB_M_PROFILE_MAINDeleteArgs} args - Arguments to delete one TB_M_PROFILE_MAIN.
+     * @example
+     * // Delete one TB_M_PROFILE_MAIN
+     * const TB_M_PROFILE_MAIN = await prisma.tB_M_PROFILE_MAIN.delete({
+     *   where: {
+     *     // ... filter to delete one TB_M_PROFILE_MAIN
+     *   }
+     * })
+     * 
+     */
+    delete<T extends TB_M_PROFILE_MAINDeleteArgs>(args: SelectSubset<T, TB_M_PROFILE_MAINDeleteArgs<ExtArgs>>): Prisma__TB_M_PROFILE_MAINClient<$Result.GetResult<Prisma.$TB_M_PROFILE_MAINPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one TB_M_PROFILE_MAIN.
+     * @param {TB_M_PROFILE_MAINUpdateArgs} args - Arguments to update one TB_M_PROFILE_MAIN.
+     * @example
+     * // Update one TB_M_PROFILE_MAIN
+     * const tB_M_PROFILE_MAIN = await prisma.tB_M_PROFILE_MAIN.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends TB_M_PROFILE_MAINUpdateArgs>(args: SelectSubset<T, TB_M_PROFILE_MAINUpdateArgs<ExtArgs>>): Prisma__TB_M_PROFILE_MAINClient<$Result.GetResult<Prisma.$TB_M_PROFILE_MAINPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more TB_M_PROFILE_MAINS.
+     * @param {TB_M_PROFILE_MAINDeleteManyArgs} args - Arguments to filter TB_M_PROFILE_MAINS to delete.
+     * @example
+     * // Delete a few TB_M_PROFILE_MAINS
+     * const { count } = await prisma.tB_M_PROFILE_MAIN.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends TB_M_PROFILE_MAINDeleteManyArgs>(args?: SelectSubset<T, TB_M_PROFILE_MAINDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TB_M_PROFILE_MAINS.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_PROFILE_MAINUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many TB_M_PROFILE_MAINS
+     * const tB_M_PROFILE_MAIN = await prisma.tB_M_PROFILE_MAIN.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends TB_M_PROFILE_MAINUpdateManyArgs>(args: SelectSubset<T, TB_M_PROFILE_MAINUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one TB_M_PROFILE_MAIN.
+     * @param {TB_M_PROFILE_MAINUpsertArgs} args - Arguments to update or create a TB_M_PROFILE_MAIN.
+     * @example
+     * // Update or create a TB_M_PROFILE_MAIN
+     * const tB_M_PROFILE_MAIN = await prisma.tB_M_PROFILE_MAIN.upsert({
+     *   create: {
+     *     // ... data to create a TB_M_PROFILE_MAIN
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the TB_M_PROFILE_MAIN we want to update
+     *   }
+     * })
+     */
+    upsert<T extends TB_M_PROFILE_MAINUpsertArgs>(args: SelectSubset<T, TB_M_PROFILE_MAINUpsertArgs<ExtArgs>>): Prisma__TB_M_PROFILE_MAINClient<$Result.GetResult<Prisma.$TB_M_PROFILE_MAINPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of TB_M_PROFILE_MAINS.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_PROFILE_MAINCountArgs} args - Arguments to filter TB_M_PROFILE_MAINS to count.
+     * @example
+     * // Count the number of TB_M_PROFILE_MAINS
+     * const count = await prisma.tB_M_PROFILE_MAIN.count({
+     *   where: {
+     *     // ... the filter for the TB_M_PROFILE_MAINS we want to count
+     *   }
+     * })
+    **/
+    count<T extends TB_M_PROFILE_MAINCountArgs>(
+      args?: Subset<T, TB_M_PROFILE_MAINCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TB_M_PROFILE_MAINCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a TB_M_PROFILE_MAIN.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_PROFILE_MAINAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TB_M_PROFILE_MAINAggregateArgs>(args: Subset<T, TB_M_PROFILE_MAINAggregateArgs>): Prisma.PrismaPromise<GetTB_M_PROFILE_MAINAggregateType<T>>
+
+    /**
+     * Group by TB_M_PROFILE_MAIN.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TB_M_PROFILE_MAINGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends TB_M_PROFILE_MAINGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: TB_M_PROFILE_MAINGroupByArgs['orderBy'] }
+        : { orderBy?: TB_M_PROFILE_MAINGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, TB_M_PROFILE_MAINGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTB_M_PROFILE_MAINGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the TB_M_PROFILE_MAIN model
+   */
+  readonly fields: TB_M_PROFILE_MAINFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for TB_M_PROFILE_MAIN.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__TB_M_PROFILE_MAINClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the TB_M_PROFILE_MAIN model
+   */ 
+  interface TB_M_PROFILE_MAINFieldRefs {
+    readonly NOREG: FieldRef<"TB_M_PROFILE_MAIN", 'String'>
+    readonly TITLE: FieldRef<"TB_M_PROFILE_MAIN", 'String'>
+    readonly NAME: FieldRef<"TB_M_PROFILE_MAIN", 'String'>
+    readonly GENDER: FieldRef<"TB_M_PROFILE_MAIN", 'String'>
+    readonly DATE_OF_BIRTH: FieldRef<"TB_M_PROFILE_MAIN", 'DateTime'>
+    readonly PLACE_OF_BIRTH: FieldRef<"TB_M_PROFILE_MAIN", 'String'>
+    readonly COUNTRY_OF_BIRTH: FieldRef<"TB_M_PROFILE_MAIN", 'String'>
+    readonly PROVINCE_OF_BIRTH: FieldRef<"TB_M_PROFILE_MAIN", 'String'>
+    readonly NATIONALITY: FieldRef<"TB_M_PROFILE_MAIN", 'String'>
+    readonly BLOOD_TYPE: FieldRef<"TB_M_PROFILE_MAIN", 'String'>
+    readonly RELIGION: FieldRef<"TB_M_PROFILE_MAIN", 'String'>
+    readonly MARITAL_STATUS: FieldRef<"TB_M_PROFILE_MAIN", 'String'>
+    readonly MARITAL_DATE: FieldRef<"TB_M_PROFILE_MAIN", 'DateTime'>
+    readonly BPK_STATUS: FieldRef<"TB_M_PROFILE_MAIN", 'String'>
+    readonly VALID_FROM: FieldRef<"TB_M_PROFILE_MAIN", 'DateTime'>
+    readonly VALID_TO: FieldRef<"TB_M_PROFILE_MAIN", 'DateTime'>
+    readonly APPROVAL_STATUS: FieldRef<"TB_M_PROFILE_MAIN", 'Int'>
+    readonly DATA_STATUS: FieldRef<"TB_M_PROFILE_MAIN", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * TB_M_PROFILE_MAIN findUnique
+   */
+  export type TB_M_PROFILE_MAINFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_PROFILE_MAIN
+     */
+    select?: TB_M_PROFILE_MAINSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_PROFILE_MAIN to fetch.
+     */
+    where: TB_M_PROFILE_MAINWhereUniqueInput
+  }
+
+  /**
+   * TB_M_PROFILE_MAIN findUniqueOrThrow
+   */
+  export type TB_M_PROFILE_MAINFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_PROFILE_MAIN
+     */
+    select?: TB_M_PROFILE_MAINSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_PROFILE_MAIN to fetch.
+     */
+    where: TB_M_PROFILE_MAINWhereUniqueInput
+  }
+
+  /**
+   * TB_M_PROFILE_MAIN findFirst
+   */
+  export type TB_M_PROFILE_MAINFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_PROFILE_MAIN
+     */
+    select?: TB_M_PROFILE_MAINSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_PROFILE_MAIN to fetch.
+     */
+    where?: TB_M_PROFILE_MAINWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_PROFILE_MAINS to fetch.
+     */
+    orderBy?: TB_M_PROFILE_MAINOrderByWithRelationInput | TB_M_PROFILE_MAINOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TB_M_PROFILE_MAINS.
+     */
+    cursor?: TB_M_PROFILE_MAINWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_PROFILE_MAINS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_PROFILE_MAINS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TB_M_PROFILE_MAINS.
+     */
+    distinct?: TB_M_PROFILE_MAINScalarFieldEnum | TB_M_PROFILE_MAINScalarFieldEnum[]
+  }
+
+  /**
+   * TB_M_PROFILE_MAIN findFirstOrThrow
+   */
+  export type TB_M_PROFILE_MAINFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_PROFILE_MAIN
+     */
+    select?: TB_M_PROFILE_MAINSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_PROFILE_MAIN to fetch.
+     */
+    where?: TB_M_PROFILE_MAINWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_PROFILE_MAINS to fetch.
+     */
+    orderBy?: TB_M_PROFILE_MAINOrderByWithRelationInput | TB_M_PROFILE_MAINOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TB_M_PROFILE_MAINS.
+     */
+    cursor?: TB_M_PROFILE_MAINWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_PROFILE_MAINS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_PROFILE_MAINS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TB_M_PROFILE_MAINS.
+     */
+    distinct?: TB_M_PROFILE_MAINScalarFieldEnum | TB_M_PROFILE_MAINScalarFieldEnum[]
+  }
+
+  /**
+   * TB_M_PROFILE_MAIN findMany
+   */
+  export type TB_M_PROFILE_MAINFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_PROFILE_MAIN
+     */
+    select?: TB_M_PROFILE_MAINSelect<ExtArgs> | null
+    /**
+     * Filter, which TB_M_PROFILE_MAINS to fetch.
+     */
+    where?: TB_M_PROFILE_MAINWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TB_M_PROFILE_MAINS to fetch.
+     */
+    orderBy?: TB_M_PROFILE_MAINOrderByWithRelationInput | TB_M_PROFILE_MAINOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing TB_M_PROFILE_MAINS.
+     */
+    cursor?: TB_M_PROFILE_MAINWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TB_M_PROFILE_MAINS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TB_M_PROFILE_MAINS.
+     */
+    skip?: number
+    distinct?: TB_M_PROFILE_MAINScalarFieldEnum | TB_M_PROFILE_MAINScalarFieldEnum[]
+  }
+
+  /**
+   * TB_M_PROFILE_MAIN create
+   */
+  export type TB_M_PROFILE_MAINCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_PROFILE_MAIN
+     */
+    select?: TB_M_PROFILE_MAINSelect<ExtArgs> | null
+    /**
+     * The data needed to create a TB_M_PROFILE_MAIN.
+     */
+    data: XOR<TB_M_PROFILE_MAINCreateInput, TB_M_PROFILE_MAINUncheckedCreateInput>
+  }
+
+  /**
+   * TB_M_PROFILE_MAIN createMany
+   */
+  export type TB_M_PROFILE_MAINCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many TB_M_PROFILE_MAINS.
+     */
+    data: TB_M_PROFILE_MAINCreateManyInput | TB_M_PROFILE_MAINCreateManyInput[]
+  }
+
+  /**
+   * TB_M_PROFILE_MAIN update
+   */
+  export type TB_M_PROFILE_MAINUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_PROFILE_MAIN
+     */
+    select?: TB_M_PROFILE_MAINSelect<ExtArgs> | null
+    /**
+     * The data needed to update a TB_M_PROFILE_MAIN.
+     */
+    data: XOR<TB_M_PROFILE_MAINUpdateInput, TB_M_PROFILE_MAINUncheckedUpdateInput>
+    /**
+     * Choose, which TB_M_PROFILE_MAIN to update.
+     */
+    where: TB_M_PROFILE_MAINWhereUniqueInput
+  }
+
+  /**
+   * TB_M_PROFILE_MAIN updateMany
+   */
+  export type TB_M_PROFILE_MAINUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update TB_M_PROFILE_MAINS.
+     */
+    data: XOR<TB_M_PROFILE_MAINUpdateManyMutationInput, TB_M_PROFILE_MAINUncheckedUpdateManyInput>
+    /**
+     * Filter which TB_M_PROFILE_MAINS to update
+     */
+    where?: TB_M_PROFILE_MAINWhereInput
+  }
+
+  /**
+   * TB_M_PROFILE_MAIN upsert
+   */
+  export type TB_M_PROFILE_MAINUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_PROFILE_MAIN
+     */
+    select?: TB_M_PROFILE_MAINSelect<ExtArgs> | null
+    /**
+     * The filter to search for the TB_M_PROFILE_MAIN to update in case it exists.
+     */
+    where: TB_M_PROFILE_MAINWhereUniqueInput
+    /**
+     * In case the TB_M_PROFILE_MAIN found by the `where` argument doesn't exist, create a new TB_M_PROFILE_MAIN with this data.
+     */
+    create: XOR<TB_M_PROFILE_MAINCreateInput, TB_M_PROFILE_MAINUncheckedCreateInput>
+    /**
+     * In case the TB_M_PROFILE_MAIN was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TB_M_PROFILE_MAINUpdateInput, TB_M_PROFILE_MAINUncheckedUpdateInput>
+  }
+
+  /**
+   * TB_M_PROFILE_MAIN delete
+   */
+  export type TB_M_PROFILE_MAINDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_PROFILE_MAIN
+     */
+    select?: TB_M_PROFILE_MAINSelect<ExtArgs> | null
+    /**
+     * Filter which TB_M_PROFILE_MAIN to delete.
+     */
+    where: TB_M_PROFILE_MAINWhereUniqueInput
+  }
+
+  /**
+   * TB_M_PROFILE_MAIN deleteMany
+   */
+  export type TB_M_PROFILE_MAINDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TB_M_PROFILE_MAINS to delete
+     */
+    where?: TB_M_PROFILE_MAINWhereInput
+  }
+
+  /**
+   * TB_M_PROFILE_MAIN without action
+   */
+  export type TB_M_PROFILE_MAINDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TB_M_PROFILE_MAIN
+     */
+    select?: TB_M_PROFILE_MAINSelect<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -21025,17 +24032,6 @@ export namespace Prisma {
   };
 
   export type TB_R_POAScalarFieldEnum = (typeof TB_R_POAScalarFieldEnum)[keyof typeof TB_R_POAScalarFieldEnum]
-
-
-  export const SysdiagramsScalarFieldEnum: {
-    name: 'name',
-    principal_id: 'principal_id',
-    diagram_id: 'diagram_id',
-    version: 'version',
-    definition: 'definition'
-  };
-
-  export type SysdiagramsScalarFieldEnum = (typeof SysdiagramsScalarFieldEnum)[keyof typeof SysdiagramsScalarFieldEnum]
 
 
   export const TB_M_APPLICATIONScalarFieldEnum: {
@@ -21320,6 +24316,72 @@ export namespace Prisma {
   export type TB_T_COUNTERScalarFieldEnum = (typeof TB_T_COUNTERScalarFieldEnum)[keyof typeof TB_T_COUNTERScalarFieldEnum]
 
 
+  export const TB_M_EMP_POA_LEVELScalarFieldEnum: {
+    SYSTEM_ID: 'SYSTEM_ID',
+    LEVEL_SEQ: 'LEVEL_SEQ',
+    GRANTOR_LEVEL_ID: 'GRANTOR_LEVEL_ID',
+    ATTORNEY_LEVEL_ID: 'ATTORNEY_LEVEL_ID',
+    CREATED_BY: 'CREATED_BY',
+    CREATED_DT: 'CREATED_DT',
+    UPDATED_BY: 'UPDATED_BY',
+    UPDATED_DT: 'UPDATED_DT'
+  };
+
+  export type TB_M_EMP_POA_LEVELScalarFieldEnum = (typeof TB_M_EMP_POA_LEVELScalarFieldEnum)[keyof typeof TB_M_EMP_POA_LEVELScalarFieldEnum]
+
+
+  export const TB_M_EMP_POSITIONScalarFieldEnum: {
+    POSITION_LEVEL: 'POSITION_LEVEL',
+    POSITION_ABBR: 'POSITION_ABBR',
+    POSITION_DESC: 'POSITION_DESC',
+    LEVEL_ID: 'LEVEL_ID',
+    CREATED_BY: 'CREATED_BY',
+    CREATED_DT: 'CREATED_DT',
+    UPDATED_BY: 'UPDATED_BY',
+    UPDATED_DT: 'UPDATED_DT'
+  };
+
+  export type TB_M_EMP_POSITIONScalarFieldEnum = (typeof TB_M_EMP_POSITIONScalarFieldEnum)[keyof typeof TB_M_EMP_POSITIONScalarFieldEnum]
+
+
+  export const TB_M_ON_BEHALFScalarFieldEnum: {
+    SYSTEM_ID: 'SYSTEM_ID',
+    SEQ: 'SEQ',
+    NOREG: 'NOREG',
+    NOREG_ON_BEHALF: 'NOREG_ON_BEHALF',
+    CREATED_BY: 'CREATED_BY',
+    CREATED_DT: 'CREATED_DT',
+    UPDATED_BY: 'UPDATED_BY',
+    UPDATED_DT: 'UPDATED_DT'
+  };
+
+  export type TB_M_ON_BEHALFScalarFieldEnum = (typeof TB_M_ON_BEHALFScalarFieldEnum)[keyof typeof TB_M_ON_BEHALFScalarFieldEnum]
+
+
+  export const TB_M_PROFILE_MAINScalarFieldEnum: {
+    NOREG: 'NOREG',
+    TITLE: 'TITLE',
+    NAME: 'NAME',
+    GENDER: 'GENDER',
+    DATE_OF_BIRTH: 'DATE_OF_BIRTH',
+    PLACE_OF_BIRTH: 'PLACE_OF_BIRTH',
+    COUNTRY_OF_BIRTH: 'COUNTRY_OF_BIRTH',
+    PROVINCE_OF_BIRTH: 'PROVINCE_OF_BIRTH',
+    NATIONALITY: 'NATIONALITY',
+    BLOOD_TYPE: 'BLOOD_TYPE',
+    RELIGION: 'RELIGION',
+    MARITAL_STATUS: 'MARITAL_STATUS',
+    MARITAL_DATE: 'MARITAL_DATE',
+    BPK_STATUS: 'BPK_STATUS',
+    VALID_FROM: 'VALID_FROM',
+    VALID_TO: 'VALID_TO',
+    APPROVAL_STATUS: 'APPROVAL_STATUS',
+    DATA_STATUS: 'DATA_STATUS'
+  };
+
+  export type TB_M_PROFILE_MAINScalarFieldEnum = (typeof TB_M_PROFILE_MAINScalarFieldEnum)[keyof typeof TB_M_PROFILE_MAINScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -21359,13 +24421,6 @@ export namespace Prisma {
    * Reference to a field of type 'Int'
    */
   export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
-    
-
-
-  /**
-   * Reference to a field of type 'Bytes'
-   */
-  export type BytesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Bytes'>
     
 
 
@@ -21476,61 +24531,6 @@ export namespace Prisma {
     UPDATED_BY?: StringNullableWithAggregatesFilter<"TB_R_POA"> | string | null
   }
 
-  export type sysdiagramsWhereInput = {
-    AND?: sysdiagramsWhereInput | sysdiagramsWhereInput[]
-    OR?: sysdiagramsWhereInput[]
-    NOT?: sysdiagramsWhereInput | sysdiagramsWhereInput[]
-    name?: StringFilter<"sysdiagrams"> | string
-    principal_id?: IntFilter<"sysdiagrams"> | number
-    diagram_id?: IntFilter<"sysdiagrams"> | number
-    version?: IntNullableFilter<"sysdiagrams"> | number | null
-    definition?: BytesNullableFilter<"sysdiagrams"> | Uint8Array | null
-  }
-
-  export type sysdiagramsOrderByWithRelationInput = {
-    name?: SortOrder
-    principal_id?: SortOrder
-    diagram_id?: SortOrder
-    version?: SortOrderInput | SortOrder
-    definition?: SortOrderInput | SortOrder
-  }
-
-  export type sysdiagramsWhereUniqueInput = Prisma.AtLeast<{
-    diagram_id?: number
-    principal_id_name?: sysdiagramsPrincipal_idNameCompoundUniqueInput
-    AND?: sysdiagramsWhereInput | sysdiagramsWhereInput[]
-    OR?: sysdiagramsWhereInput[]
-    NOT?: sysdiagramsWhereInput | sysdiagramsWhereInput[]
-    name?: StringFilter<"sysdiagrams"> | string
-    principal_id?: IntFilter<"sysdiagrams"> | number
-    version?: IntNullableFilter<"sysdiagrams"> | number | null
-    definition?: BytesNullableFilter<"sysdiagrams"> | Uint8Array | null
-  }, "diagram_id" | "principal_id_name">
-
-  export type sysdiagramsOrderByWithAggregationInput = {
-    name?: SortOrder
-    principal_id?: SortOrder
-    diagram_id?: SortOrder
-    version?: SortOrderInput | SortOrder
-    definition?: SortOrderInput | SortOrder
-    _count?: sysdiagramsCountOrderByAggregateInput
-    _avg?: sysdiagramsAvgOrderByAggregateInput
-    _max?: sysdiagramsMaxOrderByAggregateInput
-    _min?: sysdiagramsMinOrderByAggregateInput
-    _sum?: sysdiagramsSumOrderByAggregateInput
-  }
-
-  export type sysdiagramsScalarWhereWithAggregatesInput = {
-    AND?: sysdiagramsScalarWhereWithAggregatesInput | sysdiagramsScalarWhereWithAggregatesInput[]
-    OR?: sysdiagramsScalarWhereWithAggregatesInput[]
-    NOT?: sysdiagramsScalarWhereWithAggregatesInput | sysdiagramsScalarWhereWithAggregatesInput[]
-    name?: StringWithAggregatesFilter<"sysdiagrams"> | string
-    principal_id?: IntWithAggregatesFilter<"sysdiagrams"> | number
-    diagram_id?: IntWithAggregatesFilter<"sysdiagrams"> | number
-    version?: IntNullableWithAggregatesFilter<"sysdiagrams"> | number | null
-    definition?: BytesNullableWithAggregatesFilter<"sysdiagrams"> | Uint8Array | null
-  }
-
   export type TB_M_APPLICATIONWhereInput = {
     AND?: TB_M_APPLICATIONWhereInput | TB_M_APPLICATIONWhereInput[]
     OR?: TB_M_APPLICATIONWhereInput[]
@@ -21546,7 +24546,6 @@ export namespace Prisma {
     CHANGED_DATE?: DateTimeNullableFilter<"TB_M_APPLICATION"> | Date | string | null
     FA_ICON?: StringNullableFilter<"TB_M_APPLICATION"> | string | null
     TB_M_FEATURE?: TB_M_FEATUREListRelationFilter
-    TB_M_FUNCTION?: TB_M_FUNCTIONListRelationFilter
     TB_M_ROLE?: TB_M_ROLEListRelationFilter
     TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONListRelationFilter
   }
@@ -21563,7 +24562,6 @@ export namespace Prisma {
     CHANGED_DATE?: SortOrderInput | SortOrder
     FA_ICON?: SortOrderInput | SortOrder
     TB_M_FEATURE?: TB_M_FEATUREOrderByRelationAggregateInput
-    TB_M_FUNCTION?: TB_M_FUNCTIONOrderByRelationAggregateInput
     TB_M_ROLE?: TB_M_ROLEOrderByRelationAggregateInput
     TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONOrderByRelationAggregateInput
   }
@@ -21583,7 +24581,6 @@ export namespace Prisma {
     CHANGED_DATE?: DateTimeNullableFilter<"TB_M_APPLICATION"> | Date | string | null
     FA_ICON?: StringNullableFilter<"TB_M_APPLICATION"> | string | null
     TB_M_FEATURE?: TB_M_FEATUREListRelationFilter
-    TB_M_FUNCTION?: TB_M_FUNCTIONListRelationFilter
     TB_M_ROLE?: TB_M_ROLEListRelationFilter
     TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONListRelationFilter
   }, "ID">
@@ -21917,7 +24914,6 @@ export namespace Prisma {
     CREATED_DATE?: DateTimeFilter<"TB_M_FUNCTION"> | Date | string
     CHANGED_BY?: StringNullableFilter<"TB_M_FUNCTION"> | string | null
     CHANGED_DATE?: DateTimeNullableFilter<"TB_M_FUNCTION"> | Date | string | null
-    TB_M_APPLICATION?: XOR<TB_M_APPLICATIONScalarRelationFilter, TB_M_APPLICATIONWhereInput>
   }
 
   export type TB_M_FUNCTIONOrderByWithRelationInput = {
@@ -21929,7 +24925,6 @@ export namespace Prisma {
     CREATED_DATE?: SortOrder
     CHANGED_BY?: SortOrderInput | SortOrder
     CHANGED_DATE?: SortOrderInput | SortOrder
-    TB_M_APPLICATION?: TB_M_APPLICATIONOrderByWithRelationInput
   }
 
   export type TB_M_FUNCTIONWhereUniqueInput = Prisma.AtLeast<{
@@ -21945,7 +24940,6 @@ export namespace Prisma {
     CREATED_DATE?: DateTimeFilter<"TB_M_FUNCTION"> | Date | string
     CHANGED_BY?: StringNullableFilter<"TB_M_FUNCTION"> | string | null
     CHANGED_DATE?: DateTimeNullableFilter<"TB_M_FUNCTION"> | Date | string | null
-    TB_M_APPLICATION?: XOR<TB_M_APPLICATIONScalarRelationFilter, TB_M_APPLICATIONWhereInput>
   }, "ID_APPLICATION">
 
   export type TB_M_FUNCTIONOrderByWithAggregationInput = {
@@ -22951,6 +25945,335 @@ export namespace Prisma {
     ACCESS_DATE?: DateTimeWithAggregatesFilter<"TB_T_COUNTER"> | Date | string
   }
 
+  export type TB_M_EMP_POA_LEVELWhereInput = {
+    AND?: TB_M_EMP_POA_LEVELWhereInput | TB_M_EMP_POA_LEVELWhereInput[]
+    OR?: TB_M_EMP_POA_LEVELWhereInput[]
+    NOT?: TB_M_EMP_POA_LEVELWhereInput | TB_M_EMP_POA_LEVELWhereInput[]
+    SYSTEM_ID?: StringFilter<"TB_M_EMP_POA_LEVEL"> | string
+    LEVEL_SEQ?: IntFilter<"TB_M_EMP_POA_LEVEL"> | number
+    GRANTOR_LEVEL_ID?: IntFilter<"TB_M_EMP_POA_LEVEL"> | number
+    ATTORNEY_LEVEL_ID?: IntFilter<"TB_M_EMP_POA_LEVEL"> | number
+    CREATED_BY?: StringFilter<"TB_M_EMP_POA_LEVEL"> | string
+    CREATED_DT?: DateTimeFilter<"TB_M_EMP_POA_LEVEL"> | Date | string
+    UPDATED_BY?: StringNullableFilter<"TB_M_EMP_POA_LEVEL"> | string | null
+    UPDATED_DT?: DateTimeNullableFilter<"TB_M_EMP_POA_LEVEL"> | Date | string | null
+  }
+
+  export type TB_M_EMP_POA_LEVELOrderByWithRelationInput = {
+    SYSTEM_ID?: SortOrder
+    LEVEL_SEQ?: SortOrder
+    GRANTOR_LEVEL_ID?: SortOrder
+    ATTORNEY_LEVEL_ID?: SortOrder
+    CREATED_BY?: SortOrder
+    CREATED_DT?: SortOrder
+    UPDATED_BY?: SortOrderInput | SortOrder
+    UPDATED_DT?: SortOrderInput | SortOrder
+  }
+
+  export type TB_M_EMP_POA_LEVELWhereUniqueInput = Prisma.AtLeast<{
+    SYSTEM_ID_LEVEL_SEQ?: TB_M_EMP_POA_LEVELSYSTEM_IDLEVEL_SEQCompoundUniqueInput
+    AND?: TB_M_EMP_POA_LEVELWhereInput | TB_M_EMP_POA_LEVELWhereInput[]
+    OR?: TB_M_EMP_POA_LEVELWhereInput[]
+    NOT?: TB_M_EMP_POA_LEVELWhereInput | TB_M_EMP_POA_LEVELWhereInput[]
+    SYSTEM_ID?: StringFilter<"TB_M_EMP_POA_LEVEL"> | string
+    LEVEL_SEQ?: IntFilter<"TB_M_EMP_POA_LEVEL"> | number
+    GRANTOR_LEVEL_ID?: IntFilter<"TB_M_EMP_POA_LEVEL"> | number
+    ATTORNEY_LEVEL_ID?: IntFilter<"TB_M_EMP_POA_LEVEL"> | number
+    CREATED_BY?: StringFilter<"TB_M_EMP_POA_LEVEL"> | string
+    CREATED_DT?: DateTimeFilter<"TB_M_EMP_POA_LEVEL"> | Date | string
+    UPDATED_BY?: StringNullableFilter<"TB_M_EMP_POA_LEVEL"> | string | null
+    UPDATED_DT?: DateTimeNullableFilter<"TB_M_EMP_POA_LEVEL"> | Date | string | null
+  }, "SYSTEM_ID_LEVEL_SEQ">
+
+  export type TB_M_EMP_POA_LEVELOrderByWithAggregationInput = {
+    SYSTEM_ID?: SortOrder
+    LEVEL_SEQ?: SortOrder
+    GRANTOR_LEVEL_ID?: SortOrder
+    ATTORNEY_LEVEL_ID?: SortOrder
+    CREATED_BY?: SortOrder
+    CREATED_DT?: SortOrder
+    UPDATED_BY?: SortOrderInput | SortOrder
+    UPDATED_DT?: SortOrderInput | SortOrder
+    _count?: TB_M_EMP_POA_LEVELCountOrderByAggregateInput
+    _avg?: TB_M_EMP_POA_LEVELAvgOrderByAggregateInput
+    _max?: TB_M_EMP_POA_LEVELMaxOrderByAggregateInput
+    _min?: TB_M_EMP_POA_LEVELMinOrderByAggregateInput
+    _sum?: TB_M_EMP_POA_LEVELSumOrderByAggregateInput
+  }
+
+  export type TB_M_EMP_POA_LEVELScalarWhereWithAggregatesInput = {
+    AND?: TB_M_EMP_POA_LEVELScalarWhereWithAggregatesInput | TB_M_EMP_POA_LEVELScalarWhereWithAggregatesInput[]
+    OR?: TB_M_EMP_POA_LEVELScalarWhereWithAggregatesInput[]
+    NOT?: TB_M_EMP_POA_LEVELScalarWhereWithAggregatesInput | TB_M_EMP_POA_LEVELScalarWhereWithAggregatesInput[]
+    SYSTEM_ID?: StringWithAggregatesFilter<"TB_M_EMP_POA_LEVEL"> | string
+    LEVEL_SEQ?: IntWithAggregatesFilter<"TB_M_EMP_POA_LEVEL"> | number
+    GRANTOR_LEVEL_ID?: IntWithAggregatesFilter<"TB_M_EMP_POA_LEVEL"> | number
+    ATTORNEY_LEVEL_ID?: IntWithAggregatesFilter<"TB_M_EMP_POA_LEVEL"> | number
+    CREATED_BY?: StringWithAggregatesFilter<"TB_M_EMP_POA_LEVEL"> | string
+    CREATED_DT?: DateTimeWithAggregatesFilter<"TB_M_EMP_POA_LEVEL"> | Date | string
+    UPDATED_BY?: StringNullableWithAggregatesFilter<"TB_M_EMP_POA_LEVEL"> | string | null
+    UPDATED_DT?: DateTimeNullableWithAggregatesFilter<"TB_M_EMP_POA_LEVEL"> | Date | string | null
+  }
+
+  export type TB_M_EMP_POSITIONWhereInput = {
+    AND?: TB_M_EMP_POSITIONWhereInput | TB_M_EMP_POSITIONWhereInput[]
+    OR?: TB_M_EMP_POSITIONWhereInput[]
+    NOT?: TB_M_EMP_POSITIONWhereInput | TB_M_EMP_POSITIONWhereInput[]
+    POSITION_LEVEL?: IntFilter<"TB_M_EMP_POSITION"> | number
+    POSITION_ABBR?: StringFilter<"TB_M_EMP_POSITION"> | string
+    POSITION_DESC?: StringNullableFilter<"TB_M_EMP_POSITION"> | string | null
+    LEVEL_ID?: IntNullableFilter<"TB_M_EMP_POSITION"> | number | null
+    CREATED_BY?: StringFilter<"TB_M_EMP_POSITION"> | string
+    CREATED_DT?: DateTimeFilter<"TB_M_EMP_POSITION"> | Date | string
+    UPDATED_BY?: StringNullableFilter<"TB_M_EMP_POSITION"> | string | null
+    UPDATED_DT?: DateTimeNullableFilter<"TB_M_EMP_POSITION"> | Date | string | null
+  }
+
+  export type TB_M_EMP_POSITIONOrderByWithRelationInput = {
+    POSITION_LEVEL?: SortOrder
+    POSITION_ABBR?: SortOrder
+    POSITION_DESC?: SortOrderInput | SortOrder
+    LEVEL_ID?: SortOrderInput | SortOrder
+    CREATED_BY?: SortOrder
+    CREATED_DT?: SortOrder
+    UPDATED_BY?: SortOrderInput | SortOrder
+    UPDATED_DT?: SortOrderInput | SortOrder
+  }
+
+  export type TB_M_EMP_POSITIONWhereUniqueInput = Prisma.AtLeast<{
+    POSITION_LEVEL?: number
+    AND?: TB_M_EMP_POSITIONWhereInput | TB_M_EMP_POSITIONWhereInput[]
+    OR?: TB_M_EMP_POSITIONWhereInput[]
+    NOT?: TB_M_EMP_POSITIONWhereInput | TB_M_EMP_POSITIONWhereInput[]
+    POSITION_ABBR?: StringFilter<"TB_M_EMP_POSITION"> | string
+    POSITION_DESC?: StringNullableFilter<"TB_M_EMP_POSITION"> | string | null
+    LEVEL_ID?: IntNullableFilter<"TB_M_EMP_POSITION"> | number | null
+    CREATED_BY?: StringFilter<"TB_M_EMP_POSITION"> | string
+    CREATED_DT?: DateTimeFilter<"TB_M_EMP_POSITION"> | Date | string
+    UPDATED_BY?: StringNullableFilter<"TB_M_EMP_POSITION"> | string | null
+    UPDATED_DT?: DateTimeNullableFilter<"TB_M_EMP_POSITION"> | Date | string | null
+  }, "POSITION_LEVEL">
+
+  export type TB_M_EMP_POSITIONOrderByWithAggregationInput = {
+    POSITION_LEVEL?: SortOrder
+    POSITION_ABBR?: SortOrder
+    POSITION_DESC?: SortOrderInput | SortOrder
+    LEVEL_ID?: SortOrderInput | SortOrder
+    CREATED_BY?: SortOrder
+    CREATED_DT?: SortOrder
+    UPDATED_BY?: SortOrderInput | SortOrder
+    UPDATED_DT?: SortOrderInput | SortOrder
+    _count?: TB_M_EMP_POSITIONCountOrderByAggregateInput
+    _avg?: TB_M_EMP_POSITIONAvgOrderByAggregateInput
+    _max?: TB_M_EMP_POSITIONMaxOrderByAggregateInput
+    _min?: TB_M_EMP_POSITIONMinOrderByAggregateInput
+    _sum?: TB_M_EMP_POSITIONSumOrderByAggregateInput
+  }
+
+  export type TB_M_EMP_POSITIONScalarWhereWithAggregatesInput = {
+    AND?: TB_M_EMP_POSITIONScalarWhereWithAggregatesInput | TB_M_EMP_POSITIONScalarWhereWithAggregatesInput[]
+    OR?: TB_M_EMP_POSITIONScalarWhereWithAggregatesInput[]
+    NOT?: TB_M_EMP_POSITIONScalarWhereWithAggregatesInput | TB_M_EMP_POSITIONScalarWhereWithAggregatesInput[]
+    POSITION_LEVEL?: IntWithAggregatesFilter<"TB_M_EMP_POSITION"> | number
+    POSITION_ABBR?: StringWithAggregatesFilter<"TB_M_EMP_POSITION"> | string
+    POSITION_DESC?: StringNullableWithAggregatesFilter<"TB_M_EMP_POSITION"> | string | null
+    LEVEL_ID?: IntNullableWithAggregatesFilter<"TB_M_EMP_POSITION"> | number | null
+    CREATED_BY?: StringWithAggregatesFilter<"TB_M_EMP_POSITION"> | string
+    CREATED_DT?: DateTimeWithAggregatesFilter<"TB_M_EMP_POSITION"> | Date | string
+    UPDATED_BY?: StringNullableWithAggregatesFilter<"TB_M_EMP_POSITION"> | string | null
+    UPDATED_DT?: DateTimeNullableWithAggregatesFilter<"TB_M_EMP_POSITION"> | Date | string | null
+  }
+
+  export type TB_M_ON_BEHALFWhereInput = {
+    AND?: TB_M_ON_BEHALFWhereInput | TB_M_ON_BEHALFWhereInput[]
+    OR?: TB_M_ON_BEHALFWhereInput[]
+    NOT?: TB_M_ON_BEHALFWhereInput | TB_M_ON_BEHALFWhereInput[]
+    SYSTEM_ID?: StringFilter<"TB_M_ON_BEHALF"> | string
+    SEQ?: IntFilter<"TB_M_ON_BEHALF"> | number
+    NOREG?: StringFilter<"TB_M_ON_BEHALF"> | string
+    NOREG_ON_BEHALF?: StringFilter<"TB_M_ON_BEHALF"> | string
+    CREATED_BY?: StringFilter<"TB_M_ON_BEHALF"> | string
+    CREATED_DT?: DateTimeFilter<"TB_M_ON_BEHALF"> | Date | string
+    UPDATED_BY?: StringNullableFilter<"TB_M_ON_BEHALF"> | string | null
+    UPDATED_DT?: DateTimeNullableFilter<"TB_M_ON_BEHALF"> | Date | string | null
+  }
+
+  export type TB_M_ON_BEHALFOrderByWithRelationInput = {
+    SYSTEM_ID?: SortOrder
+    SEQ?: SortOrder
+    NOREG?: SortOrder
+    NOREG_ON_BEHALF?: SortOrder
+    CREATED_BY?: SortOrder
+    CREATED_DT?: SortOrder
+    UPDATED_BY?: SortOrderInput | SortOrder
+    UPDATED_DT?: SortOrderInput | SortOrder
+  }
+
+  export type TB_M_ON_BEHALFWhereUniqueInput = Prisma.AtLeast<{
+    SYSTEM_ID_SEQ?: TB_M_ON_BEHALFSYSTEM_IDSEQCompoundUniqueInput
+    AND?: TB_M_ON_BEHALFWhereInput | TB_M_ON_BEHALFWhereInput[]
+    OR?: TB_M_ON_BEHALFWhereInput[]
+    NOT?: TB_M_ON_BEHALFWhereInput | TB_M_ON_BEHALFWhereInput[]
+    SYSTEM_ID?: StringFilter<"TB_M_ON_BEHALF"> | string
+    SEQ?: IntFilter<"TB_M_ON_BEHALF"> | number
+    NOREG?: StringFilter<"TB_M_ON_BEHALF"> | string
+    NOREG_ON_BEHALF?: StringFilter<"TB_M_ON_BEHALF"> | string
+    CREATED_BY?: StringFilter<"TB_M_ON_BEHALF"> | string
+    CREATED_DT?: DateTimeFilter<"TB_M_ON_BEHALF"> | Date | string
+    UPDATED_BY?: StringNullableFilter<"TB_M_ON_BEHALF"> | string | null
+    UPDATED_DT?: DateTimeNullableFilter<"TB_M_ON_BEHALF"> | Date | string | null
+  }, "SYSTEM_ID_SEQ">
+
+  export type TB_M_ON_BEHALFOrderByWithAggregationInput = {
+    SYSTEM_ID?: SortOrder
+    SEQ?: SortOrder
+    NOREG?: SortOrder
+    NOREG_ON_BEHALF?: SortOrder
+    CREATED_BY?: SortOrder
+    CREATED_DT?: SortOrder
+    UPDATED_BY?: SortOrderInput | SortOrder
+    UPDATED_DT?: SortOrderInput | SortOrder
+    _count?: TB_M_ON_BEHALFCountOrderByAggregateInput
+    _avg?: TB_M_ON_BEHALFAvgOrderByAggregateInput
+    _max?: TB_M_ON_BEHALFMaxOrderByAggregateInput
+    _min?: TB_M_ON_BEHALFMinOrderByAggregateInput
+    _sum?: TB_M_ON_BEHALFSumOrderByAggregateInput
+  }
+
+  export type TB_M_ON_BEHALFScalarWhereWithAggregatesInput = {
+    AND?: TB_M_ON_BEHALFScalarWhereWithAggregatesInput | TB_M_ON_BEHALFScalarWhereWithAggregatesInput[]
+    OR?: TB_M_ON_BEHALFScalarWhereWithAggregatesInput[]
+    NOT?: TB_M_ON_BEHALFScalarWhereWithAggregatesInput | TB_M_ON_BEHALFScalarWhereWithAggregatesInput[]
+    SYSTEM_ID?: StringWithAggregatesFilter<"TB_M_ON_BEHALF"> | string
+    SEQ?: IntWithAggregatesFilter<"TB_M_ON_BEHALF"> | number
+    NOREG?: StringWithAggregatesFilter<"TB_M_ON_BEHALF"> | string
+    NOREG_ON_BEHALF?: StringWithAggregatesFilter<"TB_M_ON_BEHALF"> | string
+    CREATED_BY?: StringWithAggregatesFilter<"TB_M_ON_BEHALF"> | string
+    CREATED_DT?: DateTimeWithAggregatesFilter<"TB_M_ON_BEHALF"> | Date | string
+    UPDATED_BY?: StringNullableWithAggregatesFilter<"TB_M_ON_BEHALF"> | string | null
+    UPDATED_DT?: DateTimeNullableWithAggregatesFilter<"TB_M_ON_BEHALF"> | Date | string | null
+  }
+
+  export type TB_M_PROFILE_MAINWhereInput = {
+    AND?: TB_M_PROFILE_MAINWhereInput | TB_M_PROFILE_MAINWhereInput[]
+    OR?: TB_M_PROFILE_MAINWhereInput[]
+    NOT?: TB_M_PROFILE_MAINWhereInput | TB_M_PROFILE_MAINWhereInput[]
+    NOREG?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    TITLE?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    NAME?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    GENDER?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    DATE_OF_BIRTH?: DateTimeFilter<"TB_M_PROFILE_MAIN"> | Date | string
+    PLACE_OF_BIRTH?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    COUNTRY_OF_BIRTH?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    PROVINCE_OF_BIRTH?: StringNullableFilter<"TB_M_PROFILE_MAIN"> | string | null
+    NATIONALITY?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    BLOOD_TYPE?: StringNullableFilter<"TB_M_PROFILE_MAIN"> | string | null
+    RELIGION?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    MARITAL_STATUS?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    MARITAL_DATE?: DateTimeNullableFilter<"TB_M_PROFILE_MAIN"> | Date | string | null
+    BPK_STATUS?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    VALID_FROM?: DateTimeFilter<"TB_M_PROFILE_MAIN"> | Date | string
+    VALID_TO?: DateTimeFilter<"TB_M_PROFILE_MAIN"> | Date | string
+    APPROVAL_STATUS?: IntFilter<"TB_M_PROFILE_MAIN"> | number
+    DATA_STATUS?: StringNullableFilter<"TB_M_PROFILE_MAIN"> | string | null
+  }
+
+  export type TB_M_PROFILE_MAINOrderByWithRelationInput = {
+    NOREG?: SortOrder
+    TITLE?: SortOrder
+    NAME?: SortOrder
+    GENDER?: SortOrder
+    DATE_OF_BIRTH?: SortOrder
+    PLACE_OF_BIRTH?: SortOrder
+    COUNTRY_OF_BIRTH?: SortOrder
+    PROVINCE_OF_BIRTH?: SortOrderInput | SortOrder
+    NATIONALITY?: SortOrder
+    BLOOD_TYPE?: SortOrderInput | SortOrder
+    RELIGION?: SortOrder
+    MARITAL_STATUS?: SortOrder
+    MARITAL_DATE?: SortOrderInput | SortOrder
+    BPK_STATUS?: SortOrder
+    VALID_FROM?: SortOrder
+    VALID_TO?: SortOrder
+    APPROVAL_STATUS?: SortOrder
+    DATA_STATUS?: SortOrderInput | SortOrder
+  }
+
+  export type TB_M_PROFILE_MAINWhereUniqueInput = Prisma.AtLeast<{
+    NOREG_VALID_FROM_VALID_TO?: TB_M_PROFILE_MAINNOREGVALID_FROMVALID_TOCompoundUniqueInput
+    AND?: TB_M_PROFILE_MAINWhereInput | TB_M_PROFILE_MAINWhereInput[]
+    OR?: TB_M_PROFILE_MAINWhereInput[]
+    NOT?: TB_M_PROFILE_MAINWhereInput | TB_M_PROFILE_MAINWhereInput[]
+    NOREG?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    TITLE?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    NAME?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    GENDER?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    DATE_OF_BIRTH?: DateTimeFilter<"TB_M_PROFILE_MAIN"> | Date | string
+    PLACE_OF_BIRTH?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    COUNTRY_OF_BIRTH?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    PROVINCE_OF_BIRTH?: StringNullableFilter<"TB_M_PROFILE_MAIN"> | string | null
+    NATIONALITY?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    BLOOD_TYPE?: StringNullableFilter<"TB_M_PROFILE_MAIN"> | string | null
+    RELIGION?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    MARITAL_STATUS?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    MARITAL_DATE?: DateTimeNullableFilter<"TB_M_PROFILE_MAIN"> | Date | string | null
+    BPK_STATUS?: StringFilter<"TB_M_PROFILE_MAIN"> | string
+    VALID_FROM?: DateTimeFilter<"TB_M_PROFILE_MAIN"> | Date | string
+    VALID_TO?: DateTimeFilter<"TB_M_PROFILE_MAIN"> | Date | string
+    APPROVAL_STATUS?: IntFilter<"TB_M_PROFILE_MAIN"> | number
+    DATA_STATUS?: StringNullableFilter<"TB_M_PROFILE_MAIN"> | string | null
+  }, "NOREG_VALID_FROM_VALID_TO">
+
+  export type TB_M_PROFILE_MAINOrderByWithAggregationInput = {
+    NOREG?: SortOrder
+    TITLE?: SortOrder
+    NAME?: SortOrder
+    GENDER?: SortOrder
+    DATE_OF_BIRTH?: SortOrder
+    PLACE_OF_BIRTH?: SortOrder
+    COUNTRY_OF_BIRTH?: SortOrder
+    PROVINCE_OF_BIRTH?: SortOrderInput | SortOrder
+    NATIONALITY?: SortOrder
+    BLOOD_TYPE?: SortOrderInput | SortOrder
+    RELIGION?: SortOrder
+    MARITAL_STATUS?: SortOrder
+    MARITAL_DATE?: SortOrderInput | SortOrder
+    BPK_STATUS?: SortOrder
+    VALID_FROM?: SortOrder
+    VALID_TO?: SortOrder
+    APPROVAL_STATUS?: SortOrder
+    DATA_STATUS?: SortOrderInput | SortOrder
+    _count?: TB_M_PROFILE_MAINCountOrderByAggregateInput
+    _avg?: TB_M_PROFILE_MAINAvgOrderByAggregateInput
+    _max?: TB_M_PROFILE_MAINMaxOrderByAggregateInput
+    _min?: TB_M_PROFILE_MAINMinOrderByAggregateInput
+    _sum?: TB_M_PROFILE_MAINSumOrderByAggregateInput
+  }
+
+  export type TB_M_PROFILE_MAINScalarWhereWithAggregatesInput = {
+    AND?: TB_M_PROFILE_MAINScalarWhereWithAggregatesInput | TB_M_PROFILE_MAINScalarWhereWithAggregatesInput[]
+    OR?: TB_M_PROFILE_MAINScalarWhereWithAggregatesInput[]
+    NOT?: TB_M_PROFILE_MAINScalarWhereWithAggregatesInput | TB_M_PROFILE_MAINScalarWhereWithAggregatesInput[]
+    NOREG?: StringWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | string
+    TITLE?: StringWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | string
+    NAME?: StringWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | string
+    GENDER?: StringWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | string
+    DATE_OF_BIRTH?: DateTimeWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | Date | string
+    PLACE_OF_BIRTH?: StringWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | string
+    COUNTRY_OF_BIRTH?: StringWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | string
+    PROVINCE_OF_BIRTH?: StringNullableWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | string | null
+    NATIONALITY?: StringWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | string
+    BLOOD_TYPE?: StringNullableWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | string | null
+    RELIGION?: StringWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | string
+    MARITAL_STATUS?: StringWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | string
+    MARITAL_DATE?: DateTimeNullableWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | Date | string | null
+    BPK_STATUS?: StringWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | string
+    VALID_FROM?: DateTimeWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | Date | string
+    VALID_TO?: DateTimeWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | Date | string
+    APPROVAL_STATUS?: IntWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | number
+    DATA_STATUS?: StringNullableWithAggregatesFilter<"TB_M_PROFILE_MAIN"> | string | null
+  }
+
   export type TB_R_POACreateInput = {
     SYSTEM_ID: string
     POA_NO: string
@@ -23049,58 +26372,6 @@ export namespace Prisma {
     UPDATED_BY?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type sysdiagramsCreateInput = {
-    name: string
-    principal_id: number
-    version?: number | null
-    definition?: Uint8Array | null
-  }
-
-  export type sysdiagramsUncheckedCreateInput = {
-    name: string
-    principal_id: number
-    diagram_id?: number
-    version?: number | null
-    definition?: Uint8Array | null
-  }
-
-  export type sysdiagramsUpdateInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    principal_id?: IntFieldUpdateOperationsInput | number
-    version?: NullableIntFieldUpdateOperationsInput | number | null
-    definition?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
-  }
-
-  export type sysdiagramsUncheckedUpdateInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    principal_id?: IntFieldUpdateOperationsInput | number
-    diagram_id?: IntFieldUpdateOperationsInput | number
-    version?: NullableIntFieldUpdateOperationsInput | number | null
-    definition?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
-  }
-
-  export type sysdiagramsCreateManyInput = {
-    name: string
-    principal_id: number
-    version?: number | null
-    definition?: Uint8Array | null
-  }
-
-  export type sysdiagramsUpdateManyMutationInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    principal_id?: IntFieldUpdateOperationsInput | number
-    version?: NullableIntFieldUpdateOperationsInput | number | null
-    definition?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
-  }
-
-  export type sysdiagramsUncheckedUpdateManyInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    principal_id?: IntFieldUpdateOperationsInput | number
-    diagram_id?: IntFieldUpdateOperationsInput | number
-    version?: NullableIntFieldUpdateOperationsInput | number | null
-    definition?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
-  }
-
   export type TB_M_APPLICATIONCreateInput = {
     ID: string
     NAME: string
@@ -23113,7 +26384,6 @@ export namespace Prisma {
     CHANGED_DATE?: Date | string | null
     FA_ICON?: string | null
     TB_M_FEATURE?: TB_M_FEATURECreateNestedManyWithoutTB_M_APPLICATIONInput
-    TB_M_FUNCTION?: TB_M_FUNCTIONCreateNestedManyWithoutTB_M_APPLICATIONInput
     TB_M_ROLE?: TB_M_ROLECreateNestedManyWithoutTB_M_APPLICATIONInput
     TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONCreateNestedManyWithoutTB_M_APPLICATIONInput
   }
@@ -23130,7 +26400,6 @@ export namespace Prisma {
     CHANGED_DATE?: Date | string | null
     FA_ICON?: string | null
     TB_M_FEATURE?: TB_M_FEATUREUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
-    TB_M_FUNCTION?: TB_M_FUNCTIONUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
     TB_M_ROLE?: TB_M_ROLEUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
     TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
   }
@@ -23147,7 +26416,6 @@ export namespace Prisma {
     CHANGED_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     FA_ICON?: NullableStringFieldUpdateOperationsInput | string | null
     TB_M_FEATURE?: TB_M_FEATUREUpdateManyWithoutTB_M_APPLICATIONNestedInput
-    TB_M_FUNCTION?: TB_M_FUNCTIONUpdateManyWithoutTB_M_APPLICATIONNestedInput
     TB_M_ROLE?: TB_M_ROLEUpdateManyWithoutTB_M_APPLICATIONNestedInput
     TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONUpdateManyWithoutTB_M_APPLICATIONNestedInput
   }
@@ -23164,7 +26432,6 @@ export namespace Prisma {
     CHANGED_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     FA_ICON?: NullableStringFieldUpdateOperationsInput | string | null
     TB_M_FEATURE?: TB_M_FEATUREUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
-    TB_M_FUNCTION?: TB_M_FUNCTIONUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
     TB_M_ROLE?: TB_M_ROLEUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
     TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
   }
@@ -23526,6 +26793,7 @@ export namespace Prisma {
   }
 
   export type TB_M_FUNCTIONCreateInput = {
+    APPLICATION: string
     ID: string
     NAME: string
     DESCRIPTION?: string | null
@@ -23533,7 +26801,6 @@ export namespace Prisma {
     CREATED_DATE: Date | string
     CHANGED_BY?: string | null
     CHANGED_DATE?: Date | string | null
-    TB_M_APPLICATION: TB_M_APPLICATIONCreateNestedOneWithoutTB_M_FUNCTIONInput
   }
 
   export type TB_M_FUNCTIONUncheckedCreateInput = {
@@ -23548,6 +26815,7 @@ export namespace Prisma {
   }
 
   export type TB_M_FUNCTIONUpdateInput = {
+    APPLICATION?: StringFieldUpdateOperationsInput | string
     ID?: StringFieldUpdateOperationsInput | string
     NAME?: StringFieldUpdateOperationsInput | string
     DESCRIPTION?: NullableStringFieldUpdateOperationsInput | string | null
@@ -23555,7 +26823,6 @@ export namespace Prisma {
     CREATED_DATE?: DateTimeFieldUpdateOperationsInput | Date | string
     CHANGED_BY?: NullableStringFieldUpdateOperationsInput | string | null
     CHANGED_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    TB_M_APPLICATION?: TB_M_APPLICATIONUpdateOneRequiredWithoutTB_M_FUNCTIONNestedInput
   }
 
   export type TB_M_FUNCTIONUncheckedUpdateInput = {
@@ -23581,6 +26848,7 @@ export namespace Prisma {
   }
 
   export type TB_M_FUNCTIONUpdateManyMutationInput = {
+    APPLICATION?: StringFieldUpdateOperationsInput | string
     ID?: StringFieldUpdateOperationsInput | string
     NAME?: StringFieldUpdateOperationsInput | string
     DESCRIPTION?: NullableStringFieldUpdateOperationsInput | string | null
@@ -24714,6 +27982,384 @@ export namespace Prisma {
     ACCESS_DATE?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type TB_M_EMP_POA_LEVELCreateInput = {
+    SYSTEM_ID: string
+    LEVEL_SEQ: number
+    GRANTOR_LEVEL_ID: number
+    ATTORNEY_LEVEL_ID: number
+    CREATED_BY: string
+    CREATED_DT: Date | string
+    UPDATED_BY?: string | null
+    UPDATED_DT?: Date | string | null
+  }
+
+  export type TB_M_EMP_POA_LEVELUncheckedCreateInput = {
+    SYSTEM_ID: string
+    LEVEL_SEQ: number
+    GRANTOR_LEVEL_ID: number
+    ATTORNEY_LEVEL_ID: number
+    CREATED_BY: string
+    CREATED_DT: Date | string
+    UPDATED_BY?: string | null
+    UPDATED_DT?: Date | string | null
+  }
+
+  export type TB_M_EMP_POA_LEVELUpdateInput = {
+    SYSTEM_ID?: StringFieldUpdateOperationsInput | string
+    LEVEL_SEQ?: IntFieldUpdateOperationsInput | number
+    GRANTOR_LEVEL_ID?: IntFieldUpdateOperationsInput | number
+    ATTORNEY_LEVEL_ID?: IntFieldUpdateOperationsInput | number
+    CREATED_BY?: StringFieldUpdateOperationsInput | string
+    CREATED_DT?: DateTimeFieldUpdateOperationsInput | Date | string
+    UPDATED_BY?: NullableStringFieldUpdateOperationsInput | string | null
+    UPDATED_DT?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TB_M_EMP_POA_LEVELUncheckedUpdateInput = {
+    SYSTEM_ID?: StringFieldUpdateOperationsInput | string
+    LEVEL_SEQ?: IntFieldUpdateOperationsInput | number
+    GRANTOR_LEVEL_ID?: IntFieldUpdateOperationsInput | number
+    ATTORNEY_LEVEL_ID?: IntFieldUpdateOperationsInput | number
+    CREATED_BY?: StringFieldUpdateOperationsInput | string
+    CREATED_DT?: DateTimeFieldUpdateOperationsInput | Date | string
+    UPDATED_BY?: NullableStringFieldUpdateOperationsInput | string | null
+    UPDATED_DT?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TB_M_EMP_POA_LEVELCreateManyInput = {
+    SYSTEM_ID: string
+    LEVEL_SEQ: number
+    GRANTOR_LEVEL_ID: number
+    ATTORNEY_LEVEL_ID: number
+    CREATED_BY: string
+    CREATED_DT: Date | string
+    UPDATED_BY?: string | null
+    UPDATED_DT?: Date | string | null
+  }
+
+  export type TB_M_EMP_POA_LEVELUpdateManyMutationInput = {
+    SYSTEM_ID?: StringFieldUpdateOperationsInput | string
+    LEVEL_SEQ?: IntFieldUpdateOperationsInput | number
+    GRANTOR_LEVEL_ID?: IntFieldUpdateOperationsInput | number
+    ATTORNEY_LEVEL_ID?: IntFieldUpdateOperationsInput | number
+    CREATED_BY?: StringFieldUpdateOperationsInput | string
+    CREATED_DT?: DateTimeFieldUpdateOperationsInput | Date | string
+    UPDATED_BY?: NullableStringFieldUpdateOperationsInput | string | null
+    UPDATED_DT?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TB_M_EMP_POA_LEVELUncheckedUpdateManyInput = {
+    SYSTEM_ID?: StringFieldUpdateOperationsInput | string
+    LEVEL_SEQ?: IntFieldUpdateOperationsInput | number
+    GRANTOR_LEVEL_ID?: IntFieldUpdateOperationsInput | number
+    ATTORNEY_LEVEL_ID?: IntFieldUpdateOperationsInput | number
+    CREATED_BY?: StringFieldUpdateOperationsInput | string
+    CREATED_DT?: DateTimeFieldUpdateOperationsInput | Date | string
+    UPDATED_BY?: NullableStringFieldUpdateOperationsInput | string | null
+    UPDATED_DT?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TB_M_EMP_POSITIONCreateInput = {
+    POSITION_LEVEL: number
+    POSITION_ABBR: string
+    POSITION_DESC?: string | null
+    LEVEL_ID?: number | null
+    CREATED_BY: string
+    CREATED_DT: Date | string
+    UPDATED_BY?: string | null
+    UPDATED_DT?: Date | string | null
+  }
+
+  export type TB_M_EMP_POSITIONUncheckedCreateInput = {
+    POSITION_LEVEL: number
+    POSITION_ABBR: string
+    POSITION_DESC?: string | null
+    LEVEL_ID?: number | null
+    CREATED_BY: string
+    CREATED_DT: Date | string
+    UPDATED_BY?: string | null
+    UPDATED_DT?: Date | string | null
+  }
+
+  export type TB_M_EMP_POSITIONUpdateInput = {
+    POSITION_LEVEL?: IntFieldUpdateOperationsInput | number
+    POSITION_ABBR?: StringFieldUpdateOperationsInput | string
+    POSITION_DESC?: NullableStringFieldUpdateOperationsInput | string | null
+    LEVEL_ID?: NullableIntFieldUpdateOperationsInput | number | null
+    CREATED_BY?: StringFieldUpdateOperationsInput | string
+    CREATED_DT?: DateTimeFieldUpdateOperationsInput | Date | string
+    UPDATED_BY?: NullableStringFieldUpdateOperationsInput | string | null
+    UPDATED_DT?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TB_M_EMP_POSITIONUncheckedUpdateInput = {
+    POSITION_LEVEL?: IntFieldUpdateOperationsInput | number
+    POSITION_ABBR?: StringFieldUpdateOperationsInput | string
+    POSITION_DESC?: NullableStringFieldUpdateOperationsInput | string | null
+    LEVEL_ID?: NullableIntFieldUpdateOperationsInput | number | null
+    CREATED_BY?: StringFieldUpdateOperationsInput | string
+    CREATED_DT?: DateTimeFieldUpdateOperationsInput | Date | string
+    UPDATED_BY?: NullableStringFieldUpdateOperationsInput | string | null
+    UPDATED_DT?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TB_M_EMP_POSITIONCreateManyInput = {
+    POSITION_LEVEL: number
+    POSITION_ABBR: string
+    POSITION_DESC?: string | null
+    LEVEL_ID?: number | null
+    CREATED_BY: string
+    CREATED_DT: Date | string
+    UPDATED_BY?: string | null
+    UPDATED_DT?: Date | string | null
+  }
+
+  export type TB_M_EMP_POSITIONUpdateManyMutationInput = {
+    POSITION_LEVEL?: IntFieldUpdateOperationsInput | number
+    POSITION_ABBR?: StringFieldUpdateOperationsInput | string
+    POSITION_DESC?: NullableStringFieldUpdateOperationsInput | string | null
+    LEVEL_ID?: NullableIntFieldUpdateOperationsInput | number | null
+    CREATED_BY?: StringFieldUpdateOperationsInput | string
+    CREATED_DT?: DateTimeFieldUpdateOperationsInput | Date | string
+    UPDATED_BY?: NullableStringFieldUpdateOperationsInput | string | null
+    UPDATED_DT?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TB_M_EMP_POSITIONUncheckedUpdateManyInput = {
+    POSITION_LEVEL?: IntFieldUpdateOperationsInput | number
+    POSITION_ABBR?: StringFieldUpdateOperationsInput | string
+    POSITION_DESC?: NullableStringFieldUpdateOperationsInput | string | null
+    LEVEL_ID?: NullableIntFieldUpdateOperationsInput | number | null
+    CREATED_BY?: StringFieldUpdateOperationsInput | string
+    CREATED_DT?: DateTimeFieldUpdateOperationsInput | Date | string
+    UPDATED_BY?: NullableStringFieldUpdateOperationsInput | string | null
+    UPDATED_DT?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TB_M_ON_BEHALFCreateInput = {
+    SYSTEM_ID: string
+    SEQ: number
+    NOREG: string
+    NOREG_ON_BEHALF: string
+    CREATED_BY: string
+    CREATED_DT: Date | string
+    UPDATED_BY?: string | null
+    UPDATED_DT?: Date | string | null
+  }
+
+  export type TB_M_ON_BEHALFUncheckedCreateInput = {
+    SYSTEM_ID: string
+    SEQ: number
+    NOREG: string
+    NOREG_ON_BEHALF: string
+    CREATED_BY: string
+    CREATED_DT: Date | string
+    UPDATED_BY?: string | null
+    UPDATED_DT?: Date | string | null
+  }
+
+  export type TB_M_ON_BEHALFUpdateInput = {
+    SYSTEM_ID?: StringFieldUpdateOperationsInput | string
+    SEQ?: IntFieldUpdateOperationsInput | number
+    NOREG?: StringFieldUpdateOperationsInput | string
+    NOREG_ON_BEHALF?: StringFieldUpdateOperationsInput | string
+    CREATED_BY?: StringFieldUpdateOperationsInput | string
+    CREATED_DT?: DateTimeFieldUpdateOperationsInput | Date | string
+    UPDATED_BY?: NullableStringFieldUpdateOperationsInput | string | null
+    UPDATED_DT?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TB_M_ON_BEHALFUncheckedUpdateInput = {
+    SYSTEM_ID?: StringFieldUpdateOperationsInput | string
+    SEQ?: IntFieldUpdateOperationsInput | number
+    NOREG?: StringFieldUpdateOperationsInput | string
+    NOREG_ON_BEHALF?: StringFieldUpdateOperationsInput | string
+    CREATED_BY?: StringFieldUpdateOperationsInput | string
+    CREATED_DT?: DateTimeFieldUpdateOperationsInput | Date | string
+    UPDATED_BY?: NullableStringFieldUpdateOperationsInput | string | null
+    UPDATED_DT?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TB_M_ON_BEHALFCreateManyInput = {
+    SYSTEM_ID: string
+    SEQ: number
+    NOREG: string
+    NOREG_ON_BEHALF: string
+    CREATED_BY: string
+    CREATED_DT: Date | string
+    UPDATED_BY?: string | null
+    UPDATED_DT?: Date | string | null
+  }
+
+  export type TB_M_ON_BEHALFUpdateManyMutationInput = {
+    SYSTEM_ID?: StringFieldUpdateOperationsInput | string
+    SEQ?: IntFieldUpdateOperationsInput | number
+    NOREG?: StringFieldUpdateOperationsInput | string
+    NOREG_ON_BEHALF?: StringFieldUpdateOperationsInput | string
+    CREATED_BY?: StringFieldUpdateOperationsInput | string
+    CREATED_DT?: DateTimeFieldUpdateOperationsInput | Date | string
+    UPDATED_BY?: NullableStringFieldUpdateOperationsInput | string | null
+    UPDATED_DT?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TB_M_ON_BEHALFUncheckedUpdateManyInput = {
+    SYSTEM_ID?: StringFieldUpdateOperationsInput | string
+    SEQ?: IntFieldUpdateOperationsInput | number
+    NOREG?: StringFieldUpdateOperationsInput | string
+    NOREG_ON_BEHALF?: StringFieldUpdateOperationsInput | string
+    CREATED_BY?: StringFieldUpdateOperationsInput | string
+    CREATED_DT?: DateTimeFieldUpdateOperationsInput | Date | string
+    UPDATED_BY?: NullableStringFieldUpdateOperationsInput | string | null
+    UPDATED_DT?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TB_M_PROFILE_MAINCreateInput = {
+    NOREG: string
+    TITLE: string
+    NAME: string
+    GENDER: string
+    DATE_OF_BIRTH: Date | string
+    PLACE_OF_BIRTH: string
+    COUNTRY_OF_BIRTH: string
+    PROVINCE_OF_BIRTH?: string | null
+    NATIONALITY: string
+    BLOOD_TYPE?: string | null
+    RELIGION: string
+    MARITAL_STATUS: string
+    MARITAL_DATE?: Date | string | null
+    BPK_STATUS: string
+    VALID_FROM: Date | string
+    VALID_TO: Date | string
+    APPROVAL_STATUS: number
+    DATA_STATUS?: string | null
+  }
+
+  export type TB_M_PROFILE_MAINUncheckedCreateInput = {
+    NOREG: string
+    TITLE: string
+    NAME: string
+    GENDER: string
+    DATE_OF_BIRTH: Date | string
+    PLACE_OF_BIRTH: string
+    COUNTRY_OF_BIRTH: string
+    PROVINCE_OF_BIRTH?: string | null
+    NATIONALITY: string
+    BLOOD_TYPE?: string | null
+    RELIGION: string
+    MARITAL_STATUS: string
+    MARITAL_DATE?: Date | string | null
+    BPK_STATUS: string
+    VALID_FROM: Date | string
+    VALID_TO: Date | string
+    APPROVAL_STATUS: number
+    DATA_STATUS?: string | null
+  }
+
+  export type TB_M_PROFILE_MAINUpdateInput = {
+    NOREG?: StringFieldUpdateOperationsInput | string
+    TITLE?: StringFieldUpdateOperationsInput | string
+    NAME?: StringFieldUpdateOperationsInput | string
+    GENDER?: StringFieldUpdateOperationsInput | string
+    DATE_OF_BIRTH?: DateTimeFieldUpdateOperationsInput | Date | string
+    PLACE_OF_BIRTH?: StringFieldUpdateOperationsInput | string
+    COUNTRY_OF_BIRTH?: StringFieldUpdateOperationsInput | string
+    PROVINCE_OF_BIRTH?: NullableStringFieldUpdateOperationsInput | string | null
+    NATIONALITY?: StringFieldUpdateOperationsInput | string
+    BLOOD_TYPE?: NullableStringFieldUpdateOperationsInput | string | null
+    RELIGION?: StringFieldUpdateOperationsInput | string
+    MARITAL_STATUS?: StringFieldUpdateOperationsInput | string
+    MARITAL_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    BPK_STATUS?: StringFieldUpdateOperationsInput | string
+    VALID_FROM?: DateTimeFieldUpdateOperationsInput | Date | string
+    VALID_TO?: DateTimeFieldUpdateOperationsInput | Date | string
+    APPROVAL_STATUS?: IntFieldUpdateOperationsInput | number
+    DATA_STATUS?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type TB_M_PROFILE_MAINUncheckedUpdateInput = {
+    NOREG?: StringFieldUpdateOperationsInput | string
+    TITLE?: StringFieldUpdateOperationsInput | string
+    NAME?: StringFieldUpdateOperationsInput | string
+    GENDER?: StringFieldUpdateOperationsInput | string
+    DATE_OF_BIRTH?: DateTimeFieldUpdateOperationsInput | Date | string
+    PLACE_OF_BIRTH?: StringFieldUpdateOperationsInput | string
+    COUNTRY_OF_BIRTH?: StringFieldUpdateOperationsInput | string
+    PROVINCE_OF_BIRTH?: NullableStringFieldUpdateOperationsInput | string | null
+    NATIONALITY?: StringFieldUpdateOperationsInput | string
+    BLOOD_TYPE?: NullableStringFieldUpdateOperationsInput | string | null
+    RELIGION?: StringFieldUpdateOperationsInput | string
+    MARITAL_STATUS?: StringFieldUpdateOperationsInput | string
+    MARITAL_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    BPK_STATUS?: StringFieldUpdateOperationsInput | string
+    VALID_FROM?: DateTimeFieldUpdateOperationsInput | Date | string
+    VALID_TO?: DateTimeFieldUpdateOperationsInput | Date | string
+    APPROVAL_STATUS?: IntFieldUpdateOperationsInput | number
+    DATA_STATUS?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type TB_M_PROFILE_MAINCreateManyInput = {
+    NOREG: string
+    TITLE: string
+    NAME: string
+    GENDER: string
+    DATE_OF_BIRTH: Date | string
+    PLACE_OF_BIRTH: string
+    COUNTRY_OF_BIRTH: string
+    PROVINCE_OF_BIRTH?: string | null
+    NATIONALITY: string
+    BLOOD_TYPE?: string | null
+    RELIGION: string
+    MARITAL_STATUS: string
+    MARITAL_DATE?: Date | string | null
+    BPK_STATUS: string
+    VALID_FROM: Date | string
+    VALID_TO: Date | string
+    APPROVAL_STATUS: number
+    DATA_STATUS?: string | null
+  }
+
+  export type TB_M_PROFILE_MAINUpdateManyMutationInput = {
+    NOREG?: StringFieldUpdateOperationsInput | string
+    TITLE?: StringFieldUpdateOperationsInput | string
+    NAME?: StringFieldUpdateOperationsInput | string
+    GENDER?: StringFieldUpdateOperationsInput | string
+    DATE_OF_BIRTH?: DateTimeFieldUpdateOperationsInput | Date | string
+    PLACE_OF_BIRTH?: StringFieldUpdateOperationsInput | string
+    COUNTRY_OF_BIRTH?: StringFieldUpdateOperationsInput | string
+    PROVINCE_OF_BIRTH?: NullableStringFieldUpdateOperationsInput | string | null
+    NATIONALITY?: StringFieldUpdateOperationsInput | string
+    BLOOD_TYPE?: NullableStringFieldUpdateOperationsInput | string | null
+    RELIGION?: StringFieldUpdateOperationsInput | string
+    MARITAL_STATUS?: StringFieldUpdateOperationsInput | string
+    MARITAL_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    BPK_STATUS?: StringFieldUpdateOperationsInput | string
+    VALID_FROM?: DateTimeFieldUpdateOperationsInput | Date | string
+    VALID_TO?: DateTimeFieldUpdateOperationsInput | Date | string
+    APPROVAL_STATUS?: IntFieldUpdateOperationsInput | number
+    DATA_STATUS?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type TB_M_PROFILE_MAINUncheckedUpdateManyInput = {
+    NOREG?: StringFieldUpdateOperationsInput | string
+    TITLE?: StringFieldUpdateOperationsInput | string
+    NAME?: StringFieldUpdateOperationsInput | string
+    GENDER?: StringFieldUpdateOperationsInput | string
+    DATE_OF_BIRTH?: DateTimeFieldUpdateOperationsInput | Date | string
+    PLACE_OF_BIRTH?: StringFieldUpdateOperationsInput | string
+    COUNTRY_OF_BIRTH?: StringFieldUpdateOperationsInput | string
+    PROVINCE_OF_BIRTH?: NullableStringFieldUpdateOperationsInput | string | null
+    NATIONALITY?: StringFieldUpdateOperationsInput | string
+    BLOOD_TYPE?: NullableStringFieldUpdateOperationsInput | string | null
+    RELIGION?: StringFieldUpdateOperationsInput | string
+    MARITAL_STATUS?: StringFieldUpdateOperationsInput | string
+    MARITAL_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    BPK_STATUS?: StringFieldUpdateOperationsInput | string
+    VALID_FROM?: DateTimeFieldUpdateOperationsInput | Date | string
+    VALID_TO?: DateTimeFieldUpdateOperationsInput | Date | string
+    APPROVAL_STATUS?: IntFieldUpdateOperationsInput | number
+    DATA_STATUS?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[]
@@ -24878,128 +28524,10 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
-  }
-
-  export type IntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | null
-    notIn?: number[] | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
-  export type BytesNullableFilter<$PrismaModel = never> = {
-    equals?: Uint8Array | BytesFieldRefInput<$PrismaModel> | null
-    in?: Uint8Array[] | null
-    notIn?: Uint8Array[] | null
-    not?: NestedBytesNullableFilter<$PrismaModel> | Uint8Array | null
-  }
-
-  export type sysdiagramsPrincipal_idNameCompoundUniqueInput = {
-    principal_id: number
-    name: string
-  }
-
-  export type sysdiagramsCountOrderByAggregateInput = {
-    name?: SortOrder
-    principal_id?: SortOrder
-    diagram_id?: SortOrder
-    version?: SortOrder
-    definition?: SortOrder
-  }
-
-  export type sysdiagramsAvgOrderByAggregateInput = {
-    principal_id?: SortOrder
-    diagram_id?: SortOrder
-    version?: SortOrder
-  }
-
-  export type sysdiagramsMaxOrderByAggregateInput = {
-    name?: SortOrder
-    principal_id?: SortOrder
-    diagram_id?: SortOrder
-    version?: SortOrder
-    definition?: SortOrder
-  }
-
-  export type sysdiagramsMinOrderByAggregateInput = {
-    name?: SortOrder
-    principal_id?: SortOrder
-    diagram_id?: SortOrder
-    version?: SortOrder
-    definition?: SortOrder
-  }
-
-  export type sysdiagramsSumOrderByAggregateInput = {
-    principal_id?: SortOrder
-    diagram_id?: SortOrder
-    version?: SortOrder
-  }
-
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
-  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | null
-    notIn?: number[] | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
-  }
-
-  export type BytesNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Uint8Array | BytesFieldRefInput<$PrismaModel> | null
-    in?: Uint8Array[] | null
-    notIn?: Uint8Array[] | null
-    not?: NestedBytesNullableWithAggregatesFilter<$PrismaModel> | Uint8Array | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedBytesNullableFilter<$PrismaModel>
-    _max?: NestedBytesNullableFilter<$PrismaModel>
-  }
-
   export type TB_M_FEATUREListRelationFilter = {
     every?: TB_M_FEATUREWhereInput
     some?: TB_M_FEATUREWhereInput
     none?: TB_M_FEATUREWhereInput
-  }
-
-  export type TB_M_FUNCTIONListRelationFilter = {
-    every?: TB_M_FUNCTIONWhereInput
-    some?: TB_M_FUNCTIONWhereInput
-    none?: TB_M_FUNCTIONWhereInput
   }
 
   export type TB_M_ROLEListRelationFilter = {
@@ -25015,10 +28543,6 @@ export namespace Prisma {
   }
 
   export type TB_M_FEATUREOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type TB_M_FUNCTIONOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -25395,6 +28919,17 @@ export namespace Prisma {
     CHANGED_DT?: SortOrder
   }
 
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
   export type TB_M_ROLEAPPLICATIONIDCompoundUniqueInput = {
     APPLICATION: string
     ID: string
@@ -25447,6 +28982,22 @@ export namespace Prisma {
   export type TB_M_ROLESumOrderByAggregateInput = {
     SESSION_TIMEOUT?: SortOrder
     LOCK_TIMEOUT?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type BoolFilter<$PrismaModel = never> = {
@@ -25708,6 +29259,17 @@ export namespace Prisma {
     ID?: SortOrder
   }
 
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type TB_R_ANNOUNCEMENTCountOrderByAggregateInput = {
     ID?: SortOrder
     TITLE?: SortOrder
@@ -25766,6 +29328,22 @@ export namespace Prisma {
     ID?: SortOrder
     VISIBLE_FOR?: SortOrder
     SEND_EMAIL?: SortOrder
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type TB_R_AUDIT_FLAGCountOrderByAggregateInput = {
@@ -25904,6 +29482,222 @@ export namespace Prisma {
     ACCESS_DATE?: SortOrder
   }
 
+  export type TB_M_EMP_POA_LEVELSYSTEM_IDLEVEL_SEQCompoundUniqueInput = {
+    SYSTEM_ID: string
+    LEVEL_SEQ: number
+  }
+
+  export type TB_M_EMP_POA_LEVELCountOrderByAggregateInput = {
+    SYSTEM_ID?: SortOrder
+    LEVEL_SEQ?: SortOrder
+    GRANTOR_LEVEL_ID?: SortOrder
+    ATTORNEY_LEVEL_ID?: SortOrder
+    CREATED_BY?: SortOrder
+    CREATED_DT?: SortOrder
+    UPDATED_BY?: SortOrder
+    UPDATED_DT?: SortOrder
+  }
+
+  export type TB_M_EMP_POA_LEVELAvgOrderByAggregateInput = {
+    LEVEL_SEQ?: SortOrder
+    GRANTOR_LEVEL_ID?: SortOrder
+    ATTORNEY_LEVEL_ID?: SortOrder
+  }
+
+  export type TB_M_EMP_POA_LEVELMaxOrderByAggregateInput = {
+    SYSTEM_ID?: SortOrder
+    LEVEL_SEQ?: SortOrder
+    GRANTOR_LEVEL_ID?: SortOrder
+    ATTORNEY_LEVEL_ID?: SortOrder
+    CREATED_BY?: SortOrder
+    CREATED_DT?: SortOrder
+    UPDATED_BY?: SortOrder
+    UPDATED_DT?: SortOrder
+  }
+
+  export type TB_M_EMP_POA_LEVELMinOrderByAggregateInput = {
+    SYSTEM_ID?: SortOrder
+    LEVEL_SEQ?: SortOrder
+    GRANTOR_LEVEL_ID?: SortOrder
+    ATTORNEY_LEVEL_ID?: SortOrder
+    CREATED_BY?: SortOrder
+    CREATED_DT?: SortOrder
+    UPDATED_BY?: SortOrder
+    UPDATED_DT?: SortOrder
+  }
+
+  export type TB_M_EMP_POA_LEVELSumOrderByAggregateInput = {
+    LEVEL_SEQ?: SortOrder
+    GRANTOR_LEVEL_ID?: SortOrder
+    ATTORNEY_LEVEL_ID?: SortOrder
+  }
+
+  export type TB_M_EMP_POSITIONCountOrderByAggregateInput = {
+    POSITION_LEVEL?: SortOrder
+    POSITION_ABBR?: SortOrder
+    POSITION_DESC?: SortOrder
+    LEVEL_ID?: SortOrder
+    CREATED_BY?: SortOrder
+    CREATED_DT?: SortOrder
+    UPDATED_BY?: SortOrder
+    UPDATED_DT?: SortOrder
+  }
+
+  export type TB_M_EMP_POSITIONAvgOrderByAggregateInput = {
+    POSITION_LEVEL?: SortOrder
+    LEVEL_ID?: SortOrder
+  }
+
+  export type TB_M_EMP_POSITIONMaxOrderByAggregateInput = {
+    POSITION_LEVEL?: SortOrder
+    POSITION_ABBR?: SortOrder
+    POSITION_DESC?: SortOrder
+    LEVEL_ID?: SortOrder
+    CREATED_BY?: SortOrder
+    CREATED_DT?: SortOrder
+    UPDATED_BY?: SortOrder
+    UPDATED_DT?: SortOrder
+  }
+
+  export type TB_M_EMP_POSITIONMinOrderByAggregateInput = {
+    POSITION_LEVEL?: SortOrder
+    POSITION_ABBR?: SortOrder
+    POSITION_DESC?: SortOrder
+    LEVEL_ID?: SortOrder
+    CREATED_BY?: SortOrder
+    CREATED_DT?: SortOrder
+    UPDATED_BY?: SortOrder
+    UPDATED_DT?: SortOrder
+  }
+
+  export type TB_M_EMP_POSITIONSumOrderByAggregateInput = {
+    POSITION_LEVEL?: SortOrder
+    LEVEL_ID?: SortOrder
+  }
+
+  export type TB_M_ON_BEHALFSYSTEM_IDSEQCompoundUniqueInput = {
+    SYSTEM_ID: string
+    SEQ: number
+  }
+
+  export type TB_M_ON_BEHALFCountOrderByAggregateInput = {
+    SYSTEM_ID?: SortOrder
+    SEQ?: SortOrder
+    NOREG?: SortOrder
+    NOREG_ON_BEHALF?: SortOrder
+    CREATED_BY?: SortOrder
+    CREATED_DT?: SortOrder
+    UPDATED_BY?: SortOrder
+    UPDATED_DT?: SortOrder
+  }
+
+  export type TB_M_ON_BEHALFAvgOrderByAggregateInput = {
+    SEQ?: SortOrder
+  }
+
+  export type TB_M_ON_BEHALFMaxOrderByAggregateInput = {
+    SYSTEM_ID?: SortOrder
+    SEQ?: SortOrder
+    NOREG?: SortOrder
+    NOREG_ON_BEHALF?: SortOrder
+    CREATED_BY?: SortOrder
+    CREATED_DT?: SortOrder
+    UPDATED_BY?: SortOrder
+    UPDATED_DT?: SortOrder
+  }
+
+  export type TB_M_ON_BEHALFMinOrderByAggregateInput = {
+    SYSTEM_ID?: SortOrder
+    SEQ?: SortOrder
+    NOREG?: SortOrder
+    NOREG_ON_BEHALF?: SortOrder
+    CREATED_BY?: SortOrder
+    CREATED_DT?: SortOrder
+    UPDATED_BY?: SortOrder
+    UPDATED_DT?: SortOrder
+  }
+
+  export type TB_M_ON_BEHALFSumOrderByAggregateInput = {
+    SEQ?: SortOrder
+  }
+
+  export type TB_M_PROFILE_MAINNOREGVALID_FROMVALID_TOCompoundUniqueInput = {
+    NOREG: string
+    VALID_FROM: Date | string
+    VALID_TO: Date | string
+  }
+
+  export type TB_M_PROFILE_MAINCountOrderByAggregateInput = {
+    NOREG?: SortOrder
+    TITLE?: SortOrder
+    NAME?: SortOrder
+    GENDER?: SortOrder
+    DATE_OF_BIRTH?: SortOrder
+    PLACE_OF_BIRTH?: SortOrder
+    COUNTRY_OF_BIRTH?: SortOrder
+    PROVINCE_OF_BIRTH?: SortOrder
+    NATIONALITY?: SortOrder
+    BLOOD_TYPE?: SortOrder
+    RELIGION?: SortOrder
+    MARITAL_STATUS?: SortOrder
+    MARITAL_DATE?: SortOrder
+    BPK_STATUS?: SortOrder
+    VALID_FROM?: SortOrder
+    VALID_TO?: SortOrder
+    APPROVAL_STATUS?: SortOrder
+    DATA_STATUS?: SortOrder
+  }
+
+  export type TB_M_PROFILE_MAINAvgOrderByAggregateInput = {
+    APPROVAL_STATUS?: SortOrder
+  }
+
+  export type TB_M_PROFILE_MAINMaxOrderByAggregateInput = {
+    NOREG?: SortOrder
+    TITLE?: SortOrder
+    NAME?: SortOrder
+    GENDER?: SortOrder
+    DATE_OF_BIRTH?: SortOrder
+    PLACE_OF_BIRTH?: SortOrder
+    COUNTRY_OF_BIRTH?: SortOrder
+    PROVINCE_OF_BIRTH?: SortOrder
+    NATIONALITY?: SortOrder
+    BLOOD_TYPE?: SortOrder
+    RELIGION?: SortOrder
+    MARITAL_STATUS?: SortOrder
+    MARITAL_DATE?: SortOrder
+    BPK_STATUS?: SortOrder
+    VALID_FROM?: SortOrder
+    VALID_TO?: SortOrder
+    APPROVAL_STATUS?: SortOrder
+    DATA_STATUS?: SortOrder
+  }
+
+  export type TB_M_PROFILE_MAINMinOrderByAggregateInput = {
+    NOREG?: SortOrder
+    TITLE?: SortOrder
+    NAME?: SortOrder
+    GENDER?: SortOrder
+    DATE_OF_BIRTH?: SortOrder
+    PLACE_OF_BIRTH?: SortOrder
+    COUNTRY_OF_BIRTH?: SortOrder
+    PROVINCE_OF_BIRTH?: SortOrder
+    NATIONALITY?: SortOrder
+    BLOOD_TYPE?: SortOrder
+    RELIGION?: SortOrder
+    MARITAL_STATUS?: SortOrder
+    MARITAL_DATE?: SortOrder
+    BPK_STATUS?: SortOrder
+    VALID_FROM?: SortOrder
+    VALID_TO?: SortOrder
+    APPROVAL_STATUS?: SortOrder
+    DATA_STATUS?: SortOrder
+  }
+
+  export type TB_M_PROFILE_MAINSumOrderByAggregateInput = {
+    APPROVAL_STATUS?: SortOrder
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
@@ -25920,38 +29714,11 @@ export namespace Prisma {
     set?: string | null
   }
 
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type NullableIntFieldUpdateOperationsInput = {
-    set?: number | null
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type NullableBytesFieldUpdateOperationsInput = {
-    set?: Uint8Array | null
-  }
-
   export type TB_M_FEATURECreateNestedManyWithoutTB_M_APPLICATIONInput = {
     create?: XOR<TB_M_FEATURECreateWithoutTB_M_APPLICATIONInput, TB_M_FEATUREUncheckedCreateWithoutTB_M_APPLICATIONInput> | TB_M_FEATURECreateWithoutTB_M_APPLICATIONInput[] | TB_M_FEATUREUncheckedCreateWithoutTB_M_APPLICATIONInput[]
     connectOrCreate?: TB_M_FEATURECreateOrConnectWithoutTB_M_APPLICATIONInput | TB_M_FEATURECreateOrConnectWithoutTB_M_APPLICATIONInput[]
     createMany?: TB_M_FEATURECreateManyTB_M_APPLICATIONInputEnvelope
     connect?: TB_M_FEATUREWhereUniqueInput | TB_M_FEATUREWhereUniqueInput[]
-  }
-
-  export type TB_M_FUNCTIONCreateNestedManyWithoutTB_M_APPLICATIONInput = {
-    create?: XOR<TB_M_FUNCTIONCreateWithoutTB_M_APPLICATIONInput, TB_M_FUNCTIONUncheckedCreateWithoutTB_M_APPLICATIONInput> | TB_M_FUNCTIONCreateWithoutTB_M_APPLICATIONInput[] | TB_M_FUNCTIONUncheckedCreateWithoutTB_M_APPLICATIONInput[]
-    connectOrCreate?: TB_M_FUNCTIONCreateOrConnectWithoutTB_M_APPLICATIONInput | TB_M_FUNCTIONCreateOrConnectWithoutTB_M_APPLICATIONInput[]
-    createMany?: TB_M_FUNCTIONCreateManyTB_M_APPLICATIONInputEnvelope
-    connect?: TB_M_FUNCTIONWhereUniqueInput | TB_M_FUNCTIONWhereUniqueInput[]
   }
 
   export type TB_M_ROLECreateNestedManyWithoutTB_M_APPLICATIONInput = {
@@ -25973,13 +29740,6 @@ export namespace Prisma {
     connectOrCreate?: TB_M_FEATURECreateOrConnectWithoutTB_M_APPLICATIONInput | TB_M_FEATURECreateOrConnectWithoutTB_M_APPLICATIONInput[]
     createMany?: TB_M_FEATURECreateManyTB_M_APPLICATIONInputEnvelope
     connect?: TB_M_FEATUREWhereUniqueInput | TB_M_FEATUREWhereUniqueInput[]
-  }
-
-  export type TB_M_FUNCTIONUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput = {
-    create?: XOR<TB_M_FUNCTIONCreateWithoutTB_M_APPLICATIONInput, TB_M_FUNCTIONUncheckedCreateWithoutTB_M_APPLICATIONInput> | TB_M_FUNCTIONCreateWithoutTB_M_APPLICATIONInput[] | TB_M_FUNCTIONUncheckedCreateWithoutTB_M_APPLICATIONInput[]
-    connectOrCreate?: TB_M_FUNCTIONCreateOrConnectWithoutTB_M_APPLICATIONInput | TB_M_FUNCTIONCreateOrConnectWithoutTB_M_APPLICATIONInput[]
-    createMany?: TB_M_FUNCTIONCreateManyTB_M_APPLICATIONInputEnvelope
-    connect?: TB_M_FUNCTIONWhereUniqueInput | TB_M_FUNCTIONWhereUniqueInput[]
   }
 
   export type TB_M_ROLEUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput = {
@@ -26008,20 +29768,6 @@ export namespace Prisma {
     update?: TB_M_FEATUREUpdateWithWhereUniqueWithoutTB_M_APPLICATIONInput | TB_M_FEATUREUpdateWithWhereUniqueWithoutTB_M_APPLICATIONInput[]
     updateMany?: TB_M_FEATUREUpdateManyWithWhereWithoutTB_M_APPLICATIONInput | TB_M_FEATUREUpdateManyWithWhereWithoutTB_M_APPLICATIONInput[]
     deleteMany?: TB_M_FEATUREScalarWhereInput | TB_M_FEATUREScalarWhereInput[]
-  }
-
-  export type TB_M_FUNCTIONUpdateManyWithoutTB_M_APPLICATIONNestedInput = {
-    create?: XOR<TB_M_FUNCTIONCreateWithoutTB_M_APPLICATIONInput, TB_M_FUNCTIONUncheckedCreateWithoutTB_M_APPLICATIONInput> | TB_M_FUNCTIONCreateWithoutTB_M_APPLICATIONInput[] | TB_M_FUNCTIONUncheckedCreateWithoutTB_M_APPLICATIONInput[]
-    connectOrCreate?: TB_M_FUNCTIONCreateOrConnectWithoutTB_M_APPLICATIONInput | TB_M_FUNCTIONCreateOrConnectWithoutTB_M_APPLICATIONInput[]
-    upsert?: TB_M_FUNCTIONUpsertWithWhereUniqueWithoutTB_M_APPLICATIONInput | TB_M_FUNCTIONUpsertWithWhereUniqueWithoutTB_M_APPLICATIONInput[]
-    createMany?: TB_M_FUNCTIONCreateManyTB_M_APPLICATIONInputEnvelope
-    set?: TB_M_FUNCTIONWhereUniqueInput | TB_M_FUNCTIONWhereUniqueInput[]
-    disconnect?: TB_M_FUNCTIONWhereUniqueInput | TB_M_FUNCTIONWhereUniqueInput[]
-    delete?: TB_M_FUNCTIONWhereUniqueInput | TB_M_FUNCTIONWhereUniqueInput[]
-    connect?: TB_M_FUNCTIONWhereUniqueInput | TB_M_FUNCTIONWhereUniqueInput[]
-    update?: TB_M_FUNCTIONUpdateWithWhereUniqueWithoutTB_M_APPLICATIONInput | TB_M_FUNCTIONUpdateWithWhereUniqueWithoutTB_M_APPLICATIONInput[]
-    updateMany?: TB_M_FUNCTIONUpdateManyWithWhereWithoutTB_M_APPLICATIONInput | TB_M_FUNCTIONUpdateManyWithWhereWithoutTB_M_APPLICATIONInput[]
-    deleteMany?: TB_M_FUNCTIONScalarWhereInput | TB_M_FUNCTIONScalarWhereInput[]
   }
 
   export type TB_M_ROLEUpdateManyWithoutTB_M_APPLICATIONNestedInput = {
@@ -26064,20 +29810,6 @@ export namespace Prisma {
     update?: TB_M_FEATUREUpdateWithWhereUniqueWithoutTB_M_APPLICATIONInput | TB_M_FEATUREUpdateWithWhereUniqueWithoutTB_M_APPLICATIONInput[]
     updateMany?: TB_M_FEATUREUpdateManyWithWhereWithoutTB_M_APPLICATIONInput | TB_M_FEATUREUpdateManyWithWhereWithoutTB_M_APPLICATIONInput[]
     deleteMany?: TB_M_FEATUREScalarWhereInput | TB_M_FEATUREScalarWhereInput[]
-  }
-
-  export type TB_M_FUNCTIONUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput = {
-    create?: XOR<TB_M_FUNCTIONCreateWithoutTB_M_APPLICATIONInput, TB_M_FUNCTIONUncheckedCreateWithoutTB_M_APPLICATIONInput> | TB_M_FUNCTIONCreateWithoutTB_M_APPLICATIONInput[] | TB_M_FUNCTIONUncheckedCreateWithoutTB_M_APPLICATIONInput[]
-    connectOrCreate?: TB_M_FUNCTIONCreateOrConnectWithoutTB_M_APPLICATIONInput | TB_M_FUNCTIONCreateOrConnectWithoutTB_M_APPLICATIONInput[]
-    upsert?: TB_M_FUNCTIONUpsertWithWhereUniqueWithoutTB_M_APPLICATIONInput | TB_M_FUNCTIONUpsertWithWhereUniqueWithoutTB_M_APPLICATIONInput[]
-    createMany?: TB_M_FUNCTIONCreateManyTB_M_APPLICATIONInputEnvelope
-    set?: TB_M_FUNCTIONWhereUniqueInput | TB_M_FUNCTIONWhereUniqueInput[]
-    disconnect?: TB_M_FUNCTIONWhereUniqueInput | TB_M_FUNCTIONWhereUniqueInput[]
-    delete?: TB_M_FUNCTIONWhereUniqueInput | TB_M_FUNCTIONWhereUniqueInput[]
-    connect?: TB_M_FUNCTIONWhereUniqueInput | TB_M_FUNCTIONWhereUniqueInput[]
-    update?: TB_M_FUNCTIONUpdateWithWhereUniqueWithoutTB_M_APPLICATIONInput | TB_M_FUNCTIONUpdateWithWhereUniqueWithoutTB_M_APPLICATIONInput[]
-    updateMany?: TB_M_FUNCTIONUpdateManyWithWhereWithoutTB_M_APPLICATIONInput | TB_M_FUNCTIONUpdateManyWithWhereWithoutTB_M_APPLICATIONInput[]
-    deleteMany?: TB_M_FUNCTIONScalarWhereInput | TB_M_FUNCTIONScalarWhereInput[]
   }
 
   export type TB_M_ROLEUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput = {
@@ -26178,24 +29910,18 @@ export namespace Prisma {
     update?: XOR<XOR<TB_M_APPLICATIONUpdateToOneWithWhereWithoutTB_M_FEATUREInput, TB_M_APPLICATIONUpdateWithoutTB_M_FEATUREInput>, TB_M_APPLICATIONUncheckedUpdateWithoutTB_M_FEATUREInput>
   }
 
-  export type TB_M_APPLICATIONCreateNestedOneWithoutTB_M_FUNCTIONInput = {
-    create?: XOR<TB_M_APPLICATIONCreateWithoutTB_M_FUNCTIONInput, TB_M_APPLICATIONUncheckedCreateWithoutTB_M_FUNCTIONInput>
-    connectOrCreate?: TB_M_APPLICATIONCreateOrConnectWithoutTB_M_FUNCTIONInput
-    connect?: TB_M_APPLICATIONWhereUniqueInput
-  }
-
-  export type TB_M_APPLICATIONUpdateOneRequiredWithoutTB_M_FUNCTIONNestedInput = {
-    create?: XOR<TB_M_APPLICATIONCreateWithoutTB_M_FUNCTIONInput, TB_M_APPLICATIONUncheckedCreateWithoutTB_M_FUNCTIONInput>
-    connectOrCreate?: TB_M_APPLICATIONCreateOrConnectWithoutTB_M_FUNCTIONInput
-    upsert?: TB_M_APPLICATIONUpsertWithoutTB_M_FUNCTIONInput
-    connect?: TB_M_APPLICATIONWhereUniqueInput
-    update?: XOR<XOR<TB_M_APPLICATIONUpdateToOneWithWhereWithoutTB_M_FUNCTIONInput, TB_M_APPLICATIONUpdateWithoutTB_M_FUNCTIONInput>, TB_M_APPLICATIONUncheckedUpdateWithoutTB_M_FUNCTIONInput>
-  }
-
   export type TB_M_APPLICATIONCreateNestedOneWithoutTB_M_ROLEInput = {
     create?: XOR<TB_M_APPLICATIONCreateWithoutTB_M_ROLEInput, TB_M_APPLICATIONUncheckedCreateWithoutTB_M_ROLEInput>
     connectOrCreate?: TB_M_APPLICATIONCreateOrConnectWithoutTB_M_ROLEInput
     connect?: TB_M_APPLICATIONWhereUniqueInput
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type TB_M_APPLICATIONUpdateOneRequiredWithoutTB_M_ROLENestedInput = {
@@ -26346,6 +30072,14 @@ export namespace Prisma {
     update?: XOR<XOR<TB_M_USERUpdateToOneWithWhereWithoutTB_M_USER_APPLICATIONInput, TB_M_USERUpdateWithoutTB_M_USER_APPLICATIONInput>, TB_M_USERUncheckedUpdateWithoutTB_M_USER_APPLICATIONInput>
   }
 
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[]
@@ -26480,13 +30214,6 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type NestedBytesNullableFilter<$PrismaModel = never> = {
-    equals?: Uint8Array | BytesFieldRefInput<$PrismaModel> | null
-    in?: Uint8Array[] | null
-    notIn?: Uint8Array[] | null
-    not?: NestedBytesNullableFilter<$PrismaModel> | Uint8Array | null
-  }
-
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[]
@@ -26512,43 +30239,6 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatFilter<$PrismaModel> | number
-  }
-
-  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | null
-    notIn?: number[] | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
-  }
-
-  export type NestedFloatNullableFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | null
-    notIn?: number[] | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
-  }
-
-  export type NestedBytesNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Uint8Array | BytesFieldRefInput<$PrismaModel> | null
-    in?: Uint8Array[] | null
-    notIn?: Uint8Array[] | null
-    not?: NestedBytesNullableWithAggregatesFilter<$PrismaModel> | Uint8Array | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedBytesNullableFilter<$PrismaModel>
-    _max?: NestedBytesNullableFilter<$PrismaModel>
   }
 
   export type NestedBoolFilter<$PrismaModel = never> = {
@@ -26591,6 +30281,33 @@ export namespace Prisma {
     _max?: NestedBigIntFilter<$PrismaModel>
   }
 
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
   export type TB_M_FEATURECreateWithoutTB_M_APPLICATIONInput = {
     ID: string
     NAME: string
@@ -26618,35 +30335,6 @@ export namespace Prisma {
 
   export type TB_M_FEATURECreateManyTB_M_APPLICATIONInputEnvelope = {
     data: TB_M_FEATURECreateManyTB_M_APPLICATIONInput | TB_M_FEATURECreateManyTB_M_APPLICATIONInput[]
-  }
-
-  export type TB_M_FUNCTIONCreateWithoutTB_M_APPLICATIONInput = {
-    ID: string
-    NAME: string
-    DESCRIPTION?: string | null
-    CREATED_BY: string
-    CREATED_DATE: Date | string
-    CHANGED_BY?: string | null
-    CHANGED_DATE?: Date | string | null
-  }
-
-  export type TB_M_FUNCTIONUncheckedCreateWithoutTB_M_APPLICATIONInput = {
-    ID: string
-    NAME: string
-    DESCRIPTION?: string | null
-    CREATED_BY: string
-    CREATED_DATE: Date | string
-    CHANGED_BY?: string | null
-    CHANGED_DATE?: Date | string | null
-  }
-
-  export type TB_M_FUNCTIONCreateOrConnectWithoutTB_M_APPLICATIONInput = {
-    where: TB_M_FUNCTIONWhereUniqueInput
-    create: XOR<TB_M_FUNCTIONCreateWithoutTB_M_APPLICATIONInput, TB_M_FUNCTIONUncheckedCreateWithoutTB_M_APPLICATIONInput>
-  }
-
-  export type TB_M_FUNCTIONCreateManyTB_M_APPLICATIONInputEnvelope = {
-    data: TB_M_FUNCTIONCreateManyTB_M_APPLICATIONInput | TB_M_FUNCTIONCreateManyTB_M_APPLICATIONInput[]
   }
 
   export type TB_M_ROLECreateWithoutTB_M_APPLICATIONInput = {
@@ -26739,36 +30427,6 @@ export namespace Prisma {
     CREATED_DATE?: DateTimeFilter<"TB_M_FEATURE"> | Date | string
     CHANGED_BY?: StringNullableFilter<"TB_M_FEATURE"> | string | null
     CHANGED_DATE?: DateTimeNullableFilter<"TB_M_FEATURE"> | Date | string | null
-  }
-
-  export type TB_M_FUNCTIONUpsertWithWhereUniqueWithoutTB_M_APPLICATIONInput = {
-    where: TB_M_FUNCTIONWhereUniqueInput
-    update: XOR<TB_M_FUNCTIONUpdateWithoutTB_M_APPLICATIONInput, TB_M_FUNCTIONUncheckedUpdateWithoutTB_M_APPLICATIONInput>
-    create: XOR<TB_M_FUNCTIONCreateWithoutTB_M_APPLICATIONInput, TB_M_FUNCTIONUncheckedCreateWithoutTB_M_APPLICATIONInput>
-  }
-
-  export type TB_M_FUNCTIONUpdateWithWhereUniqueWithoutTB_M_APPLICATIONInput = {
-    where: TB_M_FUNCTIONWhereUniqueInput
-    data: XOR<TB_M_FUNCTIONUpdateWithoutTB_M_APPLICATIONInput, TB_M_FUNCTIONUncheckedUpdateWithoutTB_M_APPLICATIONInput>
-  }
-
-  export type TB_M_FUNCTIONUpdateManyWithWhereWithoutTB_M_APPLICATIONInput = {
-    where: TB_M_FUNCTIONScalarWhereInput
-    data: XOR<TB_M_FUNCTIONUpdateManyMutationInput, TB_M_FUNCTIONUncheckedUpdateManyWithoutTB_M_APPLICATIONInput>
-  }
-
-  export type TB_M_FUNCTIONScalarWhereInput = {
-    AND?: TB_M_FUNCTIONScalarWhereInput | TB_M_FUNCTIONScalarWhereInput[]
-    OR?: TB_M_FUNCTIONScalarWhereInput[]
-    NOT?: TB_M_FUNCTIONScalarWhereInput | TB_M_FUNCTIONScalarWhereInput[]
-    APPLICATION?: StringFilter<"TB_M_FUNCTION"> | string
-    ID?: StringFilter<"TB_M_FUNCTION"> | string
-    NAME?: StringFilter<"TB_M_FUNCTION"> | string
-    DESCRIPTION?: StringNullableFilter<"TB_M_FUNCTION"> | string | null
-    CREATED_BY?: StringFilter<"TB_M_FUNCTION"> | string
-    CREATED_DATE?: DateTimeFilter<"TB_M_FUNCTION"> | Date | string
-    CHANGED_BY?: StringNullableFilter<"TB_M_FUNCTION"> | string | null
-    CHANGED_DATE?: DateTimeNullableFilter<"TB_M_FUNCTION"> | Date | string | null
   }
 
   export type TB_M_ROLEUpsertWithWhereUniqueWithoutTB_M_APPLICATIONInput = {
@@ -27062,7 +30720,6 @@ export namespace Prisma {
     CHANGED_BY?: string | null
     CHANGED_DATE?: Date | string | null
     FA_ICON?: string | null
-    TB_M_FUNCTION?: TB_M_FUNCTIONCreateNestedManyWithoutTB_M_APPLICATIONInput
     TB_M_ROLE?: TB_M_ROLECreateNestedManyWithoutTB_M_APPLICATIONInput
     TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONCreateNestedManyWithoutTB_M_APPLICATIONInput
   }
@@ -27078,7 +30735,6 @@ export namespace Prisma {
     CHANGED_BY?: string | null
     CHANGED_DATE?: Date | string | null
     FA_ICON?: string | null
-    TB_M_FUNCTION?: TB_M_FUNCTIONUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
     TB_M_ROLE?: TB_M_ROLEUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
     TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
   }
@@ -27110,7 +30766,6 @@ export namespace Prisma {
     CHANGED_BY?: NullableStringFieldUpdateOperationsInput | string | null
     CHANGED_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     FA_ICON?: NullableStringFieldUpdateOperationsInput | string | null
-    TB_M_FUNCTION?: TB_M_FUNCTIONUpdateManyWithoutTB_M_APPLICATIONNestedInput
     TB_M_ROLE?: TB_M_ROLEUpdateManyWithoutTB_M_APPLICATIONNestedInput
     TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONUpdateManyWithoutTB_M_APPLICATIONNestedInput
   }
@@ -27126,87 +30781,6 @@ export namespace Prisma {
     CHANGED_BY?: NullableStringFieldUpdateOperationsInput | string | null
     CHANGED_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     FA_ICON?: NullableStringFieldUpdateOperationsInput | string | null
-    TB_M_FUNCTION?: TB_M_FUNCTIONUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
-    TB_M_ROLE?: TB_M_ROLEUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
-    TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
-  }
-
-  export type TB_M_APPLICATIONCreateWithoutTB_M_FUNCTIONInput = {
-    ID: string
-    NAME: string
-    TYPE: string
-    RUNTIME: string
-    DESCRIPTION?: string | null
-    CREATED_BY: string
-    CREATED_DATE: Date | string
-    CHANGED_BY?: string | null
-    CHANGED_DATE?: Date | string | null
-    FA_ICON?: string | null
-    TB_M_FEATURE?: TB_M_FEATURECreateNestedManyWithoutTB_M_APPLICATIONInput
-    TB_M_ROLE?: TB_M_ROLECreateNestedManyWithoutTB_M_APPLICATIONInput
-    TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONCreateNestedManyWithoutTB_M_APPLICATIONInput
-  }
-
-  export type TB_M_APPLICATIONUncheckedCreateWithoutTB_M_FUNCTIONInput = {
-    ID: string
-    NAME: string
-    TYPE: string
-    RUNTIME: string
-    DESCRIPTION?: string | null
-    CREATED_BY: string
-    CREATED_DATE: Date | string
-    CHANGED_BY?: string | null
-    CHANGED_DATE?: Date | string | null
-    FA_ICON?: string | null
-    TB_M_FEATURE?: TB_M_FEATUREUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
-    TB_M_ROLE?: TB_M_ROLEUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
-    TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
-  }
-
-  export type TB_M_APPLICATIONCreateOrConnectWithoutTB_M_FUNCTIONInput = {
-    where: TB_M_APPLICATIONWhereUniqueInput
-    create: XOR<TB_M_APPLICATIONCreateWithoutTB_M_FUNCTIONInput, TB_M_APPLICATIONUncheckedCreateWithoutTB_M_FUNCTIONInput>
-  }
-
-  export type TB_M_APPLICATIONUpsertWithoutTB_M_FUNCTIONInput = {
-    update: XOR<TB_M_APPLICATIONUpdateWithoutTB_M_FUNCTIONInput, TB_M_APPLICATIONUncheckedUpdateWithoutTB_M_FUNCTIONInput>
-    create: XOR<TB_M_APPLICATIONCreateWithoutTB_M_FUNCTIONInput, TB_M_APPLICATIONUncheckedCreateWithoutTB_M_FUNCTIONInput>
-    where?: TB_M_APPLICATIONWhereInput
-  }
-
-  export type TB_M_APPLICATIONUpdateToOneWithWhereWithoutTB_M_FUNCTIONInput = {
-    where?: TB_M_APPLICATIONWhereInput
-    data: XOR<TB_M_APPLICATIONUpdateWithoutTB_M_FUNCTIONInput, TB_M_APPLICATIONUncheckedUpdateWithoutTB_M_FUNCTIONInput>
-  }
-
-  export type TB_M_APPLICATIONUpdateWithoutTB_M_FUNCTIONInput = {
-    ID?: StringFieldUpdateOperationsInput | string
-    NAME?: StringFieldUpdateOperationsInput | string
-    TYPE?: StringFieldUpdateOperationsInput | string
-    RUNTIME?: StringFieldUpdateOperationsInput | string
-    DESCRIPTION?: NullableStringFieldUpdateOperationsInput | string | null
-    CREATED_BY?: StringFieldUpdateOperationsInput | string
-    CREATED_DATE?: DateTimeFieldUpdateOperationsInput | Date | string
-    CHANGED_BY?: NullableStringFieldUpdateOperationsInput | string | null
-    CHANGED_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    FA_ICON?: NullableStringFieldUpdateOperationsInput | string | null
-    TB_M_FEATURE?: TB_M_FEATUREUpdateManyWithoutTB_M_APPLICATIONNestedInput
-    TB_M_ROLE?: TB_M_ROLEUpdateManyWithoutTB_M_APPLICATIONNestedInput
-    TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONUpdateManyWithoutTB_M_APPLICATIONNestedInput
-  }
-
-  export type TB_M_APPLICATIONUncheckedUpdateWithoutTB_M_FUNCTIONInput = {
-    ID?: StringFieldUpdateOperationsInput | string
-    NAME?: StringFieldUpdateOperationsInput | string
-    TYPE?: StringFieldUpdateOperationsInput | string
-    RUNTIME?: StringFieldUpdateOperationsInput | string
-    DESCRIPTION?: NullableStringFieldUpdateOperationsInput | string | null
-    CREATED_BY?: StringFieldUpdateOperationsInput | string
-    CREATED_DATE?: DateTimeFieldUpdateOperationsInput | Date | string
-    CHANGED_BY?: NullableStringFieldUpdateOperationsInput | string | null
-    CHANGED_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    FA_ICON?: NullableStringFieldUpdateOperationsInput | string | null
-    TB_M_FEATURE?: TB_M_FEATUREUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
     TB_M_ROLE?: TB_M_ROLEUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
     TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
   }
@@ -27223,7 +30797,6 @@ export namespace Prisma {
     CHANGED_DATE?: Date | string | null
     FA_ICON?: string | null
     TB_M_FEATURE?: TB_M_FEATURECreateNestedManyWithoutTB_M_APPLICATIONInput
-    TB_M_FUNCTION?: TB_M_FUNCTIONCreateNestedManyWithoutTB_M_APPLICATIONInput
     TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONCreateNestedManyWithoutTB_M_APPLICATIONInput
   }
 
@@ -27239,7 +30812,6 @@ export namespace Prisma {
     CHANGED_DATE?: Date | string | null
     FA_ICON?: string | null
     TB_M_FEATURE?: TB_M_FEATUREUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
-    TB_M_FUNCTION?: TB_M_FUNCTIONUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
     TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
   }
 
@@ -27271,7 +30843,6 @@ export namespace Prisma {
     CHANGED_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     FA_ICON?: NullableStringFieldUpdateOperationsInput | string | null
     TB_M_FEATURE?: TB_M_FEATUREUpdateManyWithoutTB_M_APPLICATIONNestedInput
-    TB_M_FUNCTION?: TB_M_FUNCTIONUpdateManyWithoutTB_M_APPLICATIONNestedInput
     TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONUpdateManyWithoutTB_M_APPLICATIONNestedInput
   }
 
@@ -27287,7 +30858,6 @@ export namespace Prisma {
     CHANGED_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     FA_ICON?: NullableStringFieldUpdateOperationsInput | string | null
     TB_M_FEATURE?: TB_M_FEATUREUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
-    TB_M_FUNCTION?: TB_M_FUNCTIONUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
     TB_M_USER_APPLICATION?: TB_M_USER_APPLICATIONUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
   }
 
@@ -27472,7 +31042,6 @@ export namespace Prisma {
     CHANGED_DATE?: Date | string | null
     FA_ICON?: string | null
     TB_M_FEATURE?: TB_M_FEATURECreateNestedManyWithoutTB_M_APPLICATIONInput
-    TB_M_FUNCTION?: TB_M_FUNCTIONCreateNestedManyWithoutTB_M_APPLICATIONInput
     TB_M_ROLE?: TB_M_ROLECreateNestedManyWithoutTB_M_APPLICATIONInput
   }
 
@@ -27488,7 +31057,6 @@ export namespace Prisma {
     CHANGED_DATE?: Date | string | null
     FA_ICON?: string | null
     TB_M_FEATURE?: TB_M_FEATUREUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
-    TB_M_FUNCTION?: TB_M_FUNCTIONUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
     TB_M_ROLE?: TB_M_ROLEUncheckedCreateNestedManyWithoutTB_M_APPLICATIONInput
   }
 
@@ -27575,7 +31143,6 @@ export namespace Prisma {
     CHANGED_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     FA_ICON?: NullableStringFieldUpdateOperationsInput | string | null
     TB_M_FEATURE?: TB_M_FEATUREUpdateManyWithoutTB_M_APPLICATIONNestedInput
-    TB_M_FUNCTION?: TB_M_FUNCTIONUpdateManyWithoutTB_M_APPLICATIONNestedInput
     TB_M_ROLE?: TB_M_ROLEUpdateManyWithoutTB_M_APPLICATIONNestedInput
   }
 
@@ -27591,7 +31158,6 @@ export namespace Prisma {
     CHANGED_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     FA_ICON?: NullableStringFieldUpdateOperationsInput | string | null
     TB_M_FEATURE?: TB_M_FEATUREUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
-    TB_M_FUNCTION?: TB_M_FUNCTIONUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
     TB_M_ROLE?: TB_M_ROLEUncheckedUpdateManyWithoutTB_M_APPLICATIONNestedInput
   }
 
@@ -27666,16 +31232,6 @@ export namespace Prisma {
     CHANGED_DATE?: Date | string | null
   }
 
-  export type TB_M_FUNCTIONCreateManyTB_M_APPLICATIONInput = {
-    ID: string
-    NAME: string
-    DESCRIPTION?: string | null
-    CREATED_BY: string
-    CREATED_DATE: Date | string
-    CHANGED_BY?: string | null
-    CHANGED_DATE?: Date | string | null
-  }
-
   export type TB_M_ROLECreateManyTB_M_APPLICATIONInput = {
     ID: string
     NAME: string
@@ -27718,36 +31274,6 @@ export namespace Prisma {
   }
 
   export type TB_M_FEATUREUncheckedUpdateManyWithoutTB_M_APPLICATIONInput = {
-    ID?: StringFieldUpdateOperationsInput | string
-    NAME?: StringFieldUpdateOperationsInput | string
-    DESCRIPTION?: NullableStringFieldUpdateOperationsInput | string | null
-    CREATED_BY?: StringFieldUpdateOperationsInput | string
-    CREATED_DATE?: DateTimeFieldUpdateOperationsInput | Date | string
-    CHANGED_BY?: NullableStringFieldUpdateOperationsInput | string | null
-    CHANGED_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type TB_M_FUNCTIONUpdateWithoutTB_M_APPLICATIONInput = {
-    ID?: StringFieldUpdateOperationsInput | string
-    NAME?: StringFieldUpdateOperationsInput | string
-    DESCRIPTION?: NullableStringFieldUpdateOperationsInput | string | null
-    CREATED_BY?: StringFieldUpdateOperationsInput | string
-    CREATED_DATE?: DateTimeFieldUpdateOperationsInput | Date | string
-    CHANGED_BY?: NullableStringFieldUpdateOperationsInput | string | null
-    CHANGED_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type TB_M_FUNCTIONUncheckedUpdateWithoutTB_M_APPLICATIONInput = {
-    ID?: StringFieldUpdateOperationsInput | string
-    NAME?: StringFieldUpdateOperationsInput | string
-    DESCRIPTION?: NullableStringFieldUpdateOperationsInput | string | null
-    CREATED_BY?: StringFieldUpdateOperationsInput | string
-    CREATED_DATE?: DateTimeFieldUpdateOperationsInput | Date | string
-    CHANGED_BY?: NullableStringFieldUpdateOperationsInput | string | null
-    CHANGED_DATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type TB_M_FUNCTIONUncheckedUpdateManyWithoutTB_M_APPLICATIONInput = {
     ID?: StringFieldUpdateOperationsInput | string
     NAME?: StringFieldUpdateOperationsInput | string
     DESCRIPTION?: NullableStringFieldUpdateOperationsInput | string | null

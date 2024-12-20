@@ -4,9 +4,9 @@ import helmet from "helmet";
 import { pino } from "pino";
 
 import { openAPIRouter } from "@/api-docs/openAPIRouter";
-import { healthCheckRouter } from "@/api/healthCheck/healthCheckRouter";
 import { userRouter } from "@/api/user/userRouter";
 import { travelRouter } from "./api/Travel/router";
+import { authRouter } from "./api/Auth_SC/router";
 import errorHandler from "@/common/middleware/errorHandler";
 import rateLimiter from "@/common/middleware/rateLimiter";
 import requestLogger from "@/common/middleware/requestLogger";
@@ -36,9 +36,9 @@ app.get('/',(req,res) => {
   res.status(200).json("Travel Testing")
   })
   
-app.use("/health-check", healthCheckRouter);
 app.use("/users", userRouter);
 app.use("/travel", travelRouter);
+app.use("/travel" ,authRouter)
 
 
 // Global 404 Error Handler
